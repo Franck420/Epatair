@@ -148,6 +148,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlDatabaseSetup.cs" />
+    <EmbeddedResource Include="Formulaires\FrmAjouterAvion.resx">
+      <DependentUpon>FrmAjouterAvion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulaires\FrmAssignerPiloteCours.resx">
       <DependentUpon>FrmAssignerPiloteCours.cs</DependentUpon>
     </EmbeddedResource>
