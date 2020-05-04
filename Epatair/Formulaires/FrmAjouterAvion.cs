@@ -16,7 +16,7 @@ namespace Epatair.Formulaires
         {
             InitializeComponent();
 
-            //test merge
+            //test merge #2
         }
 
         private void button1_Click(object sender, EventArgs e)
