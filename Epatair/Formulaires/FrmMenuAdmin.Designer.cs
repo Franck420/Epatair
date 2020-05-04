@@ -33,6 +33,7 @@
             this.btnCours = new System.Windows.Forms.Button();
             this.btnFacturer = new System.Windows.Forms.Button();
             this.btnQuitter = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnRemplir
@@ -85,11 +86,21 @@
             this.btnQuitter.UseVisualStyleBackColor = true;
             this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(142, 75);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // FrmMenuAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(360, 256);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.btnFacturer);
             this.Controls.Add(this.btnCours);
@@ -108,6 +119,7 @@
         private System.Windows.Forms.Button btnCours;
         private System.Windows.Forms.Button btnFacturer;
         private System.Windows.Forms.Button btnQuitter;
+        private System.Windows.Forms.Button button1;
     }
 }
 

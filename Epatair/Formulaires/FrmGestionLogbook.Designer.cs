@@ -28,36 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnAssigner = new System.Windows.Forms.Button();
-            this.btnDesassigner = new System.Windows.Forms.Button();
             this.btnModifier = new System.Windows.Forms.Button();
             this.btnRemplir = new System.Windows.Forms.Button();
             this.btnQuitter = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
-            // 
-            // btnAssigner
-            // 
-            this.btnAssigner.Location = new System.Drawing.Point(32, 30);
-            this.btnAssigner.Name = "btnAssigner";
-            this.btnAssigner.Size = new System.Drawing.Size(91, 53);
-            this.btnAssigner.TabIndex = 0;
-            this.btnAssigner.Text = "Assigner un entretien";
-            this.btnAssigner.UseVisualStyleBackColor = true;
-            this.btnAssigner.Click += new System.EventHandler(this.btnAssigner_Click);
-            // 
-            // btnDesassigner
-            // 
-            this.btnDesassigner.Location = new System.Drawing.Point(172, 30);
-            this.btnDesassigner.Name = "btnDesassigner";
-            this.btnDesassigner.Size = new System.Drawing.Size(91, 53);
-            this.btnDesassigner.TabIndex = 1;
-            this.btnDesassigner.Text = "Désassigner un entretien";
-            this.btnDesassigner.UseVisualStyleBackColor = true;
-            this.btnDesassigner.Click += new System.EventHandler(this.btnDesassigner_Click);
             // 
             // btnModifier
             // 
-            this.btnModifier.Location = new System.Drawing.Point(32, 103);
+            this.btnModifier.Location = new System.Drawing.Point(26, 25);
             this.btnModifier.Name = "btnModifier";
             this.btnModifier.Size = new System.Drawing.Size(91, 53);
             this.btnModifier.TabIndex = 2;
@@ -67,7 +46,7 @@
             // 
             // btnRemplir
             // 
-            this.btnRemplir.Location = new System.Drawing.Point(172, 103);
+            this.btnRemplir.Location = new System.Drawing.Point(166, 25);
             this.btnRemplir.Name = "btnRemplir";
             this.btnRemplir.Size = new System.Drawing.Size(91, 53);
             this.btnRemplir.TabIndex = 3;
@@ -77,7 +56,7 @@
             // 
             // btnQuitter
             // 
-            this.btnQuitter.Location = new System.Drawing.Point(96, 184);
+            this.btnQuitter.Location = new System.Drawing.Point(166, 100);
             this.btnQuitter.Name = "btnQuitter";
             this.btnQuitter.Size = new System.Drawing.Size(91, 53);
             this.btnQuitter.TabIndex = 4;
@@ -85,16 +64,23 @@
             this.btnQuitter.UseVisualStyleBackColor = true;
             this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(26, 84);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(120, 95);
+            this.listBox1.TabIndex = 5;
+            // 
             // FrmGestionLogbook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 260);
+            this.ClientSize = new System.Drawing.Size(273, 192);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.btnRemplir);
             this.Controls.Add(this.btnModifier);
-            this.Controls.Add(this.btnDesassigner);
-            this.Controls.Add(this.btnAssigner);
             this.Name = "FrmGestionLogbook";
             this.Text = "FrmGestionLogbook";
             this.ResumeLayout(false);
@@ -102,11 +88,9 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnAssigner;
-        private System.Windows.Forms.Button btnDesassigner;
         private System.Windows.Forms.Button btnModifier;
         private System.Windows.Forms.Button btnRemplir;
         private System.Windows.Forms.Button btnQuitter;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
