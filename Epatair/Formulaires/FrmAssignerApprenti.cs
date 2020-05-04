@@ -15,6 +15,8 @@ namespace Epatair.Formulaires
         public FrmAssignerApprenti()
         {
             InitializeComponent();
+
+            //test merge
         }
     }
 }
