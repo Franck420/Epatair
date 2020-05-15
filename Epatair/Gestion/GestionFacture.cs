@@ -8,5 +8,7 @@ namespace Epatair.Gestion
 {
   public class GestionFacture
     {
+
+
     }
 }
