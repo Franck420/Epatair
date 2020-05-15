@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Epatair.Dto;
+using Epatair.Gestion;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,19 +14,25 @@ namespace Epatair.Formulaires
 {
     public partial class FrmGestionAvion : Form
     {
-        public FrmGestionAvion()
+        GestionAvion gestionAvions;
+        AvionDTO piloteDTO = new AvionDTO();
+
+        public FrmGestionAvion(GestionAvion gestionAvion)
         {
             InitializeComponent();
+            gestionAvions = gestionAvion;
         }
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
-
+            Form AjouterAvion = new FrmAjouterAvion(gestionAvions);
+            AjouterAvion.Show();
         }
 
         private void btnModifier_Click(object sender, EventArgs e)
         {
-
+            Form ModifierAvion = new FrmModifierAvion(gestionAvions, piloteDTO);
+            ModifierAvion.Show();
         }
 
         private void btnSupprimer_Click(object sender, EventArgs e)

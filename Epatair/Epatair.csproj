@@ -70,7 +70,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dto\AvionDTO.cs" />
     <Compile Include="Dto\FactureDto.cs" />
+    <Compile Include="Dto\PiloteDTO.cs" />
     <Compile Include="Formulaires\FrmAjouterAvion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,7 +163,11 @@
     <Compile Include="Formulaires\FrmRemplirHeures.Designer.cs">
       <DependentUpon>FrmRemplirHeures.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gestion\GestionAvion.cs" />
     <Compile Include="Gestion\GestionFacture.cs" />
+    <Compile Include="Gestion\GestionLogbook.cs" />
+    <Compile Include="Gestion\GestionPilote.cs" />
+    <Compile Include="Gestion\GestionRendezVous.cs" />
     <Compile Include="Mappeur\MappeurFacture.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
