@@ -22,10 +22,6 @@ namespace Epatair.Mappeur
             cible.TarifHrVolInstruteur = (float)source["HrVolInstruteur"];
             cible.TarifHrSolInstruteur = (float)source["HrSolInstruteur"];
 
-            cible.IdAvion = (int)source["IdAvion"];
-
-            cible.Pilote = (string)source["Pilote"];
-            cible.Instructeur = (string)source["Instruteur"];
 
             cible.HrDemarrage = (DateTime)source["HrDemarage"];
             cible.HrDemarrage2 = (DateTime)source["HrDemarage2"];
