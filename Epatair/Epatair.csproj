@@ -70,6 +70,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dto\AvionDTO.cs" />
     <Compile Include="Dto\FactureDto.cs" />
     <Compile Include="Dto\PiloteDTO.cs" />
     <Compile Include="Formulaires\FrmAjouterAvion.cs">

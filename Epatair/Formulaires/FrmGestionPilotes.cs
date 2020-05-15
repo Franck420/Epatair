@@ -15,8 +15,8 @@ namespace Epatair.Formulaires
     public partial class FrmGestionPilotes : Form
     {
         GestionPilote gestionPilotes;
-
         PiloteDTO piloteDTO = new PiloteDTO();
+
         public FrmGestionPilotes(GestionPilote gestionPilote)
         {
             InitializeComponent();
