@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Epatair.Mappeur
 {
-    class MappeurFacture
+    public class MappeurFacture
     {
         public void Map(SqlDataReader source, FactureDto cible)
         {
@@ -24,7 +24,7 @@ namespace Epatair.Mappeur
 
 
             cible.HrDemarrage = (DateTime)source["HrDemarage"];
-            cible.HrDemarrage2 = (DateTime)source["HrDemarage2"];
+            cible.HrDecollage = (DateTime)source["HrDemarage2"];
             cible.HrArret = (DateTime)source["HrArret"];
             cible.HrAtterissage = (DateTime)source["HrAtterissage"];
 
