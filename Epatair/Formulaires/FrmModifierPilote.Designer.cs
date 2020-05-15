@@ -30,12 +30,12 @@
         {
             this.btnModifier = new System.Windows.Forms.Button();
             this.btnAnnuler = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtIdentifient = new System.Windows.Forms.TextBox();
+            this.txtNom = new System.Windows.Forms.TextBox();
             this.lblId = new System.Windows.Forms.Label();
             this.LblNom = new System.Windows.Forms.Label();
             this.lblGrade = new System.Windows.Forms.Label();
+            this.cmBGrade = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnModifier
@@ -56,26 +56,19 @@
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtIdentifient
             // 
-            this.textBox1.Location = new System.Drawing.Point(66, 48);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
+            this.txtIdentifient.Location = new System.Drawing.Point(66, 48);
+            this.txtIdentifient.Name = "txtIdentifient";
+            this.txtIdentifient.Size = new System.Drawing.Size(100, 20);
+            this.txtIdentifient.TabIndex = 2;
             // 
-            // textBox2
+            // txtNom
             // 
-            this.textBox2.Location = new System.Drawing.Point(228, 48);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(137, 86);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 4;
+            this.txtNom.Location = new System.Drawing.Point(228, 48);
+            this.txtNom.Name = "txtNom";
+            this.txtNom.Size = new System.Drawing.Size(100, 20);
+            this.txtNom.TabIndex = 3;
             // 
             // lblId
             // 
@@ -104,17 +97,25 @@
             this.lblGrade.TabIndex = 7;
             this.lblGrade.Text = "Grade";
             // 
+            // cmBGrade
+            // 
+            this.cmBGrade.FormattingEnabled = true;
+            this.cmBGrade.Location = new System.Drawing.Point(138, 86);
+            this.cmBGrade.Name = "cmBGrade";
+            this.cmBGrade.Size = new System.Drawing.Size(89, 21);
+            this.cmBGrade.TabIndex = 8;
+            // 
             // FrmModifierPilote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(354, 171);
+            this.Controls.Add(this.cmBGrade);
             this.Controls.Add(this.lblGrade);
             this.Controls.Add(this.LblNom);
             this.Controls.Add(this.lblId);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNom);
+            this.Controls.Add(this.txtIdentifient);
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.btnModifier);
             this.Name = "FrmModifierPilote";
@@ -128,11 +129,11 @@
 
         private System.Windows.Forms.Button btnModifier;
         private System.Windows.Forms.Button btnAnnuler;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtIdentifient;
+        private System.Windows.Forms.TextBox txtNom;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Label LblNom;
         private System.Windows.Forms.Label lblGrade;
+        private System.Windows.Forms.ComboBox cmBGrade;
     }
 }
