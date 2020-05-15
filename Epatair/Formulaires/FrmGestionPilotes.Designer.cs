@@ -31,7 +31,6 @@
             this.btnAjouter = new System.Windows.Forms.Button();
             this.btnModifier = new System.Windows.Forms.Button();
             this.btnSupprimer = new System.Windows.Forms.Button();
-            this.btnAssigner = new System.Windows.Forms.Button();
             this.btnQuitter = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
@@ -66,19 +65,9 @@
             this.btnSupprimer.UseVisualStyleBackColor = true;
             this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
             // 
-            // btnAssigner
-            // 
-            this.btnAssigner.Location = new System.Drawing.Point(32, 220);
-            this.btnAssigner.Name = "btnAssigner";
-            this.btnAssigner.Size = new System.Drawing.Size(101, 47);
-            this.btnAssigner.TabIndex = 3;
-            this.btnAssigner.Text = "Assigner/Désassigner un pilote à un avion dans l\'horaire";
-            this.btnAssigner.UseVisualStyleBackColor = true;
-            this.btnAssigner.Click += new System.EventHandler(this.btnAssigner_Click);
-            // 
             // btnQuitter
             // 
-            this.btnQuitter.Location = new System.Drawing.Point(92, 314);
+            this.btnQuitter.Location = new System.Drawing.Point(166, 220);
             this.btnQuitter.Name = "btnQuitter";
             this.btnQuitter.Size = new System.Drawing.Size(101, 47);
             this.btnQuitter.TabIndex = 5;
@@ -101,7 +90,6 @@
             this.ClientSize = new System.Drawing.Size(290, 400);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.btnQuitter);
-            this.Controls.Add(this.btnAssigner);
             this.Controls.Add(this.btnSupprimer);
             this.Controls.Add(this.btnModifier);
             this.Controls.Add(this.btnAjouter);
@@ -116,7 +104,6 @@
         private System.Windows.Forms.Button btnAjouter;
         private System.Windows.Forms.Button btnModifier;
         private System.Windows.Forms.Button btnSupprimer;
-        private System.Windows.Forms.Button btnAssigner;
         private System.Windows.Forms.Button btnQuitter;
         private System.Windows.Forms.ListBox listBox1;
     }
