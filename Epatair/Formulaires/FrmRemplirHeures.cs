@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Epatair.Gestion;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,7 @@ namespace Epatair.Formulaires
 {
     public partial class FrmRemplirHeures : Form
     {
-        public FrmRemplirHeures()
+        public FrmRemplirHeures(GestionLogbook gestionLogbook)
         {
             InitializeComponent();
         }

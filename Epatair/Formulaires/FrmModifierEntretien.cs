@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Epatair.Dto;
+using Epatair.Gestion;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +14,7 @@ namespace Epatair.Formulaires
 {
     public partial class FrmModifierEntretien : Form
     {
-        public FrmModifierEntretien()
+        public FrmModifierEntretien(GestionLogbook gestionLogbook, LogbookDTO logbookDTO)
         {
             InitializeComponent();
         }
