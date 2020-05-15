@@ -178,6 +178,9 @@
     <EmbeddedResource Include="Formulaires\FrmAjouterAvion.resx">
       <DependentUpon>FrmAjouterAvion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formulaires\FrmAjouterPilote.resx">
+      <DependentUpon>FrmAjouterPilote.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulaires\FrmAssignerPiloteCours.resx">
       <DependentUpon>FrmAssignerPiloteCours.cs</DependentUpon>
     </EmbeddedResource>
