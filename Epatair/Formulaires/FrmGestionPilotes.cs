@@ -19,7 +19,7 @@ namespace Epatair.Formulaires
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
-            //tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttfuck
+            
         }
 
         private void btnModifier_Click(object sender, EventArgs e)
