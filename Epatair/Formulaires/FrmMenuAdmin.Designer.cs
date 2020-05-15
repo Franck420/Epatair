@@ -33,12 +33,12 @@
             this.btnCours = new System.Windows.Forms.Button();
             this.btnFacturer = new System.Windows.Forms.Button();
             this.btnQuitter = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnFacturation = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnRemplir
             // 
-            this.btnRemplir.Location = new System.Drawing.Point(38, 104);
+            this.btnRemplir.Location = new System.Drawing.Point(26, 104);
             this.btnRemplir.Name = "btnRemplir";
             this.btnRemplir.Size = new System.Drawing.Size(111, 47);
             this.btnRemplir.TabIndex = 0;
@@ -68,7 +68,7 @@
             // 
             // btnFacturer
             // 
-            this.btnFacturer.Location = new System.Drawing.Point(38, 26);
+            this.btnFacturer.Location = new System.Drawing.Point(26, 12);
             this.btnFacturer.Name = "btnFacturer";
             this.btnFacturer.Size = new System.Drawing.Size(111, 47);
             this.btnFacturer.TabIndex = 3;
@@ -86,21 +86,22 @@
             this.btnQuitter.UseVisualStyleBackColor = true;
             this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
             // 
-            // button1
+            // btnFacturation
             // 
-            this.button1.Location = new System.Drawing.Point(142, 75);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnFacturation.Location = new System.Drawing.Point(133, 65);
+            this.btnFacturation.Name = "btnFacturation";
+            this.btnFacturation.Size = new System.Drawing.Size(75, 49);
+            this.btnFacturation.TabIndex = 5;
+            this.btnFacturation.Text = "Allez vers la facturation";
+            this.btnFacturation.UseVisualStyleBackColor = true;
+            this.btnFacturation.Click += new System.EventHandler(this.btnFacturation_Click);
             // 
             // FrmMenuAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(360, 256);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnFacturation);
             this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.btnFacturer);
             this.Controls.Add(this.btnCours);
@@ -119,7 +120,7 @@
         private System.Windows.Forms.Button btnCours;
         private System.Windows.Forms.Button btnFacturer;
         private System.Windows.Forms.Button btnQuitter;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnFacturation;
     }
 }
 

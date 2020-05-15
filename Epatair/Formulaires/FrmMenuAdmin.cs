@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Epatair.Formulaires;
+using Epatair.Gestion;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,13 @@ namespace Epatair
 {
     public partial class FrmMenuAdmin : Form
     {
+
+        GestionFacture gestionFacture = new GestionFacture();
+
         public FrmMenuAdmin()
         {
             InitializeComponent();
+
         }
 
         private void btnFacturer_Click(object sender, EventArgs e)
@@ -40,6 +46,13 @@ namespace Epatair
         private void btnQuitter_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnFacturation_Click(object sender, EventArgs e)
+        {
+            Form Facturation = new FrmFacturation(gestionFacture);
+            Facturation.Show();
+
         }
     }
 }

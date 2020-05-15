@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Epatair.Gestion
 {
-    class GestionFacture
+  public class GestionFacture
     {
     }
 }
