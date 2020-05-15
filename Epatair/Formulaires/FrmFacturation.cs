@@ -16,5 +16,15 @@ namespace Epatair.Formulaires
         {
             InitializeComponent();
         }
+
+        private void btnRetour_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void FrmFacturation_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
