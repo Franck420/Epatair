@@ -27,7 +27,7 @@ namespace Epatair.Dto
         public DateTime HrDemarrage { get; set; }
         public DateTime HrArret { get; set; }
         public DateTime HrAtterissage { get; set; }
-        public DateTime HrDemarrage2 { get; set; }
+        public DateTime HrDecollage { get; set; }
 
     }
 }

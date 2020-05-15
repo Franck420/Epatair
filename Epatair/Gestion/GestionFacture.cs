@@ -12,15 +12,18 @@ namespace Epatair.Gestion
     {
         IRepositoryFacture RepositoryFacture=new RepositoryFacture();
 
-        public void NouvelleFacture()
-        { 
-        
+        public void NouvelleFacture(int avion,string instruteur,string pilote,double HeuredeVol,double HeureSol,DateTime HeureDemarrage,DateTime HeureArret,DateTime HeureAtterissage,DateTime HeureDecolage)
+        {
+       
 
 
-        
+
         }
-        
-        private
+
+        private double calculertotal()
+        {
+            return 0;
+        }
 
     }
 }

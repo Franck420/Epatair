@@ -24,7 +24,7 @@ namespace Epatair.Mappeur
 
 
             cible.HrDemarrage = (DateTime)source["HrDemarage"];
-            cible.HrDemarrage2 = (DateTime)source["HrDemarage2"];
+            cible.HrDecollage = (DateTime)source["HrDemarage2"];
             cible.HrArret = (DateTime)source["HrArret"];
             cible.HrAtterissage = (DateTime)source["HrAtterissage"];
 
