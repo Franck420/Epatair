@@ -1,4 +1,5 @@
-﻿using Epatair.Gestion;
+﻿using Epatair.Dto;
+using Epatair.Gestion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,29 +14,25 @@ namespace Epatair.Formulaires
 {
     public partial class FrmGestionLogbook : Form
     {
+
+        GestionLogbook gestionLogbooks;
+        LogbookDTO logbookDTO = new LogbookDTO();
         public FrmGestionLogbook(GestionLogbook gestionLogbook)
         {
             InitializeComponent();
-        }
-
-        private void btnAssigner_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnDesassigner_Click(object sender, EventArgs e)
-        {
-
-        }
+            gestionLogbooks = gestionLogbook;
+        }      
 
         private void btnModifier_Click(object sender, EventArgs e)
         {
-
+            Form ModifierEntretien= new FrmModifierEntretien(gestionLogbooks, logbookDTO);
+            ModifierEntretien.Show();
         }
 
         private void btnRemplir_Click(object sender, EventArgs e)
         {
-
+            Form AjouterAvion = new FrmRemplirHeures(gestionLogbooks);
+            AjouterAvion.Show();
         }
 
         private void btnQuitter_Click(object sender, EventArgs e)

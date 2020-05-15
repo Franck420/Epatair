@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Epatair.Formulaires
 {
-    public partial class FrmRemplirHeures : Form
+    public partial class FrmModifierRendezVous : Form
     {
-        public FrmRemplirHeures(GestionLogbook gestionLogbook)
+        public FrmModifierRendezVous(GestionRendezVous gestionRendezVous)
         {
             InitializeComponent();
         }

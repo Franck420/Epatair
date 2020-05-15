@@ -52,7 +52,7 @@ namespace Epatair
 
         private void btnRendezVous_Click(object sender, EventArgs e)
         {
-            Form RendezVous = new FrmGestionCours(gestionRendezVous);
+            Form RendezVous = new FrmGestionRendezVous(gestionRendezVous);
             RendezVous.Show();
         }
         private void btnQuitter_Click(object sender, EventArgs e)

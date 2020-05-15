@@ -73,6 +73,7 @@
   <ItemGroup>
     <Compile Include="Dto\AvionDTO.cs" />
     <Compile Include="Dto\FactureDto.cs" />
+    <Compile Include="Dto\LogbookDTO.cs" />
     <Compile Include="Dto\PiloteDTO.cs" />
     <Compile Include="Formulaires\FrmAjouterAvion.cs">
       <SubType>Form</SubType>
@@ -116,11 +117,11 @@
     <Compile Include="Formulaires\FrmGestionAvion.Designer.cs">
       <DependentUpon>FrmGestionAvion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formulaires\FrmGestionCours.cs">
+    <Compile Include="Formulaires\FrmGestionRendezVous.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formulaires\FrmGestionCours.Designer.cs">
-      <DependentUpon>FrmGestionCours.cs</DependentUpon>
+    <Compile Include="Formulaires\FrmGestionRendezVous.Designer.cs">
+      <DependentUpon>FrmGestionRendezVous.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulaires\FrmGestionLogbook.cs">
       <SubType>Form</SubType>
@@ -158,6 +159,12 @@
     <Compile Include="Formulaires\FrmModifierPilote.Designer.cs">
       <DependentUpon>FrmModifierPilote.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formulaires\FrmModifierRendezVous.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulaires\FrmModifierRendezVous.Designer.cs">
+      <DependentUpon>FrmModifierRendezVous.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulaires\FrmRemplirHeures.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,8 +197,8 @@
     <EmbeddedResource Include="Formulaires\FrmGestionAvion.resx">
       <DependentUpon>FrmGestionAvion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulaires\FrmGestionCours.resx">
-      <DependentUpon>FrmGestionCours.cs</DependentUpon>
+    <EmbeddedResource Include="Formulaires\FrmGestionRendezVous.resx">
+      <DependentUpon>FrmGestionRendezVous.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulaires\FrmGestionLogbook.resx">
       <DependentUpon>FrmGestionLogbook.cs</DependentUpon>
