@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Epatair.Repositorie;
+using Epatair.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +10,17 @@ namespace Epatair.Gestion
 {
   public class GestionFacture
     {
+        IRepositoryFacture RepositoryFacture=new RepositoryFacture();
 
+        public void NouvelleFacture()
+        { 
+        
+
+
+        
+        }
+        
+        private
 
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Epatair.Mappeur
 {
-    class MappeurFacture
+    public class MappeurFacture
     {
         public void Map(SqlDataReader source, FactureDto cible)
         {
