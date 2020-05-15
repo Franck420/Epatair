@@ -16,6 +16,7 @@ namespace Epatair
     {
 
         GestionFacture gestionFacture = new GestionFacture();
+        GestionFacture gestionFacture2 = new GestionFacture();
 
         public FrmMenuAdmin()
         {
