@@ -19,5 +19,10 @@ namespace Epatair.Gestion
         {
             return repositoryAvion.GetListeAvion();
         }
+
+        public void SupprimerAvion(int IdAvion)
+        {
+            repositoryAvion.SupprimerAvion(IdAvion);
+        }
     }
 }

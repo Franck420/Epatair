@@ -53,8 +53,14 @@ namespace Epatair.Repository
         
         }
         public void SupprimerAvion(int IdAvion) 
-        { 
-        
+        {
+            using (SqlConnection connexion = new SqlConnection(ChaineConnexion))
+            {
+                SqlCommand commande = new SqlCommand("DELETE FROM Tbl_Avion WHERE IdAvion = @IdAvion", connexion);
+                commande.Parameters.AddWithValue("@IdAvion", IdAvion);
+                connexion.Open();
+                commande.ExecuteNonQuery();
+            }
         }
         public void ModifierAvion(AvionDTO Avion)
         {

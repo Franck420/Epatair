@@ -38,7 +38,7 @@ namespace Epatair.Formulaires
 
         private void btnSupprimer_Click(object sender, EventArgs e)
         {
-
+            gestionAvions.SupprimerAvion(Convert.ToInt32(txtSupprimer.Text));
         }
 
         private void btnRevenir_Click(object sender, EventArgs e)
