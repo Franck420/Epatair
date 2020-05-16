@@ -55,6 +55,7 @@ namespace Epatair.Formulaires
         {
             Form AjouterPilote = new FrmAjouterPilote(gestionPilotes);
             AjouterPilote.Show();
+            RemplirListe();
         }
 
         private void btnModifier_Click(object sender, EventArgs e)
@@ -73,6 +74,7 @@ namespace Epatair.Formulaires
 
                 Form ModifierPilote = new FrmModifierPilote(gestionPilotes, piloteDTO);
                 ModifierPilote.Show();
+                RemplirListe();
             }
             else
                 MessageBox.Show("Veuillez entrez un Id valide svp");
@@ -81,7 +83,6 @@ namespace Epatair.Formulaires
         private void btnSupprimer_Click(object sender, EventArgs e)
         {            
             gestionPilotes.SupprimerPilote(Convert.ToInt32(txtSupprimer.Text));
-            lstViewPilote.Clear();
             RemplirListe();
         }      
 
@@ -92,6 +93,7 @@ namespace Epatair.Formulaires
 
         private void RemplirListe()
         {
+            lstViewPilote.Clear();
             ListePilotes = gestionPilotes.GetListePilote();
             InitialiserListViewPilote(ListePilotes);           
         }
