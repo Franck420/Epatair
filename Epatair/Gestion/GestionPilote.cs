@@ -20,10 +20,7 @@ namespace Epatair.Gestion
         {
             return repositoryPilote.GetListePilote();
         }
-        public int GetPilote(int IdPilote)
-        {
-            return repositoryPilote.GetPilote(IdPilote);
-        }
+       
         public List<PiloteDTO> GetListePilote(string grade)
         {
            return repositoryPilote.GetListePilote(grade);
