@@ -32,8 +32,8 @@
             this.btnAnnuler = new System.Windows.Forms.Button();
             this.lblNom = new System.Windows.Forms.Label();
             this.lblGrade = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.cmBGrade = new System.Windows.Forms.ComboBox();
+            this.txtNom = new System.Windows.Forms.TextBox();
+            this.cmbGrade = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // BtnAjouter
@@ -44,6 +44,7 @@
             this.BtnAjouter.TabIndex = 0;
             this.BtnAjouter.Text = "Ajouter";
             this.BtnAjouter.UseVisualStyleBackColor = true;
+            this.BtnAjouter.Click += new System.EventHandler(this.BtnAjouter_Click);
             // 
             // btnAnnuler
             // 
@@ -72,28 +73,31 @@
             this.lblGrade.TabIndex = 3;
             this.lblGrade.Text = "Grade";
             // 
-            // textBox2
+            // txtNom
             // 
-            this.textBox2.Location = new System.Drawing.Point(46, 24);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 6;
+            this.txtNom.Location = new System.Drawing.Point(46, 24);
+            this.txtNom.Name = "txtNom";
+            this.txtNom.Size = new System.Drawing.Size(100, 20);
+            this.txtNom.TabIndex = 6;
             // 
-            // cmBGrade
+            // cmbGrade
             // 
-            this.cmBGrade.FormattingEnabled = true;
-            this.cmBGrade.Location = new System.Drawing.Point(200, 23);
-            this.cmBGrade.Name = "cmBGrade";
-            this.cmBGrade.Size = new System.Drawing.Size(99, 21);
-            this.cmBGrade.TabIndex = 7;
+            this.cmbGrade.FormattingEnabled = true;
+            this.cmbGrade.Items.AddRange(new object[] {
+            "Pilote",
+            "Instructeur"});
+            this.cmbGrade.Location = new System.Drawing.Point(200, 23);
+            this.cmbGrade.Name = "cmbGrade";
+            this.cmbGrade.Size = new System.Drawing.Size(99, 21);
+            this.cmbGrade.TabIndex = 7;
             // 
             // FrmAjouterPilote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(338, 111);
-            this.Controls.Add(this.cmBGrade);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.cmbGrade);
+            this.Controls.Add(this.txtNom);
             this.Controls.Add(this.lblGrade);
             this.Controls.Add(this.lblNom);
             this.Controls.Add(this.btnAnnuler);
@@ -111,7 +115,7 @@
         private System.Windows.Forms.Button btnAnnuler;
         private System.Windows.Forms.Label lblNom;
         private System.Windows.Forms.Label lblGrade;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox cmBGrade;
+        private System.Windows.Forms.TextBox txtNom;
+        private System.Windows.Forms.ComboBox cmbGrade;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Epatair.Dto;
+using Epatair.Mappeur;
 using Epatair.Repository;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,9 @@ namespace Epatair.Gestion
     public class GestionPilote
     {
         IRepositoryPilote repositoryPilote = new RepositoryPilote();
+        PiloteDTO Pilote = new PiloteDTO();
+        
+
 
         public List<PiloteDTO> GetListePilote()
         {
@@ -24,9 +28,11 @@ namespace Epatair.Gestion
         {
            return repositoryPilote.GetListePilote(grade);
         }
-        public void NouveauPilote(PiloteDTO Pilote)
+        public void NouveauPilote(string Nom, string Grade)
         {
-
+            MappeurPilote mappeurPilote = new MappeurPilote();
+            mappeurPilote.Map(Nom,Grade,Pilote);
+            repositoryPilote.NouveauPilote(Pilote);
         }
         public void SupprimerPilote(int IdPilote)
         {

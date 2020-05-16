@@ -20,5 +20,10 @@ namespace Epatair.Formulaires
             InitializeComponent();
             gestionPilotes = gestionPilote;
         }
+
+        private void BtnAjouter_Click(object sender, EventArgs e)
+        {
+            gestionPilotes.NouveauPilote(txtNom.Text, cmbGrade.SelectedItem.ToString());
+        }
     }
 }
