@@ -92,17 +92,20 @@ namespace Epatair.Repository
 
             using (SqlConnection connexion = new SqlConnection(ChaineConnexion))
             {
-                SqlCommand commande = new SqlCommand("select IdGrade from Tbl_Grade where Titre="+Pilote.Grade, connexion);
+
+                SqlCommand commande = new SqlCommand("select IdGrade from Tbl_Grade where Titre = @Grade", connexion);
+                commande.Parameters.AddWithValue("@Grade", Pilote.Grade);
+                connexion.Open();
                 using (SqlDataReader reader = commande.ExecuteReader())
                     if (reader.Read())
                     {
                         grade = (int)reader["IdGrade"];
                     }                    
 
-                SqlCommand commande2 = new SqlCommand("INSERT INTO Tbl_Pilote (IdPilote,Nom,IdGrade ) VALUES (@Nom,"+grade+"); SELECT SCOPE_IDENTITY()", connexion);
+                SqlCommand commande2 = new SqlCommand("INSERT INTO Tbl_Pilote (Nom,IdGrade ) VALUES (@Nom,"+grade+"); SELECT SCOPE_IDENTITY()", connexion);
 
                 commande2.Parameters.AddWithValue("@Nom", Pilote.Nom);
-                connexion.Open();
+               
                 object valeur = commande2.ExecuteScalar(); 
                 Pilote.IdPilote = int.Parse(valeur.ToString());
             }
