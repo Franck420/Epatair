@@ -12,11 +12,9 @@ namespace Epatair.Mappeur
     {
         public void Map(SqlDataReader source, PiloteDTO cible)
         {
-
             cible.IdPilote = (int)source["IdPilote"];
             cible.Grade = (string)source["Titre"];
             cible.Nom = (string)source["Nom"];
-
         }
     }
 }

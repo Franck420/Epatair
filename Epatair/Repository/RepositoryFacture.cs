@@ -19,11 +19,7 @@ namespace Epatair.Repositorie
                 return ConfigurationManager.ConnectionStrings["BDEpatAir"].ConnectionString;
             }
         }
-
-      
-
-
-        
+                 
 
         public List<Dto.FactureDto> GetListeFacture()
         {
