@@ -227,6 +227,9 @@
     <EmbeddedResource Include="Formulaires\FrmMenuAdmin.resx">
       <DependentUpon>FrmMenuAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formulaires\FrmModifierAvion.resx">
+      <DependentUpon>FrmModifierAvion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulaires\FrmModifierPilote.resx">
       <DependentUpon>FrmModifierPilote.cs</DependentUpon>
     </EmbeddedResource>

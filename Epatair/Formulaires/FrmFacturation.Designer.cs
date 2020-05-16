@@ -32,7 +32,9 @@
             this.btnAjouter = new System.Windows.Forms.Button();
             this.lsbFacture = new System.Windows.Forms.ListBox();
             this.GRBFacture = new System.Windows.Forms.GroupBox();
-            this.GRBModification = new System.Windows.Forms.GroupBox();
+            this.GRBinformation = new System.Windows.Forms.GroupBox();
+            this.Btnannuler = new System.Windows.Forms.Button();
+            this.btnaccepterFacture = new System.Windows.Forms.Button();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.lblTotal = new System.Windows.Forms.Label();
             this.txtHDemarrage2 = new System.Windows.Forms.TextBox();
@@ -55,10 +57,8 @@
             this.lblHVol = new System.Windows.Forms.Label();
             this.txtIdFacture = new System.Windows.Forms.TextBox();
             this.lblIdFacture = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.GRBFacture.SuspendLayout();
-            this.GRBModification.SuspendLayout();
+            this.GRBinformation.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnRetour
@@ -99,38 +99,57 @@
             this.GRBFacture.TabStop = false;
             this.GRBFacture.Text = "Facture";
             // 
-            // GRBModification
+            // GRBinformation
             // 
-            this.GRBModification.Controls.Add(this.button2);
-            this.GRBModification.Controls.Add(this.button1);
-            this.GRBModification.Controls.Add(this.txtTotal);
-            this.GRBModification.Controls.Add(this.lblTotal);
-            this.GRBModification.Controls.Add(this.txtHDemarrage2);
-            this.GRBModification.Controls.Add(this.LblHDemarrage2);
-            this.GRBModification.Controls.Add(this.txtHAtterissage);
-            this.GRBModification.Controls.Add(this.comboBox1);
-            this.GRBModification.Controls.Add(this.lblAvion);
-            this.GRBModification.Controls.Add(this.lblHAtterissage);
-            this.GRBModification.Controls.Add(this.lblInstruteur);
-            this.GRBModification.Controls.Add(this.txtHArret);
-            this.GRBModification.Controls.Add(this.lblNomclien);
-            this.GRBModification.Controls.Add(this.lblHArret);
-            this.GRBModification.Controls.Add(this.comboBox2);
-            this.GRBModification.Controls.Add(this.txtDemarage);
-            this.GRBModification.Controls.Add(this.comboBox3);
-            this.GRBModification.Controls.Add(this.lblHDemarage);
-            this.GRBModification.Controls.Add(this.textBox3);
-            this.GRBModification.Controls.Add(this.lblHSol);
-            this.GRBModification.Controls.Add(this.txtHeureVol);
-            this.GRBModification.Controls.Add(this.lblHVol);
-            this.GRBModification.Controls.Add(this.txtIdFacture);
-            this.GRBModification.Controls.Add(this.lblIdFacture);
-            this.GRBModification.Location = new System.Drawing.Point(320, 12);
-            this.GRBModification.Name = "GRBModification";
-            this.GRBModification.Size = new System.Drawing.Size(254, 516);
-            this.GRBModification.TabIndex = 5;
-            this.GRBModification.TabStop = false;
-            this.GRBModification.Text = "Modifier information facture";
+            this.GRBinformation.Controls.Add(this.Btnannuler);
+            this.GRBinformation.Controls.Add(this.btnaccepterFacture);
+            this.GRBinformation.Controls.Add(this.txtTotal);
+            this.GRBinformation.Controls.Add(this.lblTotal);
+            this.GRBinformation.Controls.Add(this.txtHDemarrage2);
+            this.GRBinformation.Controls.Add(this.LblHDemarrage2);
+            this.GRBinformation.Controls.Add(this.txtHAtterissage);
+            this.GRBinformation.Controls.Add(this.comboBox1);
+            this.GRBinformation.Controls.Add(this.lblAvion);
+            this.GRBinformation.Controls.Add(this.lblHAtterissage);
+            this.GRBinformation.Controls.Add(this.lblInstruteur);
+            this.GRBinformation.Controls.Add(this.txtHArret);
+            this.GRBinformation.Controls.Add(this.lblNomclien);
+            this.GRBinformation.Controls.Add(this.lblHArret);
+            this.GRBinformation.Controls.Add(this.comboBox2);
+            this.GRBinformation.Controls.Add(this.txtDemarage);
+            this.GRBinformation.Controls.Add(this.comboBox3);
+            this.GRBinformation.Controls.Add(this.lblHDemarage);
+            this.GRBinformation.Controls.Add(this.textBox3);
+            this.GRBinformation.Controls.Add(this.lblHSol);
+            this.GRBinformation.Controls.Add(this.txtHeureVol);
+            this.GRBinformation.Controls.Add(this.lblHVol);
+            this.GRBinformation.Controls.Add(this.txtIdFacture);
+            this.GRBinformation.Controls.Add(this.lblIdFacture);
+            this.GRBinformation.Enabled = false;
+            this.GRBinformation.Location = new System.Drawing.Point(320, 12);
+            this.GRBinformation.Name = "GRBinformation";
+            this.GRBinformation.Size = new System.Drawing.Size(254, 516);
+            this.GRBinformation.TabIndex = 5;
+            this.GRBinformation.TabStop = false;
+            this.GRBinformation.Text = "information facture";
+            // 
+            // Btnannuler
+            // 
+            this.Btnannuler.Location = new System.Drawing.Point(173, 487);
+            this.Btnannuler.Name = "Btnannuler";
+            this.Btnannuler.Size = new System.Drawing.Size(75, 23);
+            this.Btnannuler.TabIndex = 13;
+            this.Btnannuler.Text = "annuler";
+            this.Btnannuler.UseVisualStyleBackColor = true;
+            // 
+            // btnaccepterFacture
+            // 
+            this.btnaccepterFacture.Location = new System.Drawing.Point(6, 487);
+            this.btnaccepterFacture.Name = "btnaccepterFacture";
+            this.btnaccepterFacture.Size = new System.Drawing.Size(121, 23);
+            this.btnaccepterFacture.TabIndex = 12;
+            this.btnaccepterFacture.Text = "accepter modification";
+            this.btnaccepterFacture.UseVisualStyleBackColor = true;
             // 
             // txtTotal
             // 
@@ -324,38 +343,20 @@
             this.lblIdFacture.TabIndex = 0;
             this.lblIdFacture.Text = "Identifieur Facture";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(21, 487);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(173, 487);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // FrmFacturation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(586, 590);
-            this.Controls.Add(this.GRBModification);
+            this.Controls.Add(this.GRBinformation);
             this.Controls.Add(this.GRBFacture);
             this.Controls.Add(this.btnRetour);
             this.Name = "FrmFacturation";
             this.Text = "FrmFacturation";
             this.Load += new System.EventHandler(this.FrmFacturation_Load);
             this.GRBFacture.ResumeLayout(false);
-            this.GRBModification.ResumeLayout(false);
-            this.GRBModification.PerformLayout();
+            this.GRBinformation.ResumeLayout(false);
+            this.GRBinformation.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -366,7 +367,7 @@
         private System.Windows.Forms.Button btnAjouter;
         private System.Windows.Forms.ListBox lsbFacture;
         private System.Windows.Forms.GroupBox GRBFacture;
-        private System.Windows.Forms.GroupBox GRBModification;
+        private System.Windows.Forms.GroupBox GRBinformation;
         private System.Windows.Forms.TextBox txtIdFacture;
         private System.Windows.Forms.Label lblIdFacture;
         private System.Windows.Forms.Label lblNomclien;
@@ -389,7 +390,7 @@
         private System.Windows.Forms.Label lblHDemarage;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label lblTotal;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Btnannuler;
+        private System.Windows.Forms.Button btnaccepterFacture;
     }
 }
