@@ -24,5 +24,10 @@ namespace Epatair.Gestion
         {
             repositoryAvion.SupprimerAvion(IdAvion);
         }
+
+        public void NouvelleAvion(string Nom)
+        {          
+            repositoryAvion.NouvealleAvion(Nom);
+        }
     }
 }

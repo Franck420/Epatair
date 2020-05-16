@@ -13,19 +13,22 @@ namespace Epatair.Formulaires
 {
     public partial class FrmAjouterAvion : Form
     {
+        GestionAvion gestionAvions;
         public FrmAjouterAvion(GestionAvion gestionAvion)
         {
-            InitializeComponent();                    
+            InitializeComponent();
+            gestionAvions= gestionAvion;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-          
-        }
-
+    
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void BtnAjouter_Click(object sender, EventArgs e)
+        {
+            gestionAvions.NouvelleAvion(TxtNom.Text);
         }
     }
 }

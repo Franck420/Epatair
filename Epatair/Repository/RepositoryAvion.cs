@@ -48,9 +48,20 @@ namespace Epatair.Repository
                 return listeAvion;
             }
         }
-        public void NouvealleAvion(AvionDTO Avion) 
-        { 
-        
+        public void NouvealleAvion(string Nom) 
+        {           
+
+            using (SqlConnection connexion = new SqlConnection(ChaineConnexion))
+            {             
+                
+                connexion.Open();              
+
+                SqlCommand commande = new SqlCommand("INSERT INTO Tbl_Avion (Nom) VALUES (@Nom); SELECT SCOPE_IDENTITY()", connexion);
+
+                commande.Parameters.AddWithValue("@Nom", Nom);
+
+                object valeur = commande.ExecuteScalar();               
+            }
         }
         public void SupprimerAvion(int IdAvion) 
         {

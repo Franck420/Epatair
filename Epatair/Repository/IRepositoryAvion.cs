@@ -11,7 +11,7 @@ namespace Epatair.Repository
     {       
         AvionDTO GetAvion(int IdAvion);
         List<AvionDTO> GetListeAvion();
-        void NouvealleAvion(AvionDTO Avion);
+        void NouvealleAvion(string nom);
         void SupprimerAvion(int IdAvion);
         void ModifierAvion(AvionDTO Avion);
     }

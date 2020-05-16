@@ -42,6 +42,7 @@
             this.BtnAjouter.TabIndex = 0;
             this.BtnAjouter.Text = "Ajouter un avion à la base de donnée";
             this.BtnAjouter.UseVisualStyleBackColor = true;
+            this.BtnAjouter.Click += new System.EventHandler(this.BtnAjouter_Click);
             // 
             // BtnAnnuler
             // 

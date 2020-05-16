@@ -14,8 +14,7 @@ namespace Epatair.Mappeur
         {
             cible.IdAvion = (int)source["IdAvion"];
             cible.Nom = (string)source["Nom"];
-            cible.IdLogbook = (int)source["IdLogbook"];
-            
+            cible.IdLogbook = (int)source["IdLogbook"];            
         }
     }
 }
