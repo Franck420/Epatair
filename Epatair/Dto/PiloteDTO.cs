@@ -9,5 +9,8 @@ namespace Epatair.Dto
     public class PiloteDTO
     {
         public int IdPilote;
+
+        public string Nom { get; set; }
+        public string Grade { get; set; }
     }
 }
