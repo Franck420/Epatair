@@ -16,7 +16,7 @@ namespace Epatair.Repositorie
         {
             get
             {
-                return ConfigurationManager.ConnectionStrings["Epatair"].ConnectionString;
+                return ConfigurationManager.ConnectionStrings["BDEpatAir"].ConnectionString;
             }
         }
 
@@ -55,7 +55,7 @@ namespace Epatair.Repositorie
 
         public void NouvelleFacture(FactureDto facture)
         {
-            //affaire avec Francis
+            //a faire avec Francis
             using (SqlConnection connexion = new SqlConnection(ChaineConnexion))
             {
                 SqlCommand commande = new SqlCommand("INSERT INTO Facture (Titre) VALUES (@TitreArticle); SELECT SCOPE_IDENTITY()", connexion);
