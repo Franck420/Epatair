@@ -34,13 +34,15 @@
             this.btnPilote = new System.Windows.Forms.Button();
             this.btnLogbook = new System.Windows.Forms.Button();
             this.btnRendezVous = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnQuitter
             // 
-            this.btnQuitter.Location = new System.Drawing.Point(75, 173);
+            this.btnQuitter.Location = new System.Drawing.Point(87, 181);
             this.btnQuitter.Name = "btnQuitter";
-            this.btnQuitter.Size = new System.Drawing.Size(111, 47);
+            this.btnQuitter.Size = new System.Drawing.Size(255, 47);
             this.btnQuitter.TabIndex = 4;
             this.btnQuitter.Text = "Fermer le logiciel";
             this.btnQuitter.UseVisualStyleBackColor = true;
@@ -48,9 +50,9 @@
             // 
             // btnFacturation
             // 
-            this.btnFacturation.Location = new System.Drawing.Point(41, 23);
+            this.btnFacturation.Location = new System.Drawing.Point(6, 21);
             this.btnFacturation.Name = "btnFacturation";
-            this.btnFacturation.Size = new System.Drawing.Size(75, 49);
+            this.btnFacturation.Size = new System.Drawing.Size(113, 49);
             this.btnFacturation.TabIndex = 5;
             this.btnFacturation.Text = "Allez vers la facturation";
             this.btnFacturation.UseVisualStyleBackColor = true;
@@ -58,9 +60,9 @@
             // 
             // btnAvion
             // 
-            this.btnAvion.Location = new System.Drawing.Point(143, 23);
+            this.btnAvion.Location = new System.Drawing.Point(75, 87);
             this.btnAvion.Name = "btnAvion";
-            this.btnAvion.Size = new System.Drawing.Size(75, 49);
+            this.btnAvion.Size = new System.Drawing.Size(113, 49);
             this.btnAvion.TabIndex = 6;
             this.btnAvion.Text = "Gérer les avions";
             this.btnAvion.UseVisualStyleBackColor = true;
@@ -68,9 +70,9 @@
             // 
             // btnPilote
             // 
-            this.btnPilote.Location = new System.Drawing.Point(41, 104);
+            this.btnPilote.Location = new System.Drawing.Point(284, 19);
             this.btnPilote.Name = "btnPilote";
-            this.btnPilote.Size = new System.Drawing.Size(75, 51);
+            this.btnPilote.Size = new System.Drawing.Size(113, 51);
             this.btnPilote.TabIndex = 7;
             this.btnPilote.Text = "Gérez les pilotes";
             this.btnPilote.UseVisualStyleBackColor = true;
@@ -78,9 +80,9 @@
             // 
             // btnLogbook
             // 
-            this.btnLogbook.Location = new System.Drawing.Point(143, 104);
+            this.btnLogbook.Location = new System.Drawing.Point(217, 87);
             this.btnLogbook.Name = "btnLogbook";
-            this.btnLogbook.Size = new System.Drawing.Size(75, 51);
+            this.btnLogbook.Size = new System.Drawing.Size(113, 51);
             this.btnLogbook.TabIndex = 8;
             this.btnLogbook.Text = "Gérez les logbook";
             this.btnLogbook.UseVisualStyleBackColor = true;
@@ -88,27 +90,38 @@
             // 
             // btnRendezVous
             // 
-            this.btnRendezVous.Location = new System.Drawing.Point(249, 34);
+            this.btnRendezVous.Location = new System.Drawing.Point(144, 21);
             this.btnRendezVous.Name = "btnRendezVous";
-            this.btnRendezVous.Size = new System.Drawing.Size(75, 49);
+            this.btnRendezVous.Size = new System.Drawing.Size(113, 49);
             this.btnRendezVous.TabIndex = 9;
             this.btnRendezVous.Text = "Gérez les rendez vous";
             this.btnRendezVous.UseVisualStyleBackColor = true;
             this.btnRendezVous.Click += new System.EventHandler(this.btnRendezVous_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnFacturation);
+            this.groupBox1.Controls.Add(this.btnAvion);
+            this.groupBox1.Controls.Add(this.btnLogbook);
+            this.groupBox1.Controls.Add(this.btnRendezVous);
+            this.groupBox1.Controls.Add(this.btnPilote);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(403, 152);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Gestion";
+            // 
             // FrmMenuAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(360, 256);
-            this.Controls.Add(this.btnRendezVous);
-            this.Controls.Add(this.btnLogbook);
-            this.Controls.Add(this.btnPilote);
-            this.Controls.Add(this.btnAvion);
-            this.Controls.Add(this.btnFacturation);
+            this.ClientSize = new System.Drawing.Size(443, 258);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnQuitter);
             this.Name = "FrmMenuAdmin";
             this.Text = "Menu Administrateur";
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -120,6 +133,7 @@
         private System.Windows.Forms.Button btnPilote;
         private System.Windows.Forms.Button btnLogbook;
         private System.Windows.Forms.Button btnRendezVous;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 
