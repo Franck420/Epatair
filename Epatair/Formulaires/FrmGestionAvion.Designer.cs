@@ -37,13 +37,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtSupprimer = new System.Windows.Forms.TextBox();
             this.txtModifier = new System.Windows.Forms.TextBox();
+            this.grbliste = new System.Windows.Forms.GroupBox();
+            this.grbgestionavion = new System.Windows.Forms.GroupBox();
+            this.grbliste.SuspendLayout();
+            this.grbgestionavion.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAjouter
             // 
-            this.btnAjouter.Location = new System.Drawing.Point(31, 74);
+            this.btnAjouter.Location = new System.Drawing.Point(6, 229);
             this.btnAjouter.Name = "btnAjouter";
-            this.btnAjouter.Size = new System.Drawing.Size(109, 55);
+            this.btnAjouter.Size = new System.Drawing.Size(134, 55);
             this.btnAjouter.TabIndex = 0;
             this.btnAjouter.Text = "Ajouter un avion à la base de donnée";
             this.btnAjouter.UseVisualStyleBackColor = true;
@@ -51,9 +55,9 @@
             // 
             // btnModifier
             // 
-            this.btnModifier.Location = new System.Drawing.Point(158, 74);
+            this.btnModifier.Location = new System.Drawing.Point(6, 148);
             this.btnModifier.Name = "btnModifier";
-            this.btnModifier.Size = new System.Drawing.Size(109, 55);
+            this.btnModifier.Size = new System.Drawing.Size(140, 55);
             this.btnModifier.TabIndex = 1;
             this.btnModifier.Text = "Modifier les informations d\'un avion";
             this.btnModifier.UseVisualStyleBackColor = true;
@@ -61,9 +65,9 @@
             // 
             // btnSupprimer
             // 
-            this.btnSupprimer.Location = new System.Drawing.Point(284, 74);
+            this.btnSupprimer.Location = new System.Drawing.Point(6, 53);
             this.btnSupprimer.Name = "btnSupprimer";
-            this.btnSupprimer.Size = new System.Drawing.Size(108, 55);
+            this.btnSupprimer.Size = new System.Drawing.Size(140, 55);
             this.btnSupprimer.TabIndex = 2;
             this.btnSupprimer.Text = "Supprimer un avion de la base de donnée";
             this.btnSupprimer.UseVisualStyleBackColor = true;
@@ -71,9 +75,9 @@
             // 
             // btnRevenir
             // 
-            this.btnRevenir.Location = new System.Drawing.Point(159, 160);
+            this.btnRevenir.Location = new System.Drawing.Point(18, 332);
             this.btnRevenir.Name = "btnRevenir";
-            this.btnRevenir.Size = new System.Drawing.Size(108, 55);
+            this.btnRevenir.Size = new System.Drawing.Size(156, 55);
             this.btnRevenir.TabIndex = 3;
             this.btnRevenir.Text = "Revenir au menu principal";
             this.btnRevenir.UseVisualStyleBackColor = true;
@@ -82,63 +86,85 @@
             // lstViewAvion
             // 
             this.lstViewAvion.HideSelection = false;
-            this.lstViewAvion.Location = new System.Drawing.Point(31, 135);
+            this.lstViewAvion.Location = new System.Drawing.Point(6, 19);
             this.lstViewAvion.Name = "lstViewAvion";
-            this.lstViewAvion.Size = new System.Drawing.Size(121, 97);
+            this.lstViewAvion.Size = new System.Drawing.Size(156, 278);
             this.lstViewAvion.TabIndex = 4;
             this.lstViewAvion.UseCompatibleStateImageBehavior = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(59, 23);
+            this.label1.Location = new System.Drawing.Point(152, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(187, 13);
             this.label1.TabIndex = 5;
-            this.label1.Text = "label1";
+            this.label1.Text = "entrez l\'identifier de l\'avion à supprimer";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(143, 25);
+            this.label2.Location = new System.Drawing.Point(152, 148);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(187, 13);
             this.label2.TabIndex = 6;
-            this.label2.Text = "label2";
+            this.label2.Text = "entrez l\'identifier de l\'avion à supprimer";
             // 
             // txtSupprimer
             // 
-            this.txtSupprimer.Location = new System.Drawing.Point(23, 45);
+            this.txtSupprimer.Location = new System.Drawing.Point(152, 71);
             this.txtSupprimer.Name = "txtSupprimer";
             this.txtSupprimer.Size = new System.Drawing.Size(100, 20);
             this.txtSupprimer.TabIndex = 7;
             // 
             // txtModifier
             // 
-            this.txtModifier.Location = new System.Drawing.Point(146, 45);
+            this.txtModifier.Location = new System.Drawing.Point(152, 166);
             this.txtModifier.Name = "txtModifier";
             this.txtModifier.Size = new System.Drawing.Size(100, 20);
             this.txtModifier.TabIndex = 8;
+            // 
+            // grbliste
+            // 
+            this.grbliste.Controls.Add(this.lstViewAvion);
+            this.grbliste.Location = new System.Drawing.Point(12, 14);
+            this.grbliste.Name = "grbliste";
+            this.grbliste.Size = new System.Drawing.Size(168, 312);
+            this.grbliste.TabIndex = 9;
+            this.grbliste.TabStop = false;
+            this.grbliste.Text = "Liste avion";
+            // 
+            // grbgestionavion
+            // 
+            this.grbgestionavion.Controls.Add(this.btnSupprimer);
+            this.grbgestionavion.Controls.Add(this.btnModifier);
+            this.grbgestionavion.Controls.Add(this.txtSupprimer);
+            this.grbgestionavion.Controls.Add(this.txtModifier);
+            this.grbgestionavion.Controls.Add(this.btnAjouter);
+            this.grbgestionavion.Controls.Add(this.label1);
+            this.grbgestionavion.Controls.Add(this.label2);
+            this.grbgestionavion.Location = new System.Drawing.Point(204, 14);
+            this.grbgestionavion.Name = "grbgestionavion";
+            this.grbgestionavion.Size = new System.Drawing.Size(350, 312);
+            this.grbgestionavion.TabIndex = 0;
+            this.grbgestionavion.TabStop = false;
+            this.grbgestionavion.Text = "Gestion des avions";
             // 
             // FrmGestionAvion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(428, 300);
-            this.Controls.Add(this.txtModifier);
-            this.Controls.Add(this.txtSupprimer);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.lstViewAvion);
+            this.ClientSize = new System.Drawing.Size(568, 402);
+            this.Controls.Add(this.grbgestionavion);
+            this.Controls.Add(this.grbliste);
             this.Controls.Add(this.btnRevenir);
-            this.Controls.Add(this.btnSupprimer);
-            this.Controls.Add(this.btnModifier);
-            this.Controls.Add(this.btnAjouter);
             this.Name = "FrmGestionAvion";
             this.Text = "FrmGestionAvion";
             this.Load += new System.EventHandler(this.FrmGestionAvion_Load);
+            this.grbliste.ResumeLayout(false);
+            this.grbgestionavion.ResumeLayout(false);
+            this.grbgestionavion.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -153,5 +179,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtSupprimer;
         private System.Windows.Forms.TextBox txtModifier;
+        private System.Windows.Forms.GroupBox grbliste;
+        private System.Windows.Forms.GroupBox grbgestionavion;
     }
 }
