@@ -122,13 +122,20 @@ namespace Epatair.Repository
         }
         public void ModifierPilote(PiloteDTO Pilote)
         {
+            int grade = 0;
+
             using (SqlConnection connexion = new SqlConnection(ChaineConnexion))
             {
-                SqlCommand commande = new SqlCommand("update Tbl_Pilote set Nom = @Nom, set Grade = @Grade where IdPilote = @IdPilote", connexion);
+                SqlCommand commande = new SqlCommand("update Tbl_Pilote set Nom = @Nom, IdGrade = @Grade where IdPilote = @IdPilote", connexion);
+                                
+                if (Pilote.Grade == "Pilote")
+                    grade = 1;
+                else if (Pilote.Grade == "Instructeur")
+                    grade = 2;
 
                 commande.Parameters.AddWithValue("@IdPilote", Pilote.IdPilote);
                 commande.Parameters.AddWithValue("@Nom", Pilote.Nom);
-                commande.Parameters.AddWithValue("@Grade", Pilote.Grade);
+                commande.Parameters.AddWithValue("@Grade", grade);
                 connexion.Open();
                 commande.ExecuteNonQuery();
             }

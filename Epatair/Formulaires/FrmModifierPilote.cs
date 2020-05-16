@@ -17,6 +17,8 @@ namespace Epatair.Formulaires
         GestionPilote gestionPilotes;
         public FrmModifierPilote(GestionPilote gestionPilote, PiloteDTO pilote)
         {
+            gestionPilotes = gestionPilote;
+
             InitializeComponent();
             txtId.Text = pilote.IdPilote.ToString();
             txtNom.Text = pilote.Nom;
