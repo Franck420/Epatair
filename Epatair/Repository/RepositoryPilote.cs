@@ -43,9 +43,25 @@ namespace Epatair.Repository
             } 
         }
 
-        public int GetPilote(int IdPilote)
+        public PiloteDTO GetPilote(int IdPilote)
         {
-            return 0;
+            using (SqlConnection connexion = new SqlConnection(ChaineConnexion))
+            {
+                SqlCommand commande = new SqlCommand("select * from Tbl_Pilote where IdPilote=@IdPilote", connexion);
+
+                commande.Parameters.AddWithValue("@IdPilote", IdPilote);
+                connexion.Open();
+                using (SqlDataReader reader = commande.ExecuteReader())
+                    if (reader.Read())
+                    {
+                        var mapper = new Mappeur.MappeurPilote();
+                        var dto = new PiloteDTO();
+                        mapper.Map(reader, dto);                        
+                        return dto;
+                    }
+                    else
+                        return null;
+            }
         }
 
         public List<PiloteDTO> GetListePilote(string grade)
@@ -72,7 +88,24 @@ namespace Epatair.Repository
         }
         public void NouveauPilote(PiloteDTO Pilote)
         {
+            int grade =0;
 
+            using (SqlConnection connexion = new SqlConnection(ChaineConnexion))
+            {
+                SqlCommand commande = new SqlCommand("select IdGrade from Tbl_Grade where Titre="+Pilote.Grade, connexion);
+                using (SqlDataReader reader = commande.ExecuteReader())
+                    if (reader.Read())
+                    {
+                        grade = (int)reader["IdGrade"];
+                    }                    
+
+                SqlCommand commande2 = new SqlCommand("INSERT INTO Tbl_Pilote (IdPilote,Nom,IdGrade ) VALUES (@Nom,"+grade+"); SELECT SCOPE_IDENTITY()", connexion);
+
+                commande2.Parameters.AddWithValue("@Nom", Pilote.Nom);
+                connexion.Open();
+                object valeur = commande2.ExecuteScalar(); 
+                Pilote.IdPilote = int.Parse(valeur.ToString());
+            }
         }
         public void SupprimerPilote(int IdPilote)
         {
