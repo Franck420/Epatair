@@ -32,7 +32,11 @@
             this.btnModifier = new System.Windows.Forms.Button();
             this.btnSupprimer = new System.Windows.Forms.Button();
             this.btnRevenir = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lstViewAvion = new System.Windows.Forms.ListView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtSupprimer = new System.Windows.Forms.TextBox();
+            this.txtModifier = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnAjouter
@@ -75,27 +79,66 @@
             this.btnRevenir.UseVisualStyleBackColor = true;
             this.btnRevenir.Click += new System.EventHandler(this.btnRevenir_Click);
             // 
-            // listBox1
+            // lstViewAvion
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(31, 135);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 95);
-            this.listBox1.TabIndex = 4;
+            this.lstViewAvion.HideSelection = false;
+            this.lstViewAvion.Location = new System.Drawing.Point(31, 135);
+            this.lstViewAvion.Name = "lstViewAvion";
+            this.lstViewAvion.Size = new System.Drawing.Size(121, 97);
+            this.lstViewAvion.TabIndex = 4;
+            this.lstViewAvion.UseCompatibleStateImageBehavior = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(59, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "label1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(143, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "label2";
+            // 
+            // txtSupprimer
+            // 
+            this.txtSupprimer.Location = new System.Drawing.Point(23, 45);
+            this.txtSupprimer.Name = "txtSupprimer";
+            this.txtSupprimer.Size = new System.Drawing.Size(100, 20);
+            this.txtSupprimer.TabIndex = 7;
+            // 
+            // txtModifier
+            // 
+            this.txtModifier.Location = new System.Drawing.Point(146, 45);
+            this.txtModifier.Name = "txtModifier";
+            this.txtModifier.Size = new System.Drawing.Size(100, 20);
+            this.txtModifier.TabIndex = 8;
             // 
             // FrmGestionAvion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(428, 300);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.txtModifier);
+            this.Controls.Add(this.txtSupprimer);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lstViewAvion);
             this.Controls.Add(this.btnRevenir);
             this.Controls.Add(this.btnSupprimer);
             this.Controls.Add(this.btnModifier);
             this.Controls.Add(this.btnAjouter);
             this.Name = "FrmGestionAvion";
             this.Text = "FrmGestionAvion";
+            this.Load += new System.EventHandler(this.FrmGestionAvion_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -105,6 +148,10 @@
         private System.Windows.Forms.Button btnModifier;
         private System.Windows.Forms.Button btnSupprimer;
         private System.Windows.Forms.Button btnRevenir;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListView lstViewAvion;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtSupprimer;
+        private System.Windows.Forms.TextBox txtModifier;
     }
 }

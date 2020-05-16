@@ -102,24 +102,6 @@
     <Compile Include="Formulaires\FrmAjouterPilote.Designer.cs">
       <DependentUpon>FrmAjouterPilote.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formulaires\FrmAssignerApprenti.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formulaires\FrmAssignerApprenti.Designer.cs">
-      <DependentUpon>FrmAssignerApprenti.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formulaires\FrmAssignerPiloteAvion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formulaires\FrmAssignerPiloteAvion.Designer.cs">
-      <DependentUpon>FrmAssignerPiloteAvion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formulaires\FrmAssignerPiloteCours.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formulaires\FrmAssignerPiloteCours.Designer.cs">
-      <DependentUpon>FrmAssignerPiloteCours.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formulaires\FrmFacturation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,12 +173,15 @@
     <Compile Include="Gestion\GestionLogbook.cs" />
     <Compile Include="Gestion\GestionPilote.cs" />
     <Compile Include="Gestion\GestionRendezVous.cs" />
+    <Compile Include="Mappeur\MappeurAvion.cs" />
     <Compile Include="Mappeur\MappeurFacture.cs" />
     <Compile Include="Mappeur\MappeurPilote.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\IRepositoryAvion.cs" />
     <Compile Include="Repository\IRepositoryFacture.cs" />
     <Compile Include="Repository\IRepositoryPilote.cs" />
+    <Compile Include="Repository\RepositoryAvion.cs" />
     <Compile Include="Repository\RepositoryFacture.cs" />
     <Compile Include="Repository\RepositoryPilote.cs" />
     <Compile Include="SqlDatabaseSetup.cs" />
@@ -205,9 +190,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formulaires\FrmAjouterPilote.resx">
       <DependentUpon>FrmAjouterPilote.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formulaires\FrmAssignerPiloteCours.resx">
-      <DependentUpon>FrmAssignerPiloteCours.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulaires\FrmFacturation.resx">
       <DependentUpon>FrmFacturation.cs</DependentUpon>
