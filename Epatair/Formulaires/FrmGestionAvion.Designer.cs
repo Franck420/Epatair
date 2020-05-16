@@ -32,7 +32,7 @@
             this.btnModifier = new System.Windows.Forms.Button();
             this.btnSupprimer = new System.Windows.Forms.Button();
             this.btnRevenir = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lstViewAvion = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // btnAjouter
@@ -75,26 +75,28 @@
             this.btnRevenir.UseVisualStyleBackColor = true;
             this.btnRevenir.Click += new System.EventHandler(this.btnRevenir_Click);
             // 
-            // listBox1
+            // lstViewAvion
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(31, 135);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 95);
-            this.listBox1.TabIndex = 4;
+            this.lstViewAvion.HideSelection = false;
+            this.lstViewAvion.Location = new System.Drawing.Point(31, 135);
+            this.lstViewAvion.Name = "lstViewAvion";
+            this.lstViewAvion.Size = new System.Drawing.Size(121, 97);
+            this.lstViewAvion.TabIndex = 4;
+            this.lstViewAvion.UseCompatibleStateImageBehavior = false;
             // 
             // FrmGestionAvion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(428, 300);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.lstViewAvion);
             this.Controls.Add(this.btnRevenir);
             this.Controls.Add(this.btnSupprimer);
             this.Controls.Add(this.btnModifier);
             this.Controls.Add(this.btnAjouter);
             this.Name = "FrmGestionAvion";
             this.Text = "FrmGestionAvion";
+            this.Load += new System.EventHandler(this.FrmGestionAvion_Load);
             this.ResumeLayout(false);
 
         }
@@ -105,6 +107,6 @@
         private System.Windows.Forms.Button btnModifier;
         private System.Windows.Forms.Button btnSupprimer;
         private System.Windows.Forms.Button btnRevenir;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListView lstViewAvion;
     }
 }
