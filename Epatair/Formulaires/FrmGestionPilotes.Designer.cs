@@ -32,7 +32,7 @@
             this.btnModifier = new System.Windows.Forms.Button();
             this.btnSupprimer = new System.Windows.Forms.Button();
             this.btnQuitter = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lstViewPilote = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // btnAjouter
@@ -57,7 +57,7 @@
             // 
             // btnSupprimer
             // 
-            this.btnSupprimer.Location = new System.Drawing.Point(166, 108);
+            this.btnSupprimer.Location = new System.Drawing.Point(166, 112);
             this.btnSupprimer.Name = "btnSupprimer";
             this.btnSupprimer.Size = new System.Drawing.Size(101, 47);
             this.btnSupprimer.TabIndex = 2;
@@ -67,7 +67,7 @@
             // 
             // btnQuitter
             // 
-            this.btnQuitter.Location = new System.Drawing.Point(166, 220);
+            this.btnQuitter.Location = new System.Drawing.Point(166, 165);
             this.btnQuitter.Name = "btnQuitter";
             this.btnQuitter.Size = new System.Drawing.Size(101, 47);
             this.btnQuitter.TabIndex = 5;
@@ -75,26 +75,28 @@
             this.btnQuitter.UseVisualStyleBackColor = true;
             this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
             // 
-            // listBox1
+            // lstViewPilote
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(32, 108);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 95);
-            this.listBox1.TabIndex = 6;
+            this.lstViewPilote.HideSelection = false;
+            this.lstViewPilote.Location = new System.Drawing.Point(32, 112);
+            this.lstViewPilote.Name = "lstViewPilote";
+            this.lstViewPilote.Size = new System.Drawing.Size(121, 97);
+            this.lstViewPilote.TabIndex = 7;
+            this.lstViewPilote.UseCompatibleStateImageBehavior = false;
             // 
             // FrmGestionPilotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(290, 400);
-            this.Controls.Add(this.listBox1);
+            this.ClientSize = new System.Drawing.Size(422, 488);
+            this.Controls.Add(this.lstViewPilote);
             this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.btnSupprimer);
             this.Controls.Add(this.btnModifier);
             this.Controls.Add(this.btnAjouter);
             this.Name = "FrmGestionPilotes";
             this.Text = "FrmGestionPilotes";
+            this.Load += new System.EventHandler(this.FrmGestionPilotes_Load);
             this.ResumeLayout(false);
 
         }
@@ -105,6 +107,6 @@
         private System.Windows.Forms.Button btnModifier;
         private System.Windows.Forms.Button btnSupprimer;
         private System.Windows.Forms.Button btnQuitter;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListView lstViewPilote;
     }
 }

@@ -20,13 +20,13 @@ namespace Epatair.Repository
             }
         }
 
-        List<PiloteDTO> GetListePilote()
+       public  List<PiloteDTO> GetListePilote()
         {
 
             var listePilote = new List<PiloteDTO>();
             using (SqlConnection connexion = new SqlConnection(ChaineConnexion))
             {
-                SqlCommand commande = new SqlCommand("SELECT * FROM Tbl_Pilote", connexion);
+                SqlCommand commande = new SqlCommand("select IdPilote,Nom,Titre from Tbl_Pilote inner join Tbl_Grade on Tbl_Pilote.IdGrade = Tbl_Grade.IdGrade", connexion);
                 connexion.Open();
 
                 using (SqlDataReader reader = commande.ExecuteReader())
@@ -43,12 +43,12 @@ namespace Epatair.Repository
             } 
         }
 
-        PiloteDTO GetPilote(int IdPilote)
+        public int GetPilote(int IdPilote)
         {
-
+            return 0;
         }
 
-        List<PiloteDTO> GetListePilote(string grade)
+        public List<PiloteDTO> GetListePilote(string grade)
         {
             var listePilote = new List<PiloteDTO>();
             using (SqlConnection connexion = new SqlConnection(ChaineConnexion))
@@ -70,15 +70,15 @@ namespace Epatair.Repository
                 return listePilote;
             }
         }
-        void NouveauPilote(PiloteDTO Pilote)
+        public void NouveauPilote(PiloteDTO Pilote)
         {
 
         }
-        void SupprimerPilote(int IdPilote)
+        public void SupprimerPilote(int IdPilote)
         {
 
         }
-        void ModifierPilote(PiloteDTO Pilote)
+        public void ModifierPilote(PiloteDTO Pilote)
         {
 
         }

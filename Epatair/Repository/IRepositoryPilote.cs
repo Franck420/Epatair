@@ -10,7 +10,7 @@ namespace Epatair.Repository
     interface IRepositoryPilote
     {
         List<PiloteDTO> GetListePilote();
-        PiloteDTO GetPilote(int IdPilote);
+        int GetPilote(int IdPilote);
         List<PiloteDTO> GetListePilote(string grade);
         void NouveauPilote(PiloteDTO Pilote);
         void SupprimerPilote(int IdPilote);

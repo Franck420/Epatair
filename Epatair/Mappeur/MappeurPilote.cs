@@ -14,7 +14,7 @@ namespace Epatair.Mappeur
         {
 
             cible.IdPilote = (int)source["IdPilote"];
-            cible.Grade = (string)source["Grade"];
+            cible.Grade = (string)source["Titre"];
             cible.Nom = (string)source["Nom"];
 
         }
