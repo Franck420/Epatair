@@ -1,4 +1,5 @@
 ﻿using Epatair.Dto;
+using Epatair.Mappeur;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -11,6 +12,8 @@ namespace Epatair.Repository
 {
     class RepositoryPilote : IRepositoryPilote
     {
+
+        MappeurPilote mapper = new MappeurPilote();
 
         protected string ChaineConnexion
         {
@@ -32,8 +35,7 @@ namespace Epatair.Repository
                 using (SqlDataReader reader = commande.ExecuteReader())
                 {
                     while (reader.Read())
-                    {
-                        var mapper = new Mappeur.MappeurPilote();
+                    {                       
                         var dto = new PiloteDTO();
                         mapper.Map(reader, dto);
                         listePilote.Add(dto);
@@ -53,8 +55,7 @@ namespace Epatair.Repository
                 connexion.Open();
                 using (SqlDataReader reader = commande.ExecuteReader())
                     if (reader.Read())
-                    {
-                        var mapper = new Mappeur.MappeurPilote();
+                    {                        
                         var dto = new PiloteDTO();
                         mapper.Map(reader, dto);                        
                         return dto;
@@ -76,8 +77,7 @@ namespace Epatair.Repository
                 using (SqlDataReader reader = commande.ExecuteReader())
                 {
                     while (reader.Read())
-                    {
-                        var mapper = new Mappeur.MappeurPilote();
+                    {                       
                         var dto = new PiloteDTO();
                         mapper.Map(reader, dto);
                         listePilote.Add(dto);
@@ -112,11 +112,26 @@ namespace Epatair.Repository
         }
         public void SupprimerPilote(int IdPilote)
         {
-
+            using (SqlConnection connexion = new SqlConnection(ChaineConnexion))
+            {
+                SqlCommand commande = new SqlCommand("DELETE FROM Tbl_Pilote WHERE IdPilote = @IdPilote", connexion);
+                commande.Parameters.AddWithValue("@IdPilote", IdPilote);
+                connexion.Open();
+                commande.ExecuteNonQuery();
+            }
         }
         public void ModifierPilote(PiloteDTO Pilote)
         {
+            using (SqlConnection connexion = new SqlConnection(ChaineConnexion))
+            {
+                SqlCommand commande = new SqlCommand("update Tbl_Pilote set Nom = @Nom, set Grade = @Grade where IdPilote = @IdPilote", connexion);
 
+                commande.Parameters.AddWithValue("@IdPilote", Pilote.IdPilote);
+                commande.Parameters.AddWithValue("@Nom", Pilote.Nom);
+                commande.Parameters.AddWithValue("@Grade", Pilote.Grade);
+                connexion.Open();
+                commande.ExecuteNonQuery();
+            }
         }
     }
 }

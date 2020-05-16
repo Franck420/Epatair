@@ -33,6 +33,10 @@
             this.btnSupprimer = new System.Windows.Forms.Button();
             this.btnQuitter = new System.Windows.Forms.Button();
             this.lstViewPilote = new System.Windows.Forms.ListView();
+            this.txtSupprimer = new System.Windows.Forms.TextBox();
+            this.lblSupprimer = new System.Windows.Forms.Label();
+            this.lblModifier = new System.Windows.Forms.Label();
+            this.txtModifier = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnAjouter
@@ -57,7 +61,7 @@
             // 
             // btnSupprimer
             // 
-            this.btnSupprimer.Location = new System.Drawing.Point(166, 112);
+            this.btnSupprimer.Location = new System.Drawing.Point(166, 150);
             this.btnSupprimer.Name = "btnSupprimer";
             this.btnSupprimer.Size = new System.Drawing.Size(101, 47);
             this.btnSupprimer.TabIndex = 2;
@@ -67,7 +71,7 @@
             // 
             // btnQuitter
             // 
-            this.btnQuitter.Location = new System.Drawing.Point(166, 165);
+            this.btnQuitter.Location = new System.Drawing.Point(166, 203);
             this.btnQuitter.Name = "btnQuitter";
             this.btnQuitter.Size = new System.Drawing.Size(101, 47);
             this.btnQuitter.TabIndex = 5;
@@ -84,11 +88,47 @@
             this.lstViewPilote.TabIndex = 7;
             this.lstViewPilote.UseCompatibleStateImageBehavior = false;
             // 
+            // txtSupprimer
+            // 
+            this.txtSupprimer.Location = new System.Drawing.Point(167, 124);
+            this.txtSupprimer.Name = "txtSupprimer";
+            this.txtSupprimer.Size = new System.Drawing.Size(100, 20);
+            this.txtSupprimer.TabIndex = 8;
+            // 
+            // lblSupprimer
+            // 
+            this.lblSupprimer.AutoSize = true;
+            this.lblSupprimer.Location = new System.Drawing.Point(119, 86);
+            this.lblSupprimer.Name = "lblSupprimer";
+            this.lblSupprimer.Size = new System.Drawing.Size(233, 13);
+            this.lblSupprimer.TabIndex = 9;
+            this.lblSupprimer.Text = "Entrez le Id du Pilote que vous voulez supprimer";
+            // 
+            // lblModifier
+            // 
+            this.lblModifier.AutoSize = true;
+            this.lblModifier.Location = new System.Drawing.Point(63, 328);
+            this.lblModifier.Name = "lblModifier";
+            this.lblModifier.Size = new System.Drawing.Size(223, 13);
+            this.lblModifier.TabIndex = 10;
+            this.lblModifier.Text = "Entrez le Id du pilote que vous voulez modifier";
+            // 
+            // txtModifier
+            // 
+            this.txtModifier.Location = new System.Drawing.Point(115, 344);
+            this.txtModifier.Name = "txtModifier";
+            this.txtModifier.Size = new System.Drawing.Size(100, 20);
+            this.txtModifier.TabIndex = 11;
+            // 
             // FrmGestionPilotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(422, 488);
+            this.Controls.Add(this.txtModifier);
+            this.Controls.Add(this.lblModifier);
+            this.Controls.Add(this.lblSupprimer);
+            this.Controls.Add(this.txtSupprimer);
             this.Controls.Add(this.lstViewPilote);
             this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.btnSupprimer);
@@ -98,6 +138,7 @@
             this.Text = "FrmGestionPilotes";
             this.Load += new System.EventHandler(this.FrmGestionPilotes_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -108,5 +149,9 @@
         private System.Windows.Forms.Button btnSupprimer;
         private System.Windows.Forms.Button btnQuitter;
         private System.Windows.Forms.ListView lstViewPilote;
+        private System.Windows.Forms.TextBox txtSupprimer;
+        private System.Windows.Forms.Label lblSupprimer;
+        private System.Windows.Forms.Label lblModifier;
+        private System.Windows.Forms.TextBox txtModifier;
     }
 }

@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -25,8 +26,7 @@ namespace Epatair.Formulaires
         }
         private void FrmGestionPilotes_Load(object sender, EventArgs e)
         {
-            ListePilotes = gestionPilotes.GetListePilote();
-            InitialiserListViewPilote(ListePilotes);
+            RemplirListe();
         }
         private void InitialiserListViewPilote(IEnumerable<PiloteDTO> listePilote)
         {
@@ -50,12 +50,7 @@ namespace Epatair.Formulaires
             item.SubItems.Add(Pilote.Nom);
             item.SubItems.Add(Pilote.Grade);
             return item;
-        }
-
-        private PiloteDTO GetPilote(ListViewItem item)
-        {
-            return ListePilotes.First(a => a.IdPilote.ToString() == item.SubItems[0].Text);
-        }
+        }      
         private void btnAjouter_Click(object sender, EventArgs e)
         {
             Form AjouterPilote = new FrmAjouterPilote(gestionPilotes);
@@ -64,18 +59,41 @@ namespace Epatair.Formulaires
 
         private void btnModifier_Click(object sender, EventArgs e)
         {
-            Form ModifierPilote = new FrmModifierPilote(gestionPilotes, piloteDTO);
-            ModifierPilote.Show();
+            if (int.TryParse(txtModifier.Text, out int Id))
+            {
+                foreach (var Pilote in ListePilotes)
+                {
+
+                    if (Pilote.IdPilote == Id)
+                    {
+                        piloteDTO = Pilote;
+                        break;
+                    }
+                }
+
+                Form ModifierPilote = new FrmModifierPilote(gestionPilotes, piloteDTO);
+                ModifierPilote.Show();
+            }
+            else
+                MessageBox.Show("Veuillez entrez un Id valide svp");
         }
 
         private void btnSupprimer_Click(object sender, EventArgs e)
-        {
-            
+        {            
+            gestionPilotes.SupprimerPilote(Convert.ToInt32(txtSupprimer.Text));
+            lstViewPilote.Clear();
+            RemplirListe();
         }      
 
         private void btnQuitter_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void RemplirListe()
+        {
+            ListePilotes = gestionPilotes.GetListePilote();
+            InitialiserListViewPilote(ListePilotes);           
         }
 
     }

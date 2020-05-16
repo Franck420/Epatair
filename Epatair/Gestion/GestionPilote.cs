@@ -13,7 +13,7 @@ namespace Epatair.Gestion
     {
         IRepositoryPilote repositoryPilote = new RepositoryPilote();
         PiloteDTO Pilote = new PiloteDTO();
-        
+        MappeurPilote mappeurPilote = new MappeurPilote();
 
 
         public List<PiloteDTO> GetListePilote()
@@ -29,18 +29,18 @@ namespace Epatair.Gestion
            return repositoryPilote.GetListePilote(grade);
         }
         public void NouveauPilote(string Nom, string Grade)
-        {
-            MappeurPilote mappeurPilote = new MappeurPilote();
+        {            
             mappeurPilote.Map(Nom,Grade,Pilote);
             repositoryPilote.NouveauPilote(Pilote);
         }
         public void SupprimerPilote(int IdPilote)
-        {
-
+        {           
+            repositoryPilote.SupprimerPilote(IdPilote);
         }
-        public void ModifierPilote(PiloteDTO Pilote)
-        {
-
+        public void ModifierPilote(int ID, string Nom, string Grade)
+        {            
+            mappeurPilote.Map(ID,Nom, Grade, Pilote);
+            repositoryPilote.ModifierPilote(Pilote);
         }
 
     }
