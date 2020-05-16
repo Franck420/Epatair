@@ -18,5 +18,12 @@ namespace Epatair.Mappeur
             cible.Nom = (string)source["Nom"];
 
         }
+        public void Map(string nom,string IdGrade, PiloteDTO cible)
+        {
+            
+            cible.Nom = nom;
+            cible.Grade = IdGrade;
+
+        }
     }
 }
