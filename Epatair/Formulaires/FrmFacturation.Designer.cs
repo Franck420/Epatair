@@ -29,34 +29,35 @@
         private void InitializeComponent()
         {
             this.btnRetour = new System.Windows.Forms.Button();
-            this.btnAjouter = new System.Windows.Forms.Button();
-            this.lsbFacture = new System.Windows.Forms.ListBox();
             this.GRBFacture = new System.Windows.Forms.GroupBox();
             this.GRBinformation = new System.Windows.Forms.GroupBox();
             this.Btnannuler = new System.Windows.Forms.Button();
             this.btnaccepterFacture = new System.Windows.Forms.Button();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.lblTotal = new System.Windows.Forms.Label();
-            this.txtHDemarrage2 = new System.Windows.Forms.TextBox();
-            this.LblHDemarrage2 = new System.Windows.Forms.Label();
+            this.txtHDecolage = new System.Windows.Forms.TextBox();
+            this.LblHDecolage = new System.Windows.Forms.Label();
             this.txtHAtterissage = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbAvionUtiliser = new System.Windows.Forms.ComboBox();
             this.lblAvion = new System.Windows.Forms.Label();
             this.lblHAtterissage = new System.Windows.Forms.Label();
             this.lblInstruteur = new System.Windows.Forms.Label();
             this.txtHArret = new System.Windows.Forms.TextBox();
             this.lblNomclien = new System.Windows.Forms.Label();
             this.lblHArret = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbinstruteur = new System.Windows.Forms.ComboBox();
             this.txtDemarage = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cmbClien = new System.Windows.Forms.ComboBox();
             this.lblHDemarage = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtHeureSol = new System.Windows.Forms.TextBox();
             this.lblHSol = new System.Windows.Forms.Label();
             this.txtHeureVol = new System.Windows.Forms.TextBox();
             this.lblHVol = new System.Windows.Forms.Label();
             this.txtIdFacture = new System.Windows.Forms.TextBox();
             this.lblIdFacture = new System.Windows.Forms.Label();
+            this.lstviewFacture = new System.Windows.Forms.ListView();
+            this.btnAjouter = new System.Windows.Forms.Button();
+            this.btnvalidation = new System.Windows.Forms.Button();
             this.GRBFacture.SuspendLayout();
             this.GRBinformation.SuspendLayout();
             this.SuspendLayout();
@@ -71,27 +72,10 @@
             this.btnRetour.UseVisualStyleBackColor = true;
             this.btnRetour.Click += new System.EventHandler(this.btnRetour_Click);
             // 
-            // btnAjouter
-            // 
-            this.btnAjouter.Location = new System.Drawing.Point(18, 397);
-            this.btnAjouter.Name = "btnAjouter";
-            this.btnAjouter.Size = new System.Drawing.Size(124, 23);
-            this.btnAjouter.TabIndex = 1;
-            this.btnAjouter.Text = "Ajouter une facture";
-            this.btnAjouter.UseVisualStyleBackColor = true;
-            // 
-            // lsbFacture
-            // 
-            this.lsbFacture.FormattingEnabled = true;
-            this.lsbFacture.Location = new System.Drawing.Point(6, 19);
-            this.lsbFacture.Name = "lsbFacture";
-            this.lsbFacture.Size = new System.Drawing.Size(284, 368);
-            this.lsbFacture.TabIndex = 3;
-            // 
             // GRBFacture
             // 
-            this.GRBFacture.Controls.Add(this.lsbFacture);
             this.GRBFacture.Controls.Add(this.btnAjouter);
+            this.GRBFacture.Controls.Add(this.lstviewFacture);
             this.GRBFacture.Location = new System.Drawing.Point(12, 12);
             this.GRBFacture.Name = "GRBFacture";
             this.GRBFacture.Size = new System.Drawing.Size(296, 426);
@@ -101,25 +85,26 @@
             // 
             // GRBinformation
             // 
+            this.GRBinformation.Controls.Add(this.btnvalidation);
             this.GRBinformation.Controls.Add(this.Btnannuler);
             this.GRBinformation.Controls.Add(this.btnaccepterFacture);
             this.GRBinformation.Controls.Add(this.txtTotal);
             this.GRBinformation.Controls.Add(this.lblTotal);
-            this.GRBinformation.Controls.Add(this.txtHDemarrage2);
-            this.GRBinformation.Controls.Add(this.LblHDemarrage2);
+            this.GRBinformation.Controls.Add(this.txtHDecolage);
+            this.GRBinformation.Controls.Add(this.LblHDecolage);
             this.GRBinformation.Controls.Add(this.txtHAtterissage);
-            this.GRBinformation.Controls.Add(this.comboBox1);
+            this.GRBinformation.Controls.Add(this.cmbAvionUtiliser);
             this.GRBinformation.Controls.Add(this.lblAvion);
             this.GRBinformation.Controls.Add(this.lblHAtterissage);
             this.GRBinformation.Controls.Add(this.lblInstruteur);
             this.GRBinformation.Controls.Add(this.txtHArret);
             this.GRBinformation.Controls.Add(this.lblNomclien);
             this.GRBinformation.Controls.Add(this.lblHArret);
-            this.GRBinformation.Controls.Add(this.comboBox2);
+            this.GRBinformation.Controls.Add(this.cmbinstruteur);
             this.GRBinformation.Controls.Add(this.txtDemarage);
-            this.GRBinformation.Controls.Add(this.comboBox3);
+            this.GRBinformation.Controls.Add(this.cmbClien);
             this.GRBinformation.Controls.Add(this.lblHDemarage);
-            this.GRBinformation.Controls.Add(this.textBox3);
+            this.GRBinformation.Controls.Add(this.txtHeureSol);
             this.GRBinformation.Controls.Add(this.lblHSol);
             this.GRBinformation.Controls.Add(this.txtHeureVol);
             this.GRBinformation.Controls.Add(this.lblHVol);
@@ -148,8 +133,10 @@
             this.btnaccepterFacture.Name = "btnaccepterFacture";
             this.btnaccepterFacture.Size = new System.Drawing.Size(121, 23);
             this.btnaccepterFacture.TabIndex = 12;
-            this.btnaccepterFacture.Text = "accepter modification";
+            this.btnaccepterFacture.Text = "Ajouter";
             this.btnaccepterFacture.UseVisualStyleBackColor = true;
+            this.btnaccepterFacture.Visible = false;
+            this.btnaccepterFacture.Click += new System.EventHandler(this.btnaccepterFacture_Click);
             // 
             // txtTotal
             // 
@@ -169,22 +156,22 @@
             this.lblTotal.TabIndex = 0;
             this.lblTotal.Text = "Total :";
             // 
-            // txtHDemarrage2
+            // txtHDecolage
             // 
-            this.txtHDemarrage2.Location = new System.Drawing.Point(119, 410);
-            this.txtHDemarrage2.Name = "txtHDemarrage2";
-            this.txtHDemarrage2.Size = new System.Drawing.Size(100, 20);
-            this.txtHDemarrage2.TabIndex = 11;
+            this.txtHDecolage.Location = new System.Drawing.Point(119, 410);
+            this.txtHDecolage.Name = "txtHDecolage";
+            this.txtHDecolage.Size = new System.Drawing.Size(100, 20);
+            this.txtHDecolage.TabIndex = 11;
             // 
-            // LblHDemarrage2
+            // LblHDecolage
             // 
-            this.LblHDemarrage2.AutoSize = true;
-            this.LblHDemarrage2.Enabled = false;
-            this.LblHDemarrage2.Location = new System.Drawing.Point(6, 413);
-            this.LblHDemarrage2.Name = "LblHDemarrage2";
-            this.LblHDemarrage2.Size = new System.Drawing.Size(101, 13);
-            this.LblHDemarrage2.TabIndex = 0;
-            this.LblHDemarrage2.Text = "Heure de démarage";
+            this.LblHDecolage.AutoSize = true;
+            this.LblHDecolage.Enabled = false;
+            this.LblHDecolage.Location = new System.Drawing.Point(6, 413);
+            this.LblHDecolage.Name = "LblHDecolage";
+            this.LblHDecolage.Size = new System.Drawing.Size(98, 13);
+            this.LblHDecolage.TabIndex = 0;
+            this.LblHDecolage.Text = "Heure de decolage";
             // 
             // txtHAtterissage
             // 
@@ -193,13 +180,13 @@
             this.txtHAtterissage.Size = new System.Drawing.Size(100, 20);
             this.txtHAtterissage.TabIndex = 10;
             // 
-            // comboBox1
+            // cmbAvionUtiliser
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(119, 70);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 21);
-            this.comboBox1.TabIndex = 3;
+            this.cmbAvionUtiliser.FormattingEnabled = true;
+            this.cmbAvionUtiliser.Location = new System.Drawing.Point(119, 70);
+            this.cmbAvionUtiliser.Name = "cmbAvionUtiliser";
+            this.cmbAvionUtiliser.Size = new System.Drawing.Size(100, 21);
+            this.cmbAvionUtiliser.TabIndex = 3;
             // 
             // lblAvion
             // 
@@ -258,13 +245,13 @@
             this.lblHArret.TabIndex = 0;
             this.lblHArret.Text = "Heure d\'arret";
             // 
-            // comboBox2
+            // cmbinstruteur
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(119, 116);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(100, 21);
-            this.comboBox2.TabIndex = 4;
+            this.cmbinstruteur.FormattingEnabled = true;
+            this.cmbinstruteur.Location = new System.Drawing.Point(119, 116);
+            this.cmbinstruteur.Name = "cmbinstruteur";
+            this.cmbinstruteur.Size = new System.Drawing.Size(100, 21);
+            this.cmbinstruteur.TabIndex = 4;
             // 
             // txtDemarage
             // 
@@ -273,13 +260,13 @@
             this.txtDemarage.Size = new System.Drawing.Size(100, 20);
             this.txtDemarage.TabIndex = 8;
             // 
-            // comboBox3
+            // cmbClien
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(119, 157);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(100, 21);
-            this.comboBox3.TabIndex = 5;
+            this.cmbClien.FormattingEnabled = true;
+            this.cmbClien.Location = new System.Drawing.Point(119, 157);
+            this.cmbClien.Name = "cmbClien";
+            this.cmbClien.Size = new System.Drawing.Size(100, 21);
+            this.cmbClien.TabIndex = 5;
             // 
             // lblHDemarage
             // 
@@ -291,12 +278,12 @@
             this.lblHDemarage.TabIndex = 0;
             this.lblHDemarage.Text = "Heure de Démarrage";
             // 
-            // textBox3
+            // txtHeureSol
             // 
-            this.textBox3.Location = new System.Drawing.Point(119, 240);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 7;
+            this.txtHeureSol.Location = new System.Drawing.Point(119, 240);
+            this.txtHeureSol.Name = "txtHeureSol";
+            this.txtHeureSol.Size = new System.Drawing.Size(100, 20);
+            this.txtHeureSol.TabIndex = 7;
             // 
             // lblHSol
             // 
@@ -343,6 +330,35 @@
             this.lblIdFacture.TabIndex = 0;
             this.lblIdFacture.Text = "Identifieur Facture";
             // 
+            // lstviewFacture
+            // 
+            this.lstviewFacture.HideSelection = false;
+            this.lstviewFacture.Location = new System.Drawing.Point(3, 16);
+            this.lstviewFacture.Name = "lstviewFacture";
+            this.lstviewFacture.Size = new System.Drawing.Size(287, 350);
+            this.lstviewFacture.TabIndex = 0;
+            this.lstviewFacture.UseCompatibleStateImageBehavior = false;
+            // 
+            // btnAjouter
+            // 
+            this.btnAjouter.Location = new System.Drawing.Point(6, 375);
+            this.btnAjouter.Name = "btnAjouter";
+            this.btnAjouter.Size = new System.Drawing.Size(124, 23);
+            this.btnAjouter.TabIndex = 2;
+            this.btnAjouter.Text = "Ajouter une facture";
+            this.btnAjouter.UseVisualStyleBackColor = true;
+            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click_1);
+            // 
+            // btnvalidation
+            // 
+            this.btnvalidation.Location = new System.Drawing.Point(9, 487);
+            this.btnvalidation.Name = "btnvalidation";
+            this.btnvalidation.Size = new System.Drawing.Size(158, 23);
+            this.btnvalidation.TabIndex = 14;
+            this.btnvalidation.Text = "Valider et calculer total facture";
+            this.btnvalidation.UseVisualStyleBackColor = true;
+            this.btnvalidation.Click += new System.EventHandler(this.btnvalidation_Click);
+            // 
             // FrmFacturation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -364,8 +380,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnRetour;
-        private System.Windows.Forms.Button btnAjouter;
-        private System.Windows.Forms.ListBox lsbFacture;
         private System.Windows.Forms.GroupBox GRBFacture;
         private System.Windows.Forms.GroupBox GRBinformation;
         private System.Windows.Forms.TextBox txtIdFacture;
@@ -373,15 +387,15 @@
         private System.Windows.Forms.Label lblNomclien;
         private System.Windows.Forms.Label lblInstruteur;
         private System.Windows.Forms.Label lblAvion;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtHeureSol;
         private System.Windows.Forms.Label lblHSol;
         private System.Windows.Forms.TextBox txtHeureVol;
         private System.Windows.Forms.Label lblHVol;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox txtHDemarrage2;
-        private System.Windows.Forms.Label LblHDemarrage2;
+        private System.Windows.Forms.ComboBox cmbClien;
+        private System.Windows.Forms.ComboBox cmbinstruteur;
+        private System.Windows.Forms.ComboBox cmbAvionUtiliser;
+        private System.Windows.Forms.TextBox txtHDecolage;
+        private System.Windows.Forms.Label LblHDecolage;
         private System.Windows.Forms.TextBox txtHAtterissage;
         private System.Windows.Forms.Label lblHAtterissage;
         private System.Windows.Forms.TextBox txtHArret;
@@ -392,5 +406,8 @@
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Button Btnannuler;
         private System.Windows.Forms.Button btnaccepterFacture;
+        private System.Windows.Forms.Button btnAjouter;
+        private System.Windows.Forms.ListView lstviewFacture;
+        private System.Windows.Forms.Button btnvalidation;
     }
 }
