@@ -7,12 +7,16 @@ using System.Threading.Tasks;
 
 namespace Epatair.Repository
 {
+    //Interface pour le repository des avions
     interface IRepositoryAvion
-    {       
-        AvionDTO GetAvion(int IdAvion);
+    {
+        //fonctions pour aller chercher et retourner la liste des avions
         List<AvionDTO> GetListeAvion();
+        //Fonction pour créé un avion
         void NouvealleAvion(string nom,int IdLogbook);
+        //Fonction pour supprimer un avion
         void SupprimerAvion(int IdAvion);
+        //Fonction pour modifier un avion
         void ModifierAvion(AvionDTO Avion);
     }
 }

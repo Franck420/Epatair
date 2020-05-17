@@ -13,6 +13,7 @@ using System.Windows.Forms;
 
 namespace Epatair.Formulaires
 {
+    //Formulaire qui permet de gérer la facturation
     public partial class FrmFacturation : Form
     {
         GestionFacture GestionFacture;

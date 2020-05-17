@@ -8,5 +8,6 @@ namespace Epatair.Gestion
 {
     public class GestionRendezVous
     {
+        //Non implémenté
     }
 }

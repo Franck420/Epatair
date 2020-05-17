@@ -11,6 +11,8 @@ using System.Windows.Forms;
 
 namespace Epatair.Formulaires
 {
+    //Formulaire qui permet de rajouter un avion à la BD
+
     public partial class FrmAjouterAvion : Form
     {
         GestionAvion gestionAvions;
@@ -18,10 +20,7 @@ namespace Epatair.Formulaires
         {
             InitializeComponent();
             gestionAvions= gestionAvion;
-        }
-
-    
-   
+        }   
 
         private void BtnAjouter_Click(object sender, EventArgs e)
         {

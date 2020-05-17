@@ -12,6 +12,7 @@ using System.Windows.Forms;
 
 namespace Epatair.Formulaires
 {
+    //Formulaire qui permet de modifié les Entretiens  (NE FAIT PAS PARTIE DU SPRINT 1)(TODO)
     public partial class FrmModifierEntretien : Form
     {
         public FrmModifierEntretien(GestionLogbook gestionLogbook, LogbookDTO logbookDTO)

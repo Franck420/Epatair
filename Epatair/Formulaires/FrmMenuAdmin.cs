@@ -12,6 +12,7 @@ using System.Windows.Forms;
 
 namespace Epatair
 {
+    //Formulaire qui permet de se déplacer entre les différentes parties du programme
     public partial class FrmMenuAdmin : Form
     {
 

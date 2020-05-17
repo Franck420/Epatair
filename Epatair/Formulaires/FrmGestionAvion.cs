@@ -12,11 +12,15 @@ using System.Windows.Forms;
 
 namespace Epatair.Formulaires
 {
+    //Formulaire qui permet de gérer les avions
+
     public partial class FrmGestionAvion : Form
     {
+
         GestionAvion gestionAvions;
         AvionDTO avionDTO = new AvionDTO();
         List<AvionDTO> ListeAvions = new List<AvionDTO>();
+
 
         public FrmGestionAvion(GestionAvion gestionAvion)
         {
@@ -39,31 +43,24 @@ namespace Epatair.Formulaires
             {
                 foreach (var Avion in ListeAvions)
                 {
-
                     if (Avion.IdAvion == Id)
                     {
                         avionDTO = Avion;
                         break;
                     }
                 }
-
                 Form ModifierAvion = new FrmModifierAvion(gestionAvions, avionDTO);
                 ModifierAvion.ShowDialog();
                 lstViewAvion.Items.Clear();
                 RemplirListe();
                 txtModifier.Clear();
-
             }
             else
-                MessageBox.Show("Veuillez entrez un Id valide svp");
-
-
-            
+                MessageBox.Show("Veuillez entrez un Id valide svp");            
         }
 
         private void btnSupprimer_Click(object sender, EventArgs e)
         {
-
             if (int.TryParse(txtSupprimer.Text, out int Id))
             {
                 try
@@ -77,8 +74,7 @@ namespace Epatair.Formulaires
                 catch
                 {
                     MessageBox.Show("Une erreur s'est produite pendant la supression de l'avion!");
-                }
-             
+                }             
             }
             else
                 MessageBox.Show("Veuillez entrez un Id valide svp");
@@ -96,6 +92,7 @@ namespace Epatair.Formulaires
             RemplirListe();
         }
 
+        //fonction qui initialise le ListView
         private void InitialiserListViewAvion(IEnumerable<AvionDTO> listeAvion)
         {           
             lstViewAvion.View = View.Details;
@@ -105,6 +102,8 @@ namespace Epatair.Formulaires
             lstViewAvion.Columns.Add("IdLogbook", 65);
             lstViewAvion.Sorting = SortOrder.Ascending;
         }
+
+        //Fonction pour remplir le ListView
         private ListViewItem GetListViewAvion(AvionDTO Avion)
         {
             ListViewItem item = new ListViewItem(Avion.IdAvion.ToString());
@@ -112,22 +111,17 @@ namespace Epatair.Formulaires
             item.SubItems.Add(Avion.IdLogbook.ToString());
             return item;
         }
+
+        //Fonctions pour raffraichir le ListView
         private void RemplirListe()
-        {
-            
+        {            
             ListeAvions = gestionAvions.GetListeAvion();
 
             foreach (var Avion in ListeAvions)
             {
                 lstViewAvion.Items.Add(GetListViewAvion(Avion));
             }
-
-            lstViewAvion.Sort();
-            
-        }
-
-
-
-      
+            lstViewAvion.Sort();            
+        }              
     }
 }

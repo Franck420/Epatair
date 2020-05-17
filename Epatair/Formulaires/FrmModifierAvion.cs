@@ -12,20 +12,18 @@ using System.Windows.Forms;
 
 namespace Epatair.Formulaires
 {
+    //Formulaire qui permet de modifié les avions 
     public partial class FrmModifierAvion : Form
     {
-
         GestionAvion gestionAvions;
 
         public FrmModifierAvion(GestionAvion gestionAvion, AvionDTO Avion)
         {
             gestionAvions = gestionAvion;
-
             InitializeComponent();
             txtIdAvion.Text = Avion.IdAvion.ToString();
             txtNom.Text = Avion.Nom;
             txtIdLogbook.Text = Avion.IdLogbook.ToString();
-
         }
         
         private void btnModifier_Click(object sender, EventArgs e)
@@ -41,10 +39,7 @@ namespace Epatair.Formulaires
             }
         }
 
-        private void FrmModifierAvion_Load(object sender, EventArgs e)
-        {
-
-        }
+        private void FrmModifierAvion_Load(object sender, EventArgs e){}
 
         private void btnAnnuler_Click(object sender, EventArgs e)
         {

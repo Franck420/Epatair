@@ -13,6 +13,7 @@ using System.Windows.Forms;
 
 namespace Epatair.Formulaires
 {
+    //Formulaire qui permet de gérer les pilotes
     public partial class FrmGestionPilotes : Form
     {
         GestionPilote gestionPilotes;
@@ -30,6 +31,9 @@ namespace Epatair.Formulaires
             InitialiserListViewPilote(ListePilotes);
             RemplirListe();
         }
+
+
+        //fonction qui initialise le ListView
         private void InitialiserListViewPilote(IEnumerable<PiloteDTO> listePilote)
         {
             lstViewPilote.View = View.Details;
@@ -39,6 +43,8 @@ namespace Epatair.Formulaires
             lstViewPilote.Columns.Add("Grade", 100);
             lstViewPilote.Sorting = SortOrder.Ascending;           
         }
+
+        //Fonction pour remplir le ListView
         private ListViewItem GetListViewPilote(PiloteDTO Pilote)
         {
             ListViewItem item = new ListViewItem(Pilote.IdPilote.ToString());
@@ -103,6 +109,8 @@ namespace Epatair.Formulaires
         {
             this.Close();
         }
+
+        //Fonctions pour raffraichir le ListView
 
         private void RemplirListe()
         {

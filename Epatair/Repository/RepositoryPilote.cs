@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace Epatair.Repository
 {
+    //Repository contenant les fonctions concernant les pilotes
     class RepositoryPilote : IRepositoryPilote
     {
 
@@ -23,9 +24,9 @@ namespace Epatair.Repository
             }
         }
 
-       public  List<PiloteDTO> GetListePilote()
+        //fonctions pour aller chercher et retourner la liste des pilotes
+        public List<PiloteDTO> GetListePilote()
         {
-
             var listePilote = new List<PiloteDTO>();
             using (SqlConnection connexion = new SqlConnection(ChaineConnexion))
             {
@@ -45,14 +46,15 @@ namespace Epatair.Repository
             } 
         }
 
+        //Fonction pour aller chercher un pilote grâce à son ID
         public PiloteDTO GetPilote(int IdPilote)
         {
             using (SqlConnection connexion = new SqlConnection(ChaineConnexion))
             {
                 SqlCommand commande = new SqlCommand("select * from Tbl_Pilote where IdPilote=@IdPilote", connexion);
-
                 commande.Parameters.AddWithValue("@IdPilote", IdPilote);
                 connexion.Open();
+
                 using (SqlDataReader reader = commande.ExecuteReader())
                     if (reader.Read())
                     {                        
@@ -65,6 +67,7 @@ namespace Epatair.Repository
             }
         }
 
+        //Fonction pour aller chercher une liste de pilotes selon leur grade
         public List<PiloteDTO> GetListePilote(string grade)
         {
             var listePilote = new List<PiloteDTO>();
@@ -86,13 +89,14 @@ namespace Epatair.Repository
                 return listePilote;
             }
         }
+
+        //Fonction pour créé un pilote
         public void NouveauPilote(PiloteDTO Pilote)
         {
             int grade =0;
 
             using (SqlConnection connexion = new SqlConnection(ChaineConnexion))
             {
-
                 SqlCommand commande = new SqlCommand("select IdGrade from Tbl_Grade where Titre = @Grade", connexion);
                 commande.Parameters.AddWithValue("@Grade", Pilote.Grade);
                 connexion.Open();
@@ -103,13 +107,13 @@ namespace Epatair.Repository
                     }                    
 
                 SqlCommand commande2 = new SqlCommand("INSERT INTO Tbl_Pilote (Nom,IdGrade ) VALUES (@Nom,"+grade+"); SELECT SCOPE_IDENTITY()", connexion);
-
-                commande2.Parameters.AddWithValue("@Nom", Pilote.Nom);
-               
+                commande2.Parameters.AddWithValue("@Nom", Pilote.Nom);               
                 object valeur = commande2.ExecuteScalar(); 
                 Pilote.IdPilote = int.Parse(valeur.ToString());
             }
         }
+
+        //Fonction pour supprimer un pilote
         public void SupprimerPilote(int IdPilote)
         {
             using (SqlConnection connexion = new SqlConnection(ChaineConnexion))
@@ -120,6 +124,8 @@ namespace Epatair.Repository
                 commande.ExecuteNonQuery();
             }
         }
+
+        //Fonction pour modifier un pilote
         public void ModifierPilote(PiloteDTO Pilote)
         {
             int grade = 0;

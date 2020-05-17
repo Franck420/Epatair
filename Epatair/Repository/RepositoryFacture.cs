@@ -10,8 +10,10 @@ using System.Threading.Tasks;
 
 namespace Epatair.Repositorie
 {
-    class RepositoryFacture:IRepositoryFacture
+    //Repository contenant les fonctions concernant les factures
+    class RepositoryFacture :IRepositoryFacture
     {
+        //initialisation de la chaine de connection à notre BD
         protected string ChaineConnexion
         {
             get
@@ -19,8 +21,8 @@ namespace Epatair.Repositorie
                 return ConfigurationManager.ConnectionStrings["BDEpatAir"].ConnectionString;
             }
         }
-                 
 
+        //Fonction permettant d'aller chercher et de retourner une liste de facture
         public List<Dto.FactureDto> GetListeFacture()
         {
             var liste = new List<FactureDto>();
@@ -49,6 +51,7 @@ namespace Epatair.Repositorie
 
         }
 
+        //Fonction pour créer une nouvelle facture
         public void NouvelleFacture(int avion, string instruteur, string pilote, double HeuredeVol, double HeureSol, DateTime HeureDemarrage, DateTime HeureArret, DateTime HeureAtterissage, DateTime HeureDecolage)
         {
             using (SqlConnection connexion = new SqlConnection(ChaineConnexion))

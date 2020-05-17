@@ -10,10 +10,12 @@ using System.Threading.Tasks;
 
 namespace Epatair.Repository
 {
+    //Repository contenant les fonctions concernant les avions
     class RepositoryAvion : IRepositoryAvion
     {
         MappeurAvion mapper = new MappeurAvion();
 
+        //initialisation de la chaine de connection à notre BD
         protected string ChaineConnexion
         {
             get
@@ -22,13 +24,7 @@ namespace Epatair.Repository
             }
         }
 
-
-        public AvionDTO GetAvion(int IdAvion) 
-        {
-            AvionDTO patate = new AvionDTO();
-            return patate;
-        }
-
+        //fonctions pour aller chercher et retourner la liste des avions
         public List<AvionDTO> GetListeAvion() 
         {
             var listeAvion = new List<AvionDTO>();
@@ -49,22 +45,22 @@ namespace Epatair.Repository
                 return listeAvion;
             }
         }
-        public void NouvealleAvion(string Nom, int IdLogbook) 
-        {           
 
+        //Fonction pour créé un avion
+        public void NouvealleAvion(string Nom, int IdLogbook) 
+        {  
             using (SqlConnection connexion = new SqlConnection(ChaineConnexion))
-            {             
-                
-                connexion.Open();              
+            {                   
+                connexion.Open();             
 
                 SqlCommand commande = new SqlCommand("INSERT INTO Tbl_Avion (Nom,IdLogbook) VALUES (@Nom,@IdLogbook); SELECT SCOPE_IDENTITY()", connexion);
-
                 commande.Parameters.AddWithValue("@Nom", Nom);
                 commande.Parameters.AddWithValue("@IdLogbook", IdLogbook);
-
                 object valeur = commande.ExecuteScalar();               
             }
         }
+
+        //Fonction pour supprimer un avion
         public void SupprimerAvion(int IdAvion) 
         {
             using (SqlConnection connexion = new SqlConnection(ChaineConnexion))
@@ -75,13 +71,13 @@ namespace Epatair.Repository
                 commande.ExecuteNonQuery();
             }
         }
+        //Fonction pour modifier un avion
         public void ModifierAvion(AvionDTO Avion)
         {
             using (SqlConnection connexion = new SqlConnection(ChaineConnexion))
             {
                 SqlCommand commande = new SqlCommand("update Tbl_Avion set Nom = @Nom, IdLogbook = @IdLogbook where IdAvion = @IdAvion", connexion);
-                           
-
+                       
                 commande.Parameters.AddWithValue("@IdAvion", Avion.IdAvion);
                 commande.Parameters.AddWithValue("@Nom", Avion.Nom);
                 commande.Parameters.AddWithValue("@IdLogbook", Avion.IdLogbook);

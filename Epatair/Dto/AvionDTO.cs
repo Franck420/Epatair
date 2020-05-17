@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Epatair.Dto
 {
+    //DTO contenant les informations de nos avions
     public class AvionDTO
     {
         public int IdAvion;
-
         public string Nom { get; set; }
         public int? IdLogbook { get; set; }
     }

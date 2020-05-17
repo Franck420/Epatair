@@ -12,6 +12,7 @@ using System.Windows.Forms;
 
 namespace Epatair.Formulaires
 {
+    //Formulaire qui permet de gérer les logbooks  (NE FAIT PAS PARTIE DU SPRINT 1)(TODO)
     public partial class FrmGestionLogbook : Form
     {
 

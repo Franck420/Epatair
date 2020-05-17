@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace Epatair.Formulaires
 {
+    //Formulaire qui permet de modifié les RendezVous  (NE FAIT PAS PARTIE DU SPRINT 1)(TODO)
     public partial class FrmModifierRendezVous : Form
     {
         public FrmModifierRendezVous(GestionRendezVous gestionRendezVous)

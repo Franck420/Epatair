@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace Epatair.Formulaires
 {
+
+    //Formulaire qui permet de rajouter un pilote à la BD
+
     public partial class FrmAjouterPilote : Form
     {
 

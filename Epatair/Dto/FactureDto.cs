@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Epatair.Dto
 {
-    //Stock les donnee d une facture
+    //Stock les données d'une facture
    public class FactureDto
     {
        public int Idfacture;

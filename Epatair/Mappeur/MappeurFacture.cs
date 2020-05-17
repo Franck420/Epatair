@@ -8,8 +8,10 @@ using System.Threading.Tasks;
 
 namespace Epatair.Mappeur
 {
+    //Mappeur pour mapper vers notre FactureDTO
     public class MappeurFacture
     {
+        //Fonction pour mapper a partir d'un sqlDataReader
         public void Map(SqlDataReader source, FactureDto cible)
         {
 

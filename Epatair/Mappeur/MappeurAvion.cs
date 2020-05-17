@@ -8,8 +8,10 @@ using System.Threading.Tasks;
 
 namespace Epatair.Mappeur
 {
+    //Mappeur pour mapper vers notre AvionDTO
     class MappeurAvion
     {
+        //Fonction pour mapper a partir d'un sqlDataReader
         public void Map(SqlDataReader source, AvionDTO cible)
         {
             cible.IdAvion = (int)source["IdAvion"];
@@ -17,6 +19,7 @@ namespace Epatair.Mappeur
             cible.IdLogbook = (int)source["IdLogbook"];            
         }
 
+        //Fonction pour mapper a partir des informations entrées
         public void Map(int IdAvion, string Nom, int IdLogbook, AvionDTO cible)
         {
             cible.IdAvion = IdAvion;
