@@ -32,10 +32,11 @@ namespace Epatair.Formulaires
         {
             lstViewPilote.View = View.Details;
             lstViewPilote.FullRowSelect = true;
-            lstViewPilote.Columns.Add("IdPilote", 3);
-            lstViewPilote.Columns.Add("Nom", 50);
-            lstViewPilote.Columns.Add("Grade", 25);
+            lstViewPilote.Columns.Add("IdPilote", 50);
+            lstViewPilote.Columns.Add("Nom", 100);
+            lstViewPilote.Columns.Add("Grade", 100);
             lstViewPilote.Sorting = SortOrder.Ascending;
+            
 
             foreach (var Pilote in listePilote)
             {
@@ -81,9 +82,14 @@ namespace Epatair.Formulaires
         }
 
         private void btnSupprimer_Click(object sender, EventArgs e)
-        {            
-            gestionPilotes.SupprimerPilote(Convert.ToInt32(txtSupprimer.Text));
-            RemplirListe();
+        {
+            if (int.TryParse(txtModifier.Text, out int Id))
+            {
+                gestionPilotes.SupprimerPilote(Convert.ToInt32(txtSupprimer.Text));
+                RemplirListe();
+            }
+            else
+                MessageBox.Show("Veuillez entrez un Id valide svp");
         }      
 
         private void btnQuitter_Click(object sender, EventArgs e)

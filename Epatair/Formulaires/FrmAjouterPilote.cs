@@ -25,5 +25,10 @@ namespace Epatair.Formulaires
         {
             gestionPilotes.NouveauPilote(txtNom.Text, cmbGrade.SelectedItem.ToString());
         }
+
+        private void btnAnnuler_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

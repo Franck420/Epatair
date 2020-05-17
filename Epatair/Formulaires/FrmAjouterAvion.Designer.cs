@@ -55,10 +55,11 @@
             this.BtnAnnuler.TabIndex = 1;
             this.BtnAnnuler.Text = "Annuler";
             this.BtnAnnuler.UseVisualStyleBackColor = true;
+            this.BtnAnnuler.Click += new System.EventHandler(this.BtnAnnuler_Click);
             // 
             // TxtNom
             // 
-            this.TxtNom.Location = new System.Drawing.Point(97, 48);
+            this.TxtNom.Location = new System.Drawing.Point(185, 51);
             this.TxtNom.Name = "TxtNom";
             this.TxtNom.Size = new System.Drawing.Size(119, 20);
             this.TxtNom.TabIndex = 2;
@@ -67,7 +68,7 @@
             // LblNom
             // 
             this.LblNom.AutoSize = true;
-            this.LblNom.Location = new System.Drawing.Point(14, 51);
+            this.LblNom.Location = new System.Drawing.Point(102, 54);
             this.LblNom.Name = "LblNom";
             this.LblNom.Size = new System.Drawing.Size(77, 13);
             this.LblNom.TabIndex = 3;
@@ -75,7 +76,7 @@
             // 
             // txtIdLogbook
             // 
-            this.txtIdLogbook.Location = new System.Drawing.Point(97, 73);
+            this.txtIdLogbook.Location = new System.Drawing.Point(185, 76);
             this.txtIdLogbook.Name = "txtIdLogbook";
             this.txtIdLogbook.Size = new System.Drawing.Size(119, 20);
             this.txtIdLogbook.TabIndex = 4;
@@ -83,7 +84,7 @@
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(15, 73);
+            this.lblId.Location = new System.Drawing.Point(103, 76);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(76, 13);
             this.lblId.TabIndex = 5;

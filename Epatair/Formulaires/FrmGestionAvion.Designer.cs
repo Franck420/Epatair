@@ -88,7 +88,7 @@
             this.lstViewAvion.HideSelection = false;
             this.lstViewAvion.Location = new System.Drawing.Point(6, 19);
             this.lstViewAvion.Name = "lstViewAvion";
-            this.lstViewAvion.Size = new System.Drawing.Size(156, 278);
+            this.lstViewAvion.Size = new System.Drawing.Size(230, 278);
             this.lstViewAvion.TabIndex = 4;
             this.lstViewAvion.UseCompatibleStateImageBehavior = false;
             // 
@@ -129,7 +129,7 @@
             this.grbliste.Controls.Add(this.lstViewAvion);
             this.grbliste.Location = new System.Drawing.Point(12, 14);
             this.grbliste.Name = "grbliste";
-            this.grbliste.Size = new System.Drawing.Size(168, 312);
+            this.grbliste.Size = new System.Drawing.Size(242, 312);
             this.grbliste.TabIndex = 9;
             this.grbliste.TabStop = false;
             this.grbliste.Text = "Liste avion";
@@ -143,7 +143,7 @@
             this.grbgestionavion.Controls.Add(this.btnAjouter);
             this.grbgestionavion.Controls.Add(this.label1);
             this.grbgestionavion.Controls.Add(this.label2);
-            this.grbgestionavion.Location = new System.Drawing.Point(204, 14);
+            this.grbgestionavion.Location = new System.Drawing.Point(279, 14);
             this.grbgestionavion.Name = "grbgestionavion";
             this.grbgestionavion.Size = new System.Drawing.Size(350, 312);
             this.grbgestionavion.TabIndex = 0;
@@ -155,7 +155,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(568, 402);
+            this.ClientSize = new System.Drawing.Size(644, 402);
             this.Controls.Add(this.grbgestionavion);
             this.Controls.Add(this.grbliste);
             this.Controls.Add(this.btnRevenir);
