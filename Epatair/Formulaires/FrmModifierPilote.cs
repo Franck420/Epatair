@@ -29,8 +29,17 @@ namespace Epatair.Formulaires
         }
 
         private void btnModifier_Click(object sender, EventArgs e)
-        {        
-            gestionPilotes.ModifierPilote(Convert.ToInt32(txtId.Text),txtNom.Text, cmbGrade.SelectedItem.ToString());
+        {
+            try
+            {
+                gestionPilotes.ModifierPilote(Convert.ToInt32(txtId.Text), txtNom.Text, cmbGrade.SelectedItem.ToString());
+                MessageBox.Show("Le pilote a été modifié dans la base de donnée avec succès!");
+            }
+            catch
+            {
+                MessageBox.Show("Une erreur s'est produite pendant la modification du pilote!");
+            }
+           
         }
 
         private void FrmModifierPilote_Load(object sender, EventArgs e)

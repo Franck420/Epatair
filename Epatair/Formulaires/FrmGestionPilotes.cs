@@ -26,6 +26,8 @@ namespace Epatair.Formulaires
         }
         private void FrmGestionPilotes_Load(object sender, EventArgs e)
         {
+            ListePilotes = gestionPilotes.GetListePilote();
+            InitialiserListViewPilote(ListePilotes);
             RemplirListe();
         }
         private void InitialiserListViewPilote(IEnumerable<PiloteDTO> listePilote)
@@ -35,15 +37,7 @@ namespace Epatair.Formulaires
             lstViewPilote.Columns.Add("IdPilote", 50);
             lstViewPilote.Columns.Add("Nom", 100);
             lstViewPilote.Columns.Add("Grade", 100);
-            lstViewPilote.Sorting = SortOrder.Ascending;
-            
-
-            foreach (var Pilote in listePilote)
-            {
-                lstViewPilote.Items.Add(GetListViewPilote(Pilote));
-            }
-
-            lstViewPilote.Sort();
+            lstViewPilote.Sorting = SortOrder.Ascending;           
         }
         private ListViewItem GetListViewPilote(PiloteDTO Pilote)
         {
@@ -55,7 +49,8 @@ namespace Epatair.Formulaires
         private void btnAjouter_Click(object sender, EventArgs e)
         {
             Form AjouterPilote = new FrmAjouterPilote(gestionPilotes);
-            AjouterPilote.Show();
+            AjouterPilote.ShowDialog();
+            lstViewPilote.Items.Clear();
             RemplirListe();
         }
 
@@ -74,7 +69,8 @@ namespace Epatair.Formulaires
                 }
 
                 Form ModifierPilote = new FrmModifierPilote(gestionPilotes, piloteDTO);
-                ModifierPilote.Show();
+                ModifierPilote.ShowDialog();
+                lstViewPilote.Items.Clear();
                 RemplirListe();
             }
             else
@@ -83,10 +79,20 @@ namespace Epatair.Formulaires
 
         private void btnSupprimer_Click(object sender, EventArgs e)
         {
-            if (int.TryParse(txtModifier.Text, out int Id))
+            if (int.TryParse(txtSupprimer.Text, out int Id))
             {
-                gestionPilotes.SupprimerPilote(Convert.ToInt32(txtSupprimer.Text));
-                RemplirListe();
+                try
+                {
+                    gestionPilotes.SupprimerPilote(Convert.ToInt32(txtSupprimer.Text));
+                    lstViewPilote.Items.Clear();
+                    RemplirListe();
+                    txtSupprimer.Clear();
+                    MessageBox.Show("L'avion a été supprimé de la base de donnée avec succès!");
+                }
+                catch
+                {
+                    MessageBox.Show("Une erreur s'est produite pendant la supression de l'avion!");
+                }               
             }
             else
                 MessageBox.Show("Veuillez entrez un Id valide svp");
@@ -99,9 +105,15 @@ namespace Epatair.Formulaires
 
         private void RemplirListe()
         {
-            lstViewPilote.Clear();
-            ListePilotes = gestionPilotes.GetListePilote();
-            InitialiserListViewPilote(ListePilotes);           
+            
+            ListePilotes = gestionPilotes.GetListePilote();      
+
+            foreach (var Pilote in ListePilotes)
+            {
+                lstViewPilote.Items.Add(GetListViewPilote(Pilote));
+            }
+
+            lstViewPilote.Sort();
         }
 
     }

@@ -75,7 +75,7 @@
             // 
             // btnQuitter
             // 
-            this.btnQuitter.Location = new System.Drawing.Point(426, 396);
+            this.btnQuitter.Location = new System.Drawing.Point(403, 396);
             this.btnQuitter.Name = "btnQuitter";
             this.btnQuitter.Size = new System.Drawing.Size(155, 47);
             this.btnQuitter.TabIndex = 5;
@@ -86,9 +86,9 @@
             // lstViewPilote
             // 
             this.lstViewPilote.HideSelection = false;
-            this.lstViewPilote.Location = new System.Drawing.Point(28, 19);
+            this.lstViewPilote.Location = new System.Drawing.Point(6, 19);
             this.lstViewPilote.Name = "lstViewPilote";
-            this.lstViewPilote.Size = new System.Drawing.Size(200, 394);
+            this.lstViewPilote.Size = new System.Drawing.Size(257, 394);
             this.lstViewPilote.TabIndex = 7;
             this.lstViewPilote.UseCompatibleStateImageBehavior = false;
             // 
@@ -133,7 +133,7 @@
             this.grbbtn.Controls.Add(this.btnSupprimer);
             this.grbbtn.Controls.Add(this.txtSupprimer);
             this.grbbtn.Controls.Add(this.lblSupprimer);
-            this.grbbtn.Location = new System.Drawing.Point(285, 40);
+            this.grbbtn.Location = new System.Drawing.Point(287, 40);
             this.grbbtn.Name = "grbbtn";
             this.grbbtn.Size = new System.Drawing.Size(378, 338);
             this.grbbtn.TabIndex = 12;
@@ -145,7 +145,7 @@
             this.grbliste.Controls.Add(this.lstViewPilote);
             this.grbliste.Location = new System.Drawing.Point(12, 30);
             this.grbliste.Name = "grbliste";
-            this.grbliste.Size = new System.Drawing.Size(255, 433);
+            this.grbliste.Size = new System.Drawing.Size(269, 433);
             this.grbliste.TabIndex = 13;
             this.grbliste.TabStop = false;
             this.grbliste.Text = "Liste Pilote";
@@ -154,7 +154,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(692, 488);
+            this.ClientSize = new System.Drawing.Size(800, 488);
             this.Controls.Add(this.grbliste);
             this.Controls.Add(this.grbbtn);
             this.Controls.Add(this.btnQuitter);

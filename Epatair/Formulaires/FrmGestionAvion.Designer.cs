@@ -148,8 +148,7 @@
             this.grbgestionavion.Size = new System.Drawing.Size(350, 312);
             this.grbgestionavion.TabIndex = 0;
             this.grbgestionavion.TabStop = false;
-            this.grbgestionavion.Text = "Gestion des avions";
-            this.grbgestionavion.Enter += new System.EventHandler(this.grbgestionavion_Enter);
+            this.grbgestionavion.Text = "Gestion des avions";            
             // 
             // FrmGestionAvion
             // 

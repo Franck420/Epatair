@@ -22,12 +22,15 @@ namespace Epatair.Formulaires
         {
             InitializeComponent();
             gestionAvions = gestionAvion;
+
         }
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
             Form AjouterAvion = new FrmAjouterAvion(gestionAvions);
-            AjouterAvion.Show();
+            AjouterAvion.ShowDialog();
+            lstViewAvion.Items.Clear();
+            RemplirListe();
         }
 
         private void btnModifier_Click(object sender, EventArgs e)
@@ -45,8 +48,11 @@ namespace Epatair.Formulaires
                 }
 
                 Form ModifierAvion = new FrmModifierAvion(gestionAvions, avionDTO);
-                ModifierAvion.Show();
-               
+                ModifierAvion.ShowDialog();
+                lstViewAvion.Items.Clear();
+                RemplirListe();
+                txtModifier.Clear();
+
             }
             else
                 MessageBox.Show("Veuillez entrez un Id valide svp");
@@ -57,9 +63,25 @@ namespace Epatair.Formulaires
 
         private void btnSupprimer_Click(object sender, EventArgs e)
         {
-            gestionAvions.SupprimerAvion(Convert.ToInt32(txtSupprimer.Text));
-            lstViewAvion.Items.Clear();
-            RemplirListe();
+
+            if (int.TryParse(txtSupprimer.Text, out int Id))
+            {
+                try
+                {
+                    gestionAvions.SupprimerAvion(Convert.ToInt32(txtSupprimer.Text));
+                    lstViewAvion.Items.Clear();
+                    RemplirListe();
+                    txtSupprimer.Clear();
+                    MessageBox.Show("L'avion a été supprimé de la base de donnée avec succès!");
+                }
+                catch
+                {
+                    MessageBox.Show("Une erreur s'est produite pendant la supression de l'avion!");
+                }
+             
+            }
+            else
+                MessageBox.Show("Veuillez entrez un Id valide svp");
         }
 
         private void btnRevenir_Click(object sender, EventArgs e)
@@ -69,6 +91,8 @@ namespace Epatair.Formulaires
 
         private void FrmGestionAvion_Load(object sender, EventArgs e)
         {
+            ListeAvions = gestionAvions.GetListeAvion();
+            InitialiserListViewAvion(ListeAvions);
             RemplirListe();
         }
 
@@ -80,13 +104,6 @@ namespace Epatair.Formulaires
             lstViewAvion.Columns.Add("Nom", 90);
             lstViewAvion.Columns.Add("IdLogbook", 65);
             lstViewAvion.Sorting = SortOrder.Ascending;
-
-            foreach (var Avion in listeAvion)
-            {
-                lstViewAvion.Items.Add(GetListViewAvion(Avion));
-            }
-
-            lstViewAvion.Sort();
         }
         private ListViewItem GetListViewAvion(AvionDTO Avion)
         {
@@ -97,13 +114,20 @@ namespace Epatair.Formulaires
         }
         private void RemplirListe()
         {
+            
             ListeAvions = gestionAvions.GetListeAvion();
-            InitialiserListViewAvion(ListeAvions);
+
+            foreach (var Avion in ListeAvions)
+            {
+                lstViewAvion.Items.Add(GetListViewAvion(Avion));
+            }
+
+            lstViewAvion.Sort();
+            
         }
 
-        private void grbgestionavion_Enter(object sender, EventArgs e)
-        {
 
-        }
+
+      
     }
 }

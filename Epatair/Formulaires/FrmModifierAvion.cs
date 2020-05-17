@@ -29,8 +29,16 @@ namespace Epatair.Formulaires
         }
         
         private void btnModifier_Click(object sender, EventArgs e)
-        {
-            gestionAvions.ModifierAvion(Convert.ToInt32(txtIdAvion.Text), txtNom.Text, Convert.ToInt32(txtIdLogbook.Text));
+        {            
+            try
+            {
+                gestionAvions.ModifierAvion(Convert.ToInt32(txtIdAvion.Text), txtNom.Text, Convert.ToInt32(txtIdLogbook.Text));
+                MessageBox.Show("L'avion a été modifié dans la base de donnée avec succès!");
+            }
+            catch
+            {
+                MessageBox.Show("Une erreur s'est produite pendant la modification de l'avion!");
+            }
         }
 
         private void FrmModifierAvion_Load(object sender, EventArgs e)

@@ -23,7 +23,16 @@ namespace Epatair.Formulaires
 
         private void BtnAjouter_Click(object sender, EventArgs e)
         {
-            gestionPilotes.NouveauPilote(txtNom.Text, cmbGrade.SelectedItem.ToString());
+            try
+            {
+                gestionPilotes.NouveauPilote(txtNom.Text, cmbGrade.SelectedItem.ToString());
+                MessageBox.Show("L'avion a été ajouté à la base de donnée avec succès!");
+            }
+            catch
+            {
+                MessageBox.Show("Une erreur s'est produite pendant la création de l'avion!");
+            }
+            
         }
 
         private void btnAnnuler_Click(object sender, EventArgs e)
