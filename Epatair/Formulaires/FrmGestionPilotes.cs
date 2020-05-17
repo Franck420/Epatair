@@ -72,6 +72,7 @@ namespace Epatair.Formulaires
                 ModifierPilote.ShowDialog();
                 lstViewPilote.Items.Clear();
                 RemplirListe();
+                txtModifier.Clear();
             }
             else
                 MessageBox.Show("Veuillez entrez un Id valide svp");

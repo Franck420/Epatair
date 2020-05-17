@@ -55,7 +55,7 @@
             // 
             // btnModifier
             // 
-            this.btnModifier.Location = new System.Drawing.Point(6, 148);
+            this.btnModifier.Location = new System.Drawing.Point(6, 51);
             this.btnModifier.Name = "btnModifier";
             this.btnModifier.Size = new System.Drawing.Size(140, 55);
             this.btnModifier.TabIndex = 1;
@@ -65,7 +65,7 @@
             // 
             // btnSupprimer
             // 
-            this.btnSupprimer.Location = new System.Drawing.Point(6, 53);
+            this.btnSupprimer.Location = new System.Drawing.Point(6, 141);
             this.btnSupprimer.Name = "btnSupprimer";
             this.btnSupprimer.Size = new System.Drawing.Size(140, 55);
             this.btnSupprimer.TabIndex = 2;
@@ -95,7 +95,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(152, 53);
+            this.label1.Location = new System.Drawing.Point(152, 141);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(194, 13);
             this.label1.TabIndex = 5;
@@ -104,7 +104,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(152, 148);
+            this.label2.Location = new System.Drawing.Point(152, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(185, 13);
             this.label2.TabIndex = 6;
@@ -112,14 +112,14 @@
             // 
             // txtSupprimer
             // 
-            this.txtSupprimer.Location = new System.Drawing.Point(152, 71);
+            this.txtSupprimer.Location = new System.Drawing.Point(152, 159);
             this.txtSupprimer.Name = "txtSupprimer";
             this.txtSupprimer.Size = new System.Drawing.Size(100, 20);
             this.txtSupprimer.TabIndex = 7;
             // 
             // txtModifier
             // 
-            this.txtModifier.Location = new System.Drawing.Point(152, 166);
+            this.txtModifier.Location = new System.Drawing.Point(152, 69);
             this.txtModifier.Name = "txtModifier";
             this.txtModifier.Size = new System.Drawing.Size(100, 20);
             this.txtModifier.TabIndex = 8;
@@ -148,7 +148,7 @@
             this.grbgestionavion.Size = new System.Drawing.Size(350, 312);
             this.grbgestionavion.TabIndex = 0;
             this.grbgestionavion.TabStop = false;
-            this.grbgestionavion.Text = "Gestion des avions";            
+            this.grbgestionavion.Text = "Gestion des avions";
             // 
             // FrmGestionAvion
             // 

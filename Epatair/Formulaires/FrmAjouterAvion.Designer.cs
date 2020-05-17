@@ -62,8 +62,7 @@
             this.TxtNom.Location = new System.Drawing.Point(185, 51);
             this.TxtNom.Name = "TxtNom";
             this.TxtNom.Size = new System.Drawing.Size(119, 20);
-            this.TxtNom.TabIndex = 2;
-            this.TxtNom.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.TxtNom.TabIndex = 2;           
             // 
             // LblNom
             // 
