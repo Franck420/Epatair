@@ -185,6 +185,7 @@
     <Compile Include="Repository\RepositoryFacture.cs" />
     <Compile Include="Repository\RepositoryPilote.cs" />
     <Compile Include="SqlDatabaseSetup.cs" />
+    <Compile Include="Validation\ValidationFacture.cs" />
     <EmbeddedResource Include="Formulaires\FrmAjouterAvion.resx">
       <DependentUpon>FrmAjouterAvion.cs</DependentUpon>
     </EmbeddedResource>

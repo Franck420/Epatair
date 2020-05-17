@@ -49,16 +49,26 @@ namespace Epatair.Repositorie
 
         }
 
-        public void NouvelleFacture(FactureDto facture)
+        public void NouvelleFacture(int avion, string instruteur, string pilote, double HeuredeVol, double HeureSol, DateTime HeureDemarrage, DateTime HeureArret, DateTime HeureAtterissage, DateTime HeureDecolage)
         {
-            //a faire avec Francis
             using (SqlConnection connexion = new SqlConnection(ChaineConnexion))
             {
-                SqlCommand commande = new SqlCommand("INSERT INTO Facture (Titre) VALUES (@TitreArticle); SELECT SCOPE_IDENTITY()", connexion);
 
                 connexion.Open();
-                object valeur = commande.ExecuteScalar(); // Existe aussi pour MySQL.Data
-                facture.Idfacture = int.Parse(valeur.ToString());
+
+                SqlCommand commande = new SqlCommand("INSERT INTO Tbl_Facture (HeureSol,HeureVol,IdAvion,IdInstruteur,IdPilote,HeureDemmage,HeureArret,HeureDecollage,HeureAtterissage) VALUES (@Avion,@instruteur,@pilote,@HeuredeVol,@HeureSol,@HeureDemarrage,@HeureArret,@HeureAtterissage,@HeureDecolage); SELECT SCOPE_IDENTITY()", connexion);
+
+                commande.Parameters.AddWithValue("@Avion", avion);
+                commande.Parameters.AddWithValue("@instruteur", instruteur);
+                commande.Parameters.AddWithValue("@pilote", pilote);
+                commande.Parameters.AddWithValue("@HeuredeVol", HeuredeVol);
+                commande.Parameters.AddWithValue("@HeureSol", HeureSol);
+                commande.Parameters.AddWithValue("@HeureDemarrage", HeureDemarrage);
+                commande.Parameters.AddWithValue("@HeureArret", HeureArret);
+                commande.Parameters.AddWithValue("@HeureAtterissage", HeureAtterissage);
+                commande.Parameters.AddWithValue("@HeureDecolage", HeureDecolage);
+
+                object valeur = commande.ExecuteScalar();
             }
 
 
