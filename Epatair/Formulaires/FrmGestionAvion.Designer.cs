@@ -97,18 +97,18 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(152, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(187, 13);
+            this.label1.Size = new System.Drawing.Size(194, 13);
             this.label1.TabIndex = 5;
-            this.label1.Text = "entrez l\'identifier de l\'avion à supprimer";
+            this.label1.Text = "Entrez l\'identifiant de l\'avion à supprimer";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(152, 148);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(187, 13);
+            this.label2.Size = new System.Drawing.Size(185, 13);
             this.label2.TabIndex = 6;
-            this.label2.Text = "entrez l\'identifier de l\'avion à supprimer";
+            this.label2.Text = "Entrez l\'identifiant de l\'avion à modifier";
             // 
             // txtSupprimer
             // 
@@ -149,6 +149,7 @@
             this.grbgestionavion.TabIndex = 0;
             this.grbgestionavion.TabStop = false;
             this.grbgestionavion.Text = "Gestion des avions";
+            this.grbgestionavion.Enter += new System.EventHandler(this.grbgestionavion_Enter);
             // 
             // FrmGestionAvion
             // 

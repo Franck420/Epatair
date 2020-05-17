@@ -25,9 +25,15 @@ namespace Epatair.Gestion
             repositoryAvion.SupprimerAvion(IdAvion);
         }
 
-        public void NouvelleAvion(string Nom)
+        public void NouvelleAvion(string Nom, int IdLogbook)
         {          
-            repositoryAvion.NouvealleAvion(Nom);
+            repositoryAvion.NouvealleAvion(Nom, IdLogbook);
+        }
+
+        public void ModifierAvion(int IdAvion, string Nom, int IdLogbook)
+        {
+            mappeurAvion.Map(IdAvion, Nom, IdLogbook, Avion);
+            repositoryAvion.ModifierAvion(Avion);
         }
     }
 }

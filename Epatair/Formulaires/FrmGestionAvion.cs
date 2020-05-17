@@ -32,8 +32,27 @@ namespace Epatair.Formulaires
 
         private void btnModifier_Click(object sender, EventArgs e)
         {
-            Form ModifierAvion = new FrmModifierAvion(gestionAvions, avionDTO);
-            ModifierAvion.Show();
+            if (int.TryParse(txtModifier.Text, out int Id))
+            {
+                foreach (var Avion in ListeAvions)
+                {
+
+                    if (Avion.IdAvion == Id)
+                    {
+                        avionDTO = Avion;
+                        break;
+                    }
+                }
+
+                Form ModifierAvion = new FrmModifierAvion(gestionAvions, avionDTO);
+                ModifierAvion.Show();
+                RemplirListe();
+            }
+            else
+                MessageBox.Show("Veuillez entrez un Id valide svp");
+
+
+            
         }
 
         private void btnSupprimer_Click(object sender, EventArgs e)
@@ -80,5 +99,9 @@ namespace Epatair.Formulaires
             InitialiserListViewAvion(ListeAvions);
         }
 
+        private void grbgestionavion_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

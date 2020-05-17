@@ -16,5 +16,12 @@ namespace Epatair.Mappeur
             cible.Nom = (string)source["Nom"];
             cible.IdLogbook = (int)source["IdLogbook"];            
         }
+
+        public void Map(int IdAvion, string Nom, int IdLogbook, AvionDTO cible)
+        {
+            cible.IdAvion = IdAvion;
+            cible.Nom = Nom;
+            cible.IdLogbook = IdLogbook;
+        }
     }
 }

@@ -32,6 +32,9 @@
             this.BtnAnnuler = new System.Windows.Forms.Button();
             this.TxtNom = new System.Windows.Forms.TextBox();
             this.LblNom = new System.Windows.Forms.Label();
+            this.txtIdLogbook = new System.Windows.Forms.TextBox();
+            this.lblId = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BtnAjouter
@@ -55,7 +58,7 @@
             // 
             // TxtNom
             // 
-            this.TxtNom.Location = new System.Drawing.Point(132, 63);
+            this.TxtNom.Location = new System.Drawing.Point(97, 48);
             this.TxtNom.Name = "TxtNom";
             this.TxtNom.Size = new System.Drawing.Size(119, 20);
             this.TxtNom.TabIndex = 2;
@@ -64,17 +67,45 @@
             // LblNom
             // 
             this.LblNom.AutoSize = true;
-            this.LblNom.Location = new System.Drawing.Point(49, 66);
+            this.LblNom.Location = new System.Drawing.Point(14, 51);
             this.LblNom.Name = "LblNom";
             this.LblNom.Size = new System.Drawing.Size(77, 13);
             this.LblNom.TabIndex = 3;
             this.LblNom.Text = "Nom de l\'avion";
+            // 
+            // txtIdLogbook
+            // 
+            this.txtIdLogbook.Location = new System.Drawing.Point(97, 73);
+            this.txtIdLogbook.Name = "txtIdLogbook";
+            this.txtIdLogbook.Size = new System.Drawing.Size(119, 20);
+            this.txtIdLogbook.TabIndex = 4;
+            // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(15, 73);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(76, 13);
+            this.lblId.TabIndex = 5;
+            this.lblId.Text = "Id du Logbook";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(52, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(293, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Attention! Vous devez entrez un ID de logbook déja éxistant!";
             // 
             // FrmAjouterAvion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(404, 175);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblId);
+            this.Controls.Add(this.txtIdLogbook);
             this.Controls.Add(this.LblNom);
             this.Controls.Add(this.TxtNom);
             this.Controls.Add(this.BtnAnnuler);
@@ -92,5 +123,8 @@
         private System.Windows.Forms.Button BtnAnnuler;
         private System.Windows.Forms.TextBox TxtNom;
         private System.Windows.Forms.Label LblNom;
+        private System.Windows.Forms.TextBox txtIdLogbook;
+        private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.Label label1;
     }
 }

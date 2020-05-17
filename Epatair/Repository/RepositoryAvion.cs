@@ -28,6 +28,7 @@ namespace Epatair.Repository
             AvionDTO patate = new AvionDTO();
             return patate;
         }
+
         public List<AvionDTO> GetListeAvion() 
         {
             var listeAvion = new List<AvionDTO>();
@@ -48,7 +49,7 @@ namespace Epatair.Repository
                 return listeAvion;
             }
         }
-        public void NouvealleAvion(string Nom) 
+        public void NouvealleAvion(string Nom, int IdLogbook) 
         {           
 
             using (SqlConnection connexion = new SqlConnection(ChaineConnexion))
@@ -56,9 +57,10 @@ namespace Epatair.Repository
                 
                 connexion.Open();              
 
-                SqlCommand commande = new SqlCommand("INSERT INTO Tbl_Avion (Nom) VALUES (@Nom); SELECT SCOPE_IDENTITY()", connexion);
+                SqlCommand commande = new SqlCommand("INSERT INTO Tbl_Avion (Nom,IdLogbook) VALUES (@Nom,@IdLogbook); SELECT SCOPE_IDENTITY()", connexion);
 
                 commande.Parameters.AddWithValue("@Nom", Nom);
+                commande.Parameters.AddWithValue("@IdLogbook", IdLogbook);
 
                 object valeur = commande.ExecuteScalar();               
             }
@@ -75,7 +77,17 @@ namespace Epatair.Repository
         }
         public void ModifierAvion(AvionDTO Avion)
         {
-        
+            using (SqlConnection connexion = new SqlConnection(ChaineConnexion))
+            {
+                SqlCommand commande = new SqlCommand("update Tbl_Avion set Nom = @Nom, IdLogbook = @IdLogbook where IdAvion = @IdAvion", connexion);
+                           
+
+                commande.Parameters.AddWithValue("@IdAvion", Avion.IdAvion);
+                commande.Parameters.AddWithValue("@Nom", Avion.Nom);
+                commande.Parameters.AddWithValue("@IdLogbook", Avion.IdLogbook);
+                connexion.Open();
+                commande.ExecuteNonQuery();
+            }
         }
     }
 }

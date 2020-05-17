@@ -14,9 +14,28 @@ namespace Epatair.Formulaires
 {
     public partial class FrmModifierAvion : Form
     {
-        public FrmModifierAvion(GestionAvion gestionAvion, AvionDTO avionDTO)
+
+        GestionAvion gestionAvions;
+
+        public FrmModifierAvion(GestionAvion gestionAvion, AvionDTO Avion)
         {
+            gestionAvions = gestionAvion;
+
             InitializeComponent();
+            txtIdAvion.Text = Avion.IdAvion.ToString();
+            txtNom.Text = Avion.Nom;
+            txtIdLogbook.Text = Avion.IdLogbook.ToString();
+
+        }
+        
+        private void btnModifier_Click(object sender, EventArgs e)
+        {
+            gestionAvions.ModifierAvion(Convert.ToInt32(txtIdAvion.Text), txtNom.Text, Convert.ToInt32(txtIdLogbook.Text));
+        }
+
+        private void FrmModifierAvion_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

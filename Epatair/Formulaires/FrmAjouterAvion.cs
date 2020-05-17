@@ -28,7 +28,7 @@ namespace Epatair.Formulaires
 
         private void BtnAjouter_Click(object sender, EventArgs e)
         {
-            gestionAvions.NouvelleAvion(TxtNom.Text);
+            gestionAvions.NouvelleAvion(TxtNom.Text,Convert.ToInt32(txtIdLogbook.Text));
         }
     }
 }
