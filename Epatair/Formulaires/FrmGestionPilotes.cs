@@ -87,11 +87,11 @@ namespace Epatair.Formulaires
                     lstViewPilote.Items.Clear();
                     RemplirListe();
                     txtSupprimer.Clear();
-                    MessageBox.Show("L'avion a été supprimé de la base de donnée avec succès!");
+                    MessageBox.Show("Le pilote a été supprimé de la base de donnée avec succès!");
                 }
                 catch
                 {
-                    MessageBox.Show("Une erreur s'est produite pendant la supression de l'avion!");
+                    MessageBox.Show("Une erreur s'est produite pendant la supression du pilote!");
                 }               
             }
             else

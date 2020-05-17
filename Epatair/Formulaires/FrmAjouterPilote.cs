@@ -26,11 +26,11 @@ namespace Epatair.Formulaires
             try
             {
                 gestionPilotes.NouveauPilote(txtNom.Text, cmbGrade.SelectedItem.ToString());
-                MessageBox.Show("L'avion a été ajouté à la base de donnée avec succès!");
+                MessageBox.Show("Le pilote a été ajouté à la base de donnée avec succès!");
             }
             catch
             {
-                MessageBox.Show("Une erreur s'est produite pendant la création de l'avion!");
+                MessageBox.Show("Une erreur s'est produite pendant la création du pilote!");
             }
             
         }
