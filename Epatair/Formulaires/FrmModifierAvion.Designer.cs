@@ -39,6 +39,8 @@
             this.lblNom = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtTarif = new System.Windows.Forms.TextBox();
+            this.lblTarif = new System.Windows.Forms.Label();
             this.grbinfoavion.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,6 +66,8 @@
             // 
             // grbinfoavion
             // 
+            this.grbinfoavion.Controls.Add(this.txtTarif);
+            this.grbinfoavion.Controls.Add(this.lblTarif);
             this.grbinfoavion.Controls.Add(this.txtIdAvion);
             this.grbinfoavion.Controls.Add(this.label1);
             this.grbinfoavion.Controls.Add(this.txtIdLogbook);
@@ -72,7 +76,7 @@
             this.grbinfoavion.Controls.Add(this.lblNom);
             this.grbinfoavion.Location = new System.Drawing.Point(27, 48);
             this.grbinfoavion.Name = "grbinfoavion";
-            this.grbinfoavion.Size = new System.Drawing.Size(238, 100);
+            this.grbinfoavion.Size = new System.Drawing.Size(238, 117);
             this.grbinfoavion.TabIndex = 2;
             this.grbinfoavion.TabStop = false;
             this.grbinfoavion.Text = "information avion";
@@ -142,6 +146,22 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Attention! Vous devez entrez un ID de logbook déja éxistant!";
             // 
+            // txtTarif
+            // 
+            this.txtTarif.Location = new System.Drawing.Point(91, 91);
+            this.txtTarif.Name = "txtTarif";
+            this.txtTarif.Size = new System.Drawing.Size(127, 20);
+            this.txtTarif.TabIndex = 7;
+            // 
+            // lblTarif
+            // 
+            this.lblTarif.AutoSize = true;
+            this.lblTarif.Location = new System.Drawing.Point(10, 98);
+            this.lblTarif.Name = "lblTarif";
+            this.lblTarif.Size = new System.Drawing.Size(28, 13);
+            this.lblTarif.TabIndex = 6;
+            this.lblTarif.Text = "Tarif";
+            // 
             // FrmModifierAvion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -175,5 +195,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtTarif;
+        private System.Windows.Forms.Label lblTarif;
     }
 }

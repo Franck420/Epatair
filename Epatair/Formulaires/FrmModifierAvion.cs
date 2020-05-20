@@ -25,18 +25,23 @@ namespace Epatair.Formulaires
             txtNom.Text = Avion.Nom;
             txtIdLogbook.Text = Avion.IdLogbook.ToString();
         }
-        
+
         private void btnModifier_Click(object sender, EventArgs e)
-        {            
-            try
-            {
-                gestionAvions.ModifierAvion(Convert.ToInt32(txtIdAvion.Text), txtNom.Text, Convert.ToInt32(txtIdLogbook.Text));
-                MessageBox.Show("L'avion a été modifié dans la base de donnée avec succès!");
+        {
+            if (int.TryParse(txtIdLogbook.Text, out int IdLogbook) && double.TryParse(txtTarif.Text, out double Tarif))
+            { 
+                try
+                {
+                    gestionAvions.ModifierAvion(Convert.ToInt32(txtIdAvion.Text), txtNom.Text, Convert.ToInt32(txtIdLogbook.Text), Tarif);
+                    MessageBox.Show("L'avion a été modifié dans la base de donnée avec succès!");
+                }
+                catch
+                {
+                    MessageBox.Show("Une erreur s'est produite pendant la modification de l'avion!");
+                }
             }
-            catch
-            {
-                MessageBox.Show("Une erreur s'est produite pendant la modification de l'avion!");
-            }
+            else
+                MessageBox.Show("Veuillez entrez des valeurs correct pour continuer!");
         }
 
         private void FrmModifierAvion_Load(object sender, EventArgs e){}

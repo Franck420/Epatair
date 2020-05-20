@@ -13,7 +13,10 @@ namespace Epatair.Repository
         List<Dto.FactureDto> GetListeFacture();
 
         //Fonction pour créer une nouvelle facture
-        void NouvelleFacture(int avion, string instruteur, string pilote, double HeuredeVol, double HeureSol, DateTime HeureDemarrage, DateTime HeureArret, DateTime HeureAtterissage, DateTime HeureDecolage);
-        
+        void NouvelleFacture(FactureDto facture);
+
+        FactureDto GetFacture(int IdFacture);
+
+
     }
 }

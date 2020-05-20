@@ -40,5 +40,10 @@ namespace Epatair.Gestion
             mappeurAvion.Map(IdAvion, Nom, IdLogbook, Avion, Tarif);
             repositoryAvion.ModifierAvion(Avion);
         }
+
+        public AvionDTO GetAvion(int IdAvion)
+        {
+            return repositoryAvion.GetAvion(IdAvion);
+        }
     }
 }

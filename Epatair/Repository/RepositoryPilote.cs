@@ -73,7 +73,7 @@ namespace Epatair.Repository
             var listePilote = new List<PiloteDTO>();
             using (SqlConnection connexion = new SqlConnection(ChaineConnexion))
             {
-                SqlCommand commande = new SqlCommand("SELECT * FROM Tbl_Pilote where grade = @Grade", connexion);
+                SqlCommand commande = new SqlCommand("select IdPilote,Nom,Titre from Tbl_Pilote inner join Tbl_Grade on Tbl_Pilote.IdGrade = Tbl_Grade.IdGrade where Titre = @Grade", connexion);
                 commande.Parameters.AddWithValue("@Grade", grade);
                 connexion.Open();
 

@@ -37,15 +37,16 @@ namespace Epatair.Formulaires
         private void FrmFacturation_Load(object sender, EventArgs e)
         {
             remplirecmbAvion(cmbAvionUtiliser);
-            remplirecmbPilote(cmbClien);
-            remplirecmbPilote(cmbinstruteur);
+            remplirecmbPilote(cmbClien,"Pilote");
+            remplirecmbPilote(cmbinstruteur,"Instruteur");
             afficherListeview();
         }
 
         private void btnaccepterFacture_Click(object sender, EventArgs e)
         {
             
-            GestionFacture.NouvelleFacture(gestionAvion.getAvion(cmbAvionUtiliser.SelectedIndex),gestionPilote.GetPilote(cmbinstruteur.SelectedIndex), gestionPilote.GetPilote(cmbClien.SelectedIndex), Convert.ToDateTime(txtDemarage.Text), Convert.ToDateTime(txtHArret.Text), Convert.ToDateTime(txtHAtterissage.Text), Convert.ToDateTime(txtHDecolage.Text));
+           txtTotal.Text=GestionFacture.NouvelleFacture(gestionAvion.GetAvion(cmbAvionUtiliser.SelectedIndex),gestionPilote.GetPilote(cmbinstruteur.SelectedIndex), gestionPilote.GetPilote(cmbClien.SelectedIndex), Convert.ToDateTime(txtDemarage.Text), Convert.ToDateTime(txtHArret.Text), Convert.ToDateTime(txtHAtterissage.Text), Convert.ToDateTime(txtHDecolage.Text)).ToString();
+           
             GRBinformation.Enabled = false;
             btnaccepterFacture.Visible = false;
             btnvalidation.Visible = true;
@@ -128,10 +129,10 @@ namespace Epatair.Formulaires
             }
             
         }
-        private void remplirecmbPilote(ComboBox cmb)
+        private void remplirecmbPilote(ComboBox cmb,string grade)
         {
             List<PiloteDTO> listePilote = new List<PiloteDTO>();
-            listePilote=gestionPilote.GetListePilote();
+            listePilote=gestionPilote.GetListePilote(grade);
 
             foreach (PiloteDTO Pilote in listePilote)
                 cmbAvionUtiliser.Items.Add(Pilote.Nom);
