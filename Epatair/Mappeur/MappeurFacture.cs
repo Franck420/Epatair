@@ -21,8 +21,7 @@ namespace Epatair.Mappeur
             cible.HrSol = (float)source["HrSol"];
             cible.TarifHrVol = (float)source["TarifHrVol"];
             cible.TarifHrSol = (float)source["TarifHrVol"];
-            cible.TarifHrVolInstruteur = (float)source["HrVolInstruteur"];
-            cible.TarifHrSolInstruteur = (float)source["HrSolInstruteur"];
+          
 
 
             cible.HrDemarrage = (DateTime)source["HrDemarage"];
@@ -30,6 +29,26 @@ namespace Epatair.Mappeur
             cible.HrArret = (DateTime)source["HrArret"];
             cible.HrAtterissage = (DateTime)source["HrAtterissage"];
 
+        }
+
+        public FactureDto  Map(AvionDTO avion, PiloteDTO instruteur, PiloteDTO pilote, double HeuredeVol, double HeureSol, DateTime HeureDemarrage, DateTime HeureArret, DateTime HeureAtterissage, DateTime HeureDecolage, double tarifHrVol, double tarifHrSol , FactureDto cible)
+        {
+
+            
+
+            cible.HrVol = HeuredeVol;
+            cible.HrSol = HeureSol;
+            cible.TarifHrVol = tarifHrVol;
+            cible.TarifHrSol = tarifHrSol;
+        
+
+
+            cible.HrDemarrage = HeureDemarrage;
+            cible.HrDecollage =HeureDecolage;
+            cible.HrArret =HeureArret;
+            cible.HrAtterissage = HeureAtterissage;
+
+            return cible;
         }
     }
 }

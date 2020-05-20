@@ -29,7 +29,7 @@ namespace Epatair
         }
         private void btnFacturation_Click(object sender, EventArgs e)
         {
-            Form Facturation = new FrmFacturation(gestionFacture);
+            Form Facturation = new FrmFacturation(gestionFacture,gestionPilote,gestionAvion);
             Facturation.Show();
         }         
 

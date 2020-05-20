@@ -14,18 +14,26 @@ namespace Epatair.Gestion
     public class GestionFacture
     {
         IRepositoryFacture RepositoryFacture = new RepositoryFacture();
-        double tarifHrVol,tarifHrSol,TarifHrSolInstruteur,TarifHrVolInstruteur;
+        double tarifHrVol = 10;
+        double tarifHrSol = 20;
+
+        FactureDto facture = new FactureDto();
 
         //Fonction pour créer une nouvelle facture
-        public void NouvelleFacture(int avion, string instruteur, string pilote, double HeuredeVol, double HeureSol, DateTime HeureDemarrage, DateTime HeureArret, DateTime HeureAtterissage, DateTime HeureDecolage)
+        public void NouvelleFacture(AvionDTO avion, PiloteDTO instruteur, PiloteDTO pilote,DateTime HeureDemarrage, DateTime HeureArret, DateTime HeureAtterissage, DateTime HeureDecolage,double tarifHrVol,double tarifHrSol, double tarifAvion)
         {
-            RepositoryFacture.NouvelleFacture(avion, instruteur, pilote, HeuredeVol, HeureSol, HeureDemarrage, HeureArret, HeureAtterissage, HeureDecolage);
+            double HeuredeVol, HeureSol;
+
+            Mappeur.MappeurFacture mappeur = new Mappeur.MappeurFacture();
+
+            facture=mappeur.Map(avion,instruteur,  pilote,  HeuredeVol,  HeureSol,  HeureDemarrage, HeureArret,  HeureAtterissage,  HeureDecolage,  tarifHrVol,  tarifHrSol,facture);
+            
         }
 
         //fonction pour calculer le total d'une facture
-        public double calculertotal(double HeuredeVol, double HeureSol)
+        public double calculertotalFacture(FactureDto facture)
         {
-            return 0;
+            
         }
         
         //Fonction permettant d'aller chercher et de retourner une liste de facture
@@ -35,5 +43,15 @@ namespace Epatair.Gestion
 
         }
 
+        private void calculertempssol()
+        { 
+            facture.HrSol
+        
+        }
+        private void calculertempsVol()
+        {
+
+
+        }
     }
 }

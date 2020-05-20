@@ -12,6 +12,8 @@ namespace Epatair.Dto
     {
         public int IdAvion;
         public string Nom { get; set; }
-        public int? IdLogbook { get; set; }
+        public int IdLogbook { get; set; }
+
+        public double tarif { get; set; }
     }
 }

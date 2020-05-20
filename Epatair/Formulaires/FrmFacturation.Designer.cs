@@ -30,7 +30,10 @@
         {
             this.btnRetour = new System.Windows.Forms.Button();
             this.GRBFacture = new System.Windows.Forms.GroupBox();
+            this.btnAjouter = new System.Windows.Forms.Button();
+            this.lstviewFacture = new System.Windows.Forms.ListView();
             this.GRBinformation = new System.Windows.Forms.GroupBox();
+            this.btnvalidation = new System.Windows.Forms.Button();
             this.Btnannuler = new System.Windows.Forms.Button();
             this.btnaccepterFacture = new System.Windows.Forms.Button();
             this.txtTotal = new System.Windows.Forms.TextBox();
@@ -49,15 +52,10 @@
             this.txtDemarage = new System.Windows.Forms.TextBox();
             this.cmbClien = new System.Windows.Forms.ComboBox();
             this.lblHDemarage = new System.Windows.Forms.Label();
-            this.txtHeureSol = new System.Windows.Forms.TextBox();
-            this.lblHSol = new System.Windows.Forms.Label();
-            this.txtHeureVol = new System.Windows.Forms.TextBox();
-            this.lblHVol = new System.Windows.Forms.Label();
             this.txtIdFacture = new System.Windows.Forms.TextBox();
             this.lblIdFacture = new System.Windows.Forms.Label();
-            this.lstviewFacture = new System.Windows.Forms.ListView();
-            this.btnAjouter = new System.Windows.Forms.Button();
-            this.btnvalidation = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.GRBFacture.SuspendLayout();
             this.GRBinformation.SuspendLayout();
             this.SuspendLayout();
@@ -83,8 +81,29 @@
             this.GRBFacture.TabStop = false;
             this.GRBFacture.Text = "Facture";
             // 
+            // btnAjouter
+            // 
+            this.btnAjouter.Location = new System.Drawing.Point(6, 375);
+            this.btnAjouter.Name = "btnAjouter";
+            this.btnAjouter.Size = new System.Drawing.Size(124, 23);
+            this.btnAjouter.TabIndex = 2;
+            this.btnAjouter.Text = "Ajouter une facture";
+            this.btnAjouter.UseVisualStyleBackColor = true;
+            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click_1);
+            // 
+            // lstviewFacture
+            // 
+            this.lstviewFacture.HideSelection = false;
+            this.lstviewFacture.Location = new System.Drawing.Point(3, 16);
+            this.lstviewFacture.Name = "lstviewFacture";
+            this.lstviewFacture.Size = new System.Drawing.Size(287, 350);
+            this.lstviewFacture.TabIndex = 0;
+            this.lstviewFacture.UseCompatibleStateImageBehavior = false;
+            // 
             // GRBinformation
             // 
+            this.GRBinformation.Controls.Add(this.label1);
+            this.GRBinformation.Controls.Add(this.textBox1);
             this.GRBinformation.Controls.Add(this.btnvalidation);
             this.GRBinformation.Controls.Add(this.Btnannuler);
             this.GRBinformation.Controls.Add(this.btnaccepterFacture);
@@ -104,23 +123,29 @@
             this.GRBinformation.Controls.Add(this.txtDemarage);
             this.GRBinformation.Controls.Add(this.cmbClien);
             this.GRBinformation.Controls.Add(this.lblHDemarage);
-            this.GRBinformation.Controls.Add(this.txtHeureSol);
-            this.GRBinformation.Controls.Add(this.lblHSol);
-            this.GRBinformation.Controls.Add(this.txtHeureVol);
-            this.GRBinformation.Controls.Add(this.lblHVol);
             this.GRBinformation.Controls.Add(this.txtIdFacture);
             this.GRBinformation.Controls.Add(this.lblIdFacture);
             this.GRBinformation.Enabled = false;
             this.GRBinformation.Location = new System.Drawing.Point(320, 12);
             this.GRBinformation.Name = "GRBinformation";
-            this.GRBinformation.Size = new System.Drawing.Size(254, 516);
+            this.GRBinformation.Size = new System.Drawing.Size(254, 493);
             this.GRBinformation.TabIndex = 5;
             this.GRBinformation.TabStop = false;
             this.GRBinformation.Text = "information facture";
             // 
+            // btnvalidation
+            // 
+            this.btnvalidation.Location = new System.Drawing.Point(9, 444);
+            this.btnvalidation.Name = "btnvalidation";
+            this.btnvalidation.Size = new System.Drawing.Size(158, 23);
+            this.btnvalidation.TabIndex = 14;
+            this.btnvalidation.Text = "Valider et calculer total facture";
+            this.btnvalidation.UseVisualStyleBackColor = true;
+            this.btnvalidation.Click += new System.EventHandler(this.btnvalidation_Click);
+            // 
             // Btnannuler
             // 
-            this.Btnannuler.Location = new System.Drawing.Point(173, 487);
+            this.Btnannuler.Location = new System.Drawing.Point(173, 444);
             this.Btnannuler.Name = "Btnannuler";
             this.Btnannuler.Size = new System.Drawing.Size(75, 23);
             this.Btnannuler.TabIndex = 13;
@@ -129,7 +154,7 @@
             // 
             // btnaccepterFacture
             // 
-            this.btnaccepterFacture.Location = new System.Drawing.Point(6, 487);
+            this.btnaccepterFacture.Location = new System.Drawing.Point(6, 444);
             this.btnaccepterFacture.Name = "btnaccepterFacture";
             this.btnaccepterFacture.Size = new System.Drawing.Size(121, 23);
             this.btnaccepterFacture.TabIndex = 12;
@@ -141,7 +166,7 @@
             // txtTotal
             // 
             this.txtTotal.Enabled = false;
-            this.txtTotal.Location = new System.Drawing.Point(119, 443);
+            this.txtTotal.Location = new System.Drawing.Point(119, 400);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(100, 20);
             this.txtTotal.TabIndex = 0;
@@ -150,7 +175,7 @@
             // 
             this.lblTotal.AutoSize = true;
             this.lblTotal.Enabled = false;
-            this.lblTotal.Location = new System.Drawing.Point(70, 446);
+            this.lblTotal.Location = new System.Drawing.Point(70, 403);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(37, 13);
             this.lblTotal.TabIndex = 0;
@@ -158,7 +183,7 @@
             // 
             // txtHDecolage
             // 
-            this.txtHDecolage.Location = new System.Drawing.Point(119, 410);
+            this.txtHDecolage.Location = new System.Drawing.Point(119, 367);
             this.txtHDecolage.Name = "txtHDecolage";
             this.txtHDecolage.Size = new System.Drawing.Size(100, 20);
             this.txtHDecolage.TabIndex = 11;
@@ -167,7 +192,7 @@
             // 
             this.LblHDecolage.AutoSize = true;
             this.LblHDecolage.Enabled = false;
-            this.LblHDecolage.Location = new System.Drawing.Point(6, 413);
+            this.LblHDecolage.Location = new System.Drawing.Point(6, 370);
             this.LblHDecolage.Name = "LblHDecolage";
             this.LblHDecolage.Size = new System.Drawing.Size(98, 13);
             this.LblHDecolage.TabIndex = 0;
@@ -175,7 +200,7 @@
             // 
             // txtHAtterissage
             // 
-            this.txtHAtterissage.Location = new System.Drawing.Point(119, 372);
+            this.txtHAtterissage.Location = new System.Drawing.Point(119, 329);
             this.txtHAtterissage.Name = "txtHAtterissage";
             this.txtHAtterissage.Size = new System.Drawing.Size(100, 20);
             this.txtHAtterissage.TabIndex = 10;
@@ -202,7 +227,7 @@
             // 
             this.lblHAtterissage.AutoSize = true;
             this.lblHAtterissage.Enabled = false;
-            this.lblHAtterissage.Location = new System.Drawing.Point(6, 375);
+            this.lblHAtterissage.Location = new System.Drawing.Point(6, 332);
             this.lblHAtterissage.Name = "lblHAtterissage";
             this.lblHAtterissage.Size = new System.Drawing.Size(98, 13);
             this.lblHAtterissage.TabIndex = 0;
@@ -212,7 +237,7 @@
             // 
             this.lblInstruteur.AutoSize = true;
             this.lblInstruteur.Enabled = false;
-            this.lblInstruteur.Location = new System.Drawing.Point(6, 116);
+            this.lblInstruteur.Location = new System.Drawing.Point(6, 156);
             this.lblInstruteur.Name = "lblInstruteur";
             this.lblInstruteur.Size = new System.Drawing.Size(90, 13);
             this.lblInstruteur.TabIndex = 0;
@@ -220,7 +245,7 @@
             // 
             // txtHArret
             // 
-            this.txtHArret.Location = new System.Drawing.Point(119, 329);
+            this.txtHArret.Location = new System.Drawing.Point(119, 286);
             this.txtHArret.Name = "txtHArret";
             this.txtHArret.Size = new System.Drawing.Size(100, 20);
             this.txtHArret.TabIndex = 9;
@@ -229,7 +254,7 @@
             // 
             this.lblNomclien.AutoSize = true;
             this.lblNomclien.Enabled = false;
-            this.lblNomclien.Location = new System.Drawing.Point(6, 160);
+            this.lblNomclien.Location = new System.Drawing.Point(6, 200);
             this.lblNomclien.Name = "lblNomclien";
             this.lblNomclien.Size = new System.Drawing.Size(69, 13);
             this.lblNomclien.TabIndex = 0;
@@ -239,7 +264,7 @@
             // 
             this.lblHArret.AutoSize = true;
             this.lblHArret.Enabled = false;
-            this.lblHArret.Location = new System.Drawing.Point(6, 332);
+            this.lblHArret.Location = new System.Drawing.Point(6, 289);
             this.lblHArret.Name = "lblHArret";
             this.lblHArret.Size = new System.Drawing.Size(68, 13);
             this.lblHArret.TabIndex = 0;
@@ -248,14 +273,14 @@
             // cmbinstruteur
             // 
             this.cmbinstruteur.FormattingEnabled = true;
-            this.cmbinstruteur.Location = new System.Drawing.Point(119, 116);
+            this.cmbinstruteur.Location = new System.Drawing.Point(119, 156);
             this.cmbinstruteur.Name = "cmbinstruteur";
             this.cmbinstruteur.Size = new System.Drawing.Size(100, 21);
             this.cmbinstruteur.TabIndex = 4;
             // 
             // txtDemarage
             // 
-            this.txtDemarage.Location = new System.Drawing.Point(119, 285);
+            this.txtDemarage.Location = new System.Drawing.Point(119, 242);
             this.txtDemarage.Name = "txtDemarage";
             this.txtDemarage.Size = new System.Drawing.Size(100, 20);
             this.txtDemarage.TabIndex = 8;
@@ -263,7 +288,7 @@
             // cmbClien
             // 
             this.cmbClien.FormattingEnabled = true;
-            this.cmbClien.Location = new System.Drawing.Point(119, 157);
+            this.cmbClien.Location = new System.Drawing.Point(119, 197);
             this.cmbClien.Name = "cmbClien";
             this.cmbClien.Size = new System.Drawing.Size(100, 21);
             this.cmbClien.TabIndex = 5;
@@ -272,45 +297,11 @@
             // 
             this.lblHDemarage.AutoSize = true;
             this.lblHDemarage.Enabled = false;
-            this.lblHDemarage.Location = new System.Drawing.Point(6, 288);
+            this.lblHDemarage.Location = new System.Drawing.Point(6, 245);
             this.lblHDemarage.Name = "lblHDemarage";
             this.lblHDemarage.Size = new System.Drawing.Size(106, 13);
             this.lblHDemarage.TabIndex = 0;
             this.lblHDemarage.Text = "Heure de Démarrage";
-            // 
-            // txtHeureSol
-            // 
-            this.txtHeureSol.Location = new System.Drawing.Point(119, 240);
-            this.txtHeureSol.Name = "txtHeureSol";
-            this.txtHeureSol.Size = new System.Drawing.Size(100, 20);
-            this.txtHeureSol.TabIndex = 7;
-            // 
-            // lblHSol
-            // 
-            this.lblHSol.AutoSize = true;
-            this.lblHSol.Enabled = false;
-            this.lblHSol.Location = new System.Drawing.Point(6, 243);
-            this.lblHSol.Name = "lblHSol";
-            this.lblHSol.Size = new System.Drawing.Size(67, 13);
-            this.lblHSol.TabIndex = 0;
-            this.lblHSol.Text = "Heure au sol";
-            // 
-            // txtHeureVol
-            // 
-            this.txtHeureVol.Location = new System.Drawing.Point(119, 197);
-            this.txtHeureVol.Name = "txtHeureVol";
-            this.txtHeureVol.Size = new System.Drawing.Size(100, 20);
-            this.txtHeureVol.TabIndex = 6;
-            // 
-            // lblHVol
-            // 
-            this.lblHVol.AutoSize = true;
-            this.lblHVol.Enabled = false;
-            this.lblHVol.Location = new System.Drawing.Point(6, 200);
-            this.lblHVol.Name = "lblHVol";
-            this.lblHVol.Size = new System.Drawing.Size(69, 13);
-            this.lblHVol.TabIndex = 0;
-            this.lblHVol.Text = "Heure de Vol";
             // 
             // txtIdFacture
             // 
@@ -330,34 +321,22 @@
             this.lblIdFacture.TabIndex = 0;
             this.lblIdFacture.Text = "Identifieur Facture";
             // 
-            // lstviewFacture
+            // textBox1
             // 
-            this.lstviewFacture.HideSelection = false;
-            this.lstviewFacture.Location = new System.Drawing.Point(3, 16);
-            this.lstviewFacture.Name = "lstviewFacture";
-            this.lstviewFacture.Size = new System.Drawing.Size(287, 350);
-            this.lstviewFacture.TabIndex = 0;
-            this.lstviewFacture.UseCompatibleStateImageBehavior = false;
+            this.textBox1.Location = new System.Drawing.Point(119, 113);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 15;
             // 
-            // btnAjouter
+            // label1
             // 
-            this.btnAjouter.Location = new System.Drawing.Point(6, 375);
-            this.btnAjouter.Name = "btnAjouter";
-            this.btnAjouter.Size = new System.Drawing.Size(124, 23);
-            this.btnAjouter.TabIndex = 2;
-            this.btnAjouter.Text = "Ajouter une facture";
-            this.btnAjouter.UseVisualStyleBackColor = true;
-            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click_1);
-            // 
-            // btnvalidation
-            // 
-            this.btnvalidation.Location = new System.Drawing.Point(9, 487);
-            this.btnvalidation.Name = "btnvalidation";
-            this.btnvalidation.Size = new System.Drawing.Size(158, 23);
-            this.btnvalidation.TabIndex = 14;
-            this.btnvalidation.Text = "Valider et calculer total facture";
-            this.btnvalidation.UseVisualStyleBackColor = true;
-            this.btnvalidation.Click += new System.EventHandler(this.btnvalidation_Click);
+            this.label1.AutoSize = true;
+            this.label1.Enabled = false;
+            this.label1.Location = new System.Drawing.Point(9, 120);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Avion Tarif";
             // 
             // FrmFacturation
             // 
@@ -387,10 +366,6 @@
         private System.Windows.Forms.Label lblNomclien;
         private System.Windows.Forms.Label lblInstruteur;
         private System.Windows.Forms.Label lblAvion;
-        private System.Windows.Forms.TextBox txtHeureSol;
-        private System.Windows.Forms.Label lblHSol;
-        private System.Windows.Forms.TextBox txtHeureVol;
-        private System.Windows.Forms.Label lblHVol;
         private System.Windows.Forms.ComboBox cmbClien;
         private System.Windows.Forms.ComboBox cmbinstruteur;
         private System.Windows.Forms.ComboBox cmbAvionUtiliser;
@@ -409,5 +384,7 @@
         private System.Windows.Forms.Button btnAjouter;
         private System.Windows.Forms.ListView lstviewFacture;
         private System.Windows.Forms.Button btnvalidation;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
