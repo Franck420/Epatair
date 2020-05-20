@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Diagnostics.Tracing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,15 +17,17 @@ namespace Epatair.Mappeur
         {
             cible.IdAvion = (int)source["IdAvion"];
             cible.Nom = (string)source["Nom"];
-            cible.IdLogbook = (int)source["IdLogbook"];            
+            cible.IdLogbook = (int)source["IdLogbook"];
+            cible.tarif = (double)source["Tarif"];
         }
 
         //Fonction pour mapper a partir des informations entrées
-        public void Map(int IdAvion, string Nom, int IdLogbook, AvionDTO cible)
+        public void Map(int IdAvion, string Nom, int IdLogbook, AvionDTO cible ,double tarif)
         {
             cible.IdAvion = IdAvion;
             cible.Nom = Nom;
             cible.IdLogbook = IdLogbook;
+            cible.tarif=tarif
         }
     }
 }

@@ -17,12 +17,16 @@ namespace Epatair.Formulaires
     public partial class FrmFacturation : Form
     {
         GestionFacture GestionFacture;
+        GestionAvion gestionAvion;
+        GestionPilote gestionPilote;
         Validation.ValidationFacture validationFacture = new Validation.ValidationFacture();
         
-        public FrmFacturation(GestionFacture gestionFacture)
+        public FrmFacturation(GestionFacture gestionFacture,GestionPilote gestionPilotes,GestionAvion gestionAvions)
         {
             InitializeComponent();
             GestionFacture = gestionFacture;
+            gestionPilote = gestionPilotes;
+            gestionAvion = gestionAvions;
         }
 
         private void btnRetour_Click(object sender, EventArgs e)
@@ -32,7 +36,10 @@ namespace Epatair.Formulaires
 
         private void FrmFacturation_Load(object sender, EventArgs e)
         {
-
+            remplirecmbAvion(cmbAvionUtiliser);
+            remplirecmbPilote(cmbClien);
+            remplirecmbPilote(cmbinstruteur);
+            afficherListeview();
         }
 
         private void btnaccepterFacture_Click(object sender, EventArgs e)
@@ -128,6 +135,22 @@ namespace Epatair.Formulaires
                 btnvalidation.Visible = false;
             }
             
+        }
+        private void remplirecmbPilote(ComboBox cmb)
+        {
+            List<PiloteDTO> listePilote = new List<PiloteDTO>();
+            listePilote=gestionPilote.GetListePilote();
+
+            foreach (PiloteDTO Pilote in listePilote)
+                cmbAvionUtiliser.Items.Add(Pilote.Nom);
+        }
+
+        private void remplirecmbAvion(ComboBox cmb)
+        {
+            List<AvionDTO> listeAvion = new List<AvionDTO>();
+            listeAvion = gestionAvion.GetListeAvion();
+            foreach (AvionDTO Avion in listeAvion)
+                cmbAvionUtiliser.Items.Add(Avion.Nom);
         }
     }
 }
