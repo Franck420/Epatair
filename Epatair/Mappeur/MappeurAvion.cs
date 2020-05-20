@@ -18,7 +18,7 @@ namespace Epatair.Mappeur
             cible.IdAvion = (int)source["IdAvion"];
             cible.Nom = (string)source["Nom"];
             cible.IdLogbook = (int)source["IdLogbook"];
-            cible.tarif = (double)source["Tarif"];
+            cible.Tarif = (double)source["Tarif"];
         }
 
         //Fonction pour mapper a partir des informations entrées
@@ -27,7 +27,7 @@ namespace Epatair.Mappeur
             cible.IdAvion = IdAvion;
             cible.Nom = Nom;
             cible.IdLogbook = IdLogbook;
-            cible.tarif=tarif
+            cible.Tarif = tarif;
         }
     }
 }

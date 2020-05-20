@@ -29,15 +29,15 @@ namespace Epatair.Gestion
         }
 
         //Fonction pour créé un avion
-        public void NouvelleAvion(string Nom, int IdLogbook)
+        public void NouvelleAvion(string Nom, int IdLogbook, double Tarif)
         {          
-            repositoryAvion.NouvealleAvion(Nom, IdLogbook);
+            repositoryAvion.NouvealleAvion(Nom, IdLogbook, Tarif);
         }
 
         //Fonction pour modifier un avion
-        public void ModifierAvion(int IdAvion, string Nom, int IdLogbook)
+        public void ModifierAvion(int IdAvion, string Nom, int IdLogbook, double Tarif)
         {
-            mappeurAvion.Map(IdAvion, Nom, IdLogbook, Avion);
+            mappeurAvion.Map(IdAvion, Nom, IdLogbook, Avion, Tarif);
             repositoryAvion.ModifierAvion(Avion);
         }
     }
