@@ -44,7 +44,8 @@ namespace Epatair.Formulaires
 
         private void btnaccepterFacture_Click(object sender, EventArgs e)
         {
-            GestionFacture.NouvelleFacture(cmbAvionUtiliser.SelectedIndex, cmbinstruteur.SelectedItem.ToString(), cmbClien.SelectedItem.ToString(), Convert.ToDouble(txtHeureVol.Text), Convert.ToDouble(txtHeureSol.Text), Convert.ToDateTime(txtDemarage.Text), Convert.ToDateTime(txtHArret.Text), Convert.ToDateTime(txtHAtterissage.Text), Convert.ToDateTime(txtHDecolage.Text));
+            
+            GestionFacture.NouvelleFacture(gestionAvion.getAvion(cmbAvionUtiliser.SelectedIndex),gestionPilote.GetPilote(cmbinstruteur.SelectedIndex), gestionPilote.GetPilote(cmbClien.SelectedIndex), Convert.ToDateTime(txtDemarage.Text), Convert.ToDateTime(txtHArret.Text), Convert.ToDateTime(txtHAtterissage.Text), Convert.ToDateTime(txtHDecolage.Text));
             GRBinformation.Enabled = false;
             btnaccepterFacture.Visible = false;
             btnvalidation.Visible = true;
@@ -77,7 +78,7 @@ namespace Epatair.Formulaires
         private ListViewItem GetListViewFacture(FactureDto Facture)
         {
             ListViewItem item = new ListViewItem(Facture.Idfacture.ToString());
-            item.SubItems.Add(Facture.IdAvion.ToString());
+            item.SubItems.Add(Facture.avion.IdAvion.ToString());
             item.SubItems.Add(Facture.Pilote.IdPilote.ToString());
             item.SubItems.Add(Facture.Pilote.Nom);
             return item;
@@ -92,16 +93,7 @@ namespace Epatair.Formulaires
         {
             bool erreur = false;
 
-            if (!validationFacture.validationDouble(txtHeureVol.Text))
-            {
-                erreur = true;
-                MessageBox.Show("Heure de vol doit etre un nombre positif");
-            }
-            if (!validationFacture.validationDouble(txtHeureSol.Text))
-            {
-                erreur = true;
-                MessageBox.Show("Heure au sol doit etre un nombre positif");
-            }
+           
 
 
             if (!validationFacture.ValidationDatetime(txtDemarage.Text))
@@ -130,7 +122,7 @@ namespace Epatair.Formulaires
 
             if (!erreur)
             {
-                GestionFacture.calculertotal(Convert.ToDouble(txtHeureVol.Text),Convert.ToDouble(txtHeureSol.Text));
+                
                 btnaccepterFacture.Visible = true;
                 btnvalidation.Visible = false;
             }
