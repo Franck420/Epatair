@@ -47,15 +47,16 @@ namespace Epatair.Repository
         }
 
         //Fonction pour créé un avion
-        public void NouvealleAvion(string Nom, int IdLogbook) 
+        public void NouvealleAvion(string Nom, int IdLogbook, double Tarif) 
         {  
             using (SqlConnection connexion = new SqlConnection(ChaineConnexion))
             {                   
                 connexion.Open();             
 
-                SqlCommand commande = new SqlCommand("INSERT INTO Tbl_Avion (Nom,IdLogbook) VALUES (@Nom,@IdLogbook); SELECT SCOPE_IDENTITY()", connexion);
+                SqlCommand commande = new SqlCommand("INSERT INTO Tbl_Avion (Nom,IdLogbook,Tarif) VALUES (@Nom,@IdLogbook,@Tarif); SELECT SCOPE_IDENTITY()", connexion);
                 commande.Parameters.AddWithValue("@Nom", Nom);
                 commande.Parameters.AddWithValue("@IdLogbook", IdLogbook);
+                commande.Parameters.AddWithValue("@Tarif", Tarif);
                 object valeur = commande.ExecuteScalar();               
             }
         }
@@ -76,11 +77,12 @@ namespace Epatair.Repository
         {
             using (SqlConnection connexion = new SqlConnection(ChaineConnexion))
             {
-                SqlCommand commande = new SqlCommand("update Tbl_Avion set Nom = @Nom, IdLogbook = @IdLogbook where IdAvion = @IdAvion", connexion);
+                SqlCommand commande = new SqlCommand("update Tbl_Avion set Nom = @Nom, IdLogbook = @IdLogbook, Tarif = @Tarif where IdAvion = @IdAvion", connexion);
                        
                 commande.Parameters.AddWithValue("@IdAvion", Avion.IdAvion);
                 commande.Parameters.AddWithValue("@Nom", Avion.Nom);
                 commande.Parameters.AddWithValue("@IdLogbook", Avion.IdLogbook);
+                commande.Parameters.AddWithValue("@Tarif", Avion.Tarif);
                 connexion.Open();
                 commande.ExecuteNonQuery();
             }

@@ -13,7 +13,7 @@ namespace Epatair.Repository
         //fonctions pour aller chercher et retourner la liste des avions
         List<AvionDTO> GetListeAvion();
         //Fonction pour créé un avion
-        void NouvealleAvion(string nom,int IdLogbook);
+        void NouvealleAvion(string nom,int IdLogbook, double Tarif);
         //Fonction pour supprimer un avion
         void SupprimerAvion(int IdAvion);
         //Fonction pour modifier un avion

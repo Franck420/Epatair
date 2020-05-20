@@ -213,6 +213,9 @@
     <EmbeddedResource Include="Formulaires\FrmModifierAvion.resx">
       <DependentUpon>FrmModifierAvion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formulaires\FrmModifierEntretien.resx">
+      <DependentUpon>FrmModifierEntretien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulaires\FrmModifierPilote.resx">
       <DependentUpon>FrmModifierPilote.cs</DependentUpon>
     </EmbeddedResource>
