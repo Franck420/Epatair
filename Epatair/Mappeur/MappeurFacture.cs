@@ -19,10 +19,12 @@ namespace Epatair.Mappeur
 
             cible.HrVol = (double)source["HeureVol"];
             cible.HrSol = (double)source["HeureSol"];
-            cible.TarifHrVol = (double)source["TarifHeureVol"];
+            cible.TarifHrVol = (int)source["TarifHeureVol"];
             cible.TarifHrSol = (double)source["TarifHoraireSol"];
-          
-            
+
+            cible.avion = (int)source["IdAvion"];
+            cible.Instructeur = (int)source["IdInstructeur"];
+            cible.Pilote = (int)source["IdPilote"];
 
             cible.HrDemarrage = (DateTime)source["HeureDemarrage"];
             cible.HrDecollage = (DateTime)source["HeureDecollage"];
@@ -43,9 +45,9 @@ namespace Epatair.Mappeur
             cible.TarifHrVol = tarifHrVol;
             cible.TarifHrSol = tarifHrSol;
 
-            cible.avion = avion;
-            cible.Instructeur = instruteur;
-            cible.Pilote = pilote;
+            cible.avion = avion.IdAvion;
+            cible.Instructeur = instruteur.IdPilote;
+            cible.Pilote = pilote.IdPilote;
 
             cible.HrDemarrage = HeureDemarrage;
             cible.HrDecollage =HeureDecolage;

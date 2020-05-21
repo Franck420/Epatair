@@ -18,12 +18,12 @@ namespace Epatair.Dto
       
         
 
-        public AvionDTO avion { get; set; }
+        public int avion { get; set; }
         
 
-        public PiloteDTO Instructeur { get; set; }
+        public int Instructeur { get; set; }
 
-        public PiloteDTO Pilote { get; set; }
+        public int Pilote { get; set; }
 
         public DateTime HrDemarrage { get; set; }
         public DateTime HrArret { get; set; }

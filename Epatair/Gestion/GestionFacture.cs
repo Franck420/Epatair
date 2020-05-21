@@ -21,7 +21,7 @@ namespace Epatair.Gestion
         FactureDto facture = new FactureDto();
 
         //Fonction pour créer une nouvelle facture
-        public double NouvelleFacture(AvionDTO avion, PiloteDTO instruteur, PiloteDTO pilote,DateTime HeureDemarrage, DateTime HeureArret, DateTime HeureAtterissage, DateTime HeureDecolage)
+        public double NouvelleFacture(AvionDTO avion, PiloteDTO instruteur, PiloteDTO pilote,DateTime HeureDemarrage, DateTime HeureArret, DateTime HeureAtterissage, DateTime HeureDecolage,double TarifAvion)
         {
             double HeuredeVol, HeureSol;
 
@@ -34,15 +34,15 @@ namespace Epatair.Gestion
 
             RepositoryFacture.NouvelleFacture(facture);
 
-            return calculertotalFacture(facture);
+            return calculertotalFacture(facture, TarifAvion);
         }
 
         //fonction pour calculer le total d'une facture
-        public double calculertotalFacture(FactureDto facture)
+        public double calculertotalFacture(FactureDto facture,double TarifAvion)
         {
             
 
-            return(facture.HrVol * tarifHrVol) + (facture.HrSol * tarifHrSol)+facture.avion.Tarif;
+            return(facture.HrVol * tarifHrVol) + (facture.HrSol * tarifHrSol)+TarifAvion;
 
         }
         
