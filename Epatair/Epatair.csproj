@@ -219,6 +219,12 @@
     <EmbeddedResource Include="Formulaires\FrmModifierPilote.resx">
       <DependentUpon>FrmModifierPilote.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formulaires\FrmModifierRendezVous.resx">
+      <DependentUpon>FrmModifierRendezVous.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulaires\FrmRemplirHeures.resx">
+      <DependentUpon>FrmRemplirHeures.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
