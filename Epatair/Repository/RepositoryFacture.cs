@@ -60,9 +60,9 @@ namespace Epatair.Repositorie
 
                 connexion.Open();
 
-                SqlCommand commande = new SqlCommand("INSERT INTO Tbl_Facture (HeureSol,HeureVol,IdAvion,IdInstruteur,IdPilote,HeureDemmage,HeureArret,HeureDecollage,HeureAtterissage) VALUES (@Avion,@instruteur,@pilote,@HeuredeVol,@HeureSol,@HeureDemarrage,@HeureArret,@HeureAtterissage,@HeureDecolage); SELECT SCOPE_IDENTITY()", connexion);
+                SqlCommand commande = new SqlCommand("INSERT INTO Tbl_Facture (HeureSol,TarifHoraireSol,HeureVol,TarifHeureVol,IdInstructeur,IdPilote,IdAvion,HeureDemarrage,HeureDecollage,HeureAtterissage,HeureArret) VALUES (@HeureSol,@TarifHSol,@HeuredeVol,@TarifHVol,@instruteur,@pilote,@Avion,@HeureDemarrage,@HeureDecolage,@HeureAtterissage,@HeureArret); SELECT SCOPE_IDENTITY()", connexion);
 
-                commande.Parameters.AddWithValue("@Avion", facture.avion);
+                commande.Parameters.AddWithValue("@Avion", facture.avion.IdAvion);
                 commande.Parameters.AddWithValue("@instruteur", facture.Instructeur.IdPilote);
                 commande.Parameters.AddWithValue("@pilote", facture.Pilote.IdPilote);
                 commande.Parameters.AddWithValue("@HeuredeVol", facture.HrVol);
@@ -71,6 +71,8 @@ namespace Epatair.Repositorie
                 commande.Parameters.AddWithValue("@HeureArret", facture.HrArret);
                 commande.Parameters.AddWithValue("@HeureAtterissage", facture.HrAtterissage);
                 commande.Parameters.AddWithValue("@HeureDecolage", facture.HrDecollage);
+                commande.Parameters.AddWithValue("@TarifHVol", facture.TarifHrVol);
+                commande.Parameters.AddWithValue("@TarifHSol", facture.TarifHrSol);
 
                 object valeur = commande.ExecuteScalar();
             }

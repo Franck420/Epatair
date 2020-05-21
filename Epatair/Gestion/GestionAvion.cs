@@ -45,5 +45,10 @@ namespace Epatair.Gestion
         {
             return repositoryAvion.GetAvion(IdAvion);
         }
+
+        public AvionDTO GetAvion(string NomAvion)
+        {
+            return repositoryAvion.GetAvion(NomAvion);
+        }
     }
 }

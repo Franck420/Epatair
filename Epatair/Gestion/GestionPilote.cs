@@ -29,6 +29,11 @@ namespace Epatair.Gestion
             return repositoryPilote.GetPilote(IdPilote);
         }
 
+        public PiloteDTO GetPilote(string Nom)
+        {
+            return repositoryPilote.GetPilote(Nom);
+        }
+
         //Fonction pour aller chercher une liste de pilotes selon leur grade
         public List<PiloteDTO> GetListePilote(string grade)
         {

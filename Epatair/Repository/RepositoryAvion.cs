@@ -107,5 +107,25 @@ namespace Epatair.Repository
                         return null;
             }
         }
+
+        public AvionDTO GetAvion(string NomAvion)
+        {
+            using (SqlConnection connexion = new SqlConnection(ChaineConnexion))
+            {
+                SqlCommand commande = new SqlCommand("select * from Tbl_Avion where Nom=@NomAvion", connexion);
+                commande.Parameters.AddWithValue("@NomAvion", NomAvion);
+                connexion.Open();
+
+                using (SqlDataReader reader = commande.ExecuteReader())
+                    if (reader.Read())
+                    {
+                        var dto = new AvionDTO();
+                        mapper.Map(reader, dto);
+                        return dto;
+                    }
+                    else
+                        return null;
+            }
+        }
     }
 }

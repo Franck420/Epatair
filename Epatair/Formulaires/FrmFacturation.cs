@@ -20,7 +20,8 @@ namespace Epatair.Formulaires
         GestionAvion gestionAvion;
         GestionPilote gestionPilote;
         Validation.ValidationFacture validationFacture = new Validation.ValidationFacture();
-        
+        List<AvionDTO> listeAvion = new List<AvionDTO>();
+
         public FrmFacturation(GestionFacture gestionFacture,GestionPilote gestionPilotes,GestionAvion gestionAvions)
         {
             InitializeComponent();
@@ -38,14 +39,14 @@ namespace Epatair.Formulaires
         {
             remplirecmbAvion(cmbAvionUtiliser);
             remplirecmbPilote(cmbClien,"Pilote");
-            remplirecmbPilote(cmbinstruteur,"Instruteur");
+            remplirecmbPilote(cmbinstruteur,"Instructeur");
             afficherListeview();
         }
 
         private void btnaccepterFacture_Click(object sender, EventArgs e)
         {
             
-           txtTotal.Text=GestionFacture.NouvelleFacture(gestionAvion.GetAvion(cmbAvionUtiliser.SelectedIndex),gestionPilote.GetPilote(cmbinstruteur.SelectedIndex), gestionPilote.GetPilote(cmbClien.SelectedIndex), Convert.ToDateTime(txtDemarage.Text), Convert.ToDateTime(txtHArret.Text), Convert.ToDateTime(txtHAtterissage.Text), Convert.ToDateTime(txtHDecolage.Text)).ToString();
+           txtTotal.Text=GestionFacture.NouvelleFacture(gestionAvion.GetAvion(cmbAvionUtiliser.SelectedItem.ToString()),gestionPilote.GetPilote(cmbinstruteur.SelectedItem.ToString()), gestionPilote.GetPilote(cmbClien.SelectedItem.ToString()), Convert.ToDateTime(txtDemarage.Text), Convert.ToDateTime(txtHArret.Text), Convert.ToDateTime(txtHAtterissage.Text), Convert.ToDateTime(txtHDecolage.Text)).ToString();
            
             GRBinformation.Enabled = false;
             btnaccepterFacture.Visible = false;
@@ -135,15 +136,21 @@ namespace Epatair.Formulaires
             listePilote=gestionPilote.GetListePilote(grade);
 
             foreach (PiloteDTO Pilote in listePilote)
-                cmbAvionUtiliser.Items.Add(Pilote.Nom);
+                cmb.Items.Add(Pilote.Nom);
         }
 
         private void remplirecmbAvion(ComboBox cmb)
         {
-            List<AvionDTO> listeAvion = new List<AvionDTO>();
+            
             listeAvion = gestionAvion.GetListeAvion();
             foreach (AvionDTO Avion in listeAvion)
                 cmbAvionUtiliser.Items.Add(Avion.Nom);
+        }
+
+        private void cmbAvionUtiliser_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            txtTarifAvion.Text = Convert.ToString(gestionAvion.GetAvion(cmbAvionUtiliser.SelectedItem.ToString()).Tarif);
         }
     }
 }

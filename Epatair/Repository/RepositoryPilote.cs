@@ -51,7 +51,7 @@ namespace Epatair.Repository
         {
             using (SqlConnection connexion = new SqlConnection(ChaineConnexion))
             {
-                SqlCommand commande = new SqlCommand("select * from Tbl_Pilote where IdPilote=@IdPilote", connexion);
+                SqlCommand commande = new SqlCommand("select * from Tbl_Pilote inner join Tbl_Grade on Tbl_Pilote.IdGrade = Tbl_Grade.IdGrade where IdPilote=@IdPilote", connexion);
                 commande.Parameters.AddWithValue("@IdPilote", IdPilote);
                 connexion.Open();
 
@@ -60,6 +60,26 @@ namespace Epatair.Repository
                     {                        
                         var dto = new PiloteDTO();
                         mapper.Map(reader, dto);                        
+                        return dto;
+                    }
+                    else
+                        return null;
+            }
+        }
+
+        public PiloteDTO GetPilote(string NomPilote)
+        {
+            using (SqlConnection connexion = new SqlConnection(ChaineConnexion))
+            {
+                SqlCommand commande = new SqlCommand("select * from Tbl_Pilote inner join Tbl_Grade on Tbl_Pilote.IdGrade = Tbl_Grade.IdGrade where Nom=@NomPilote", connexion);
+                commande.Parameters.AddWithValue("@NomPilote", NomPilote);
+                connexion.Open();
+
+                using (SqlDataReader reader = commande.ExecuteReader())
+                    if (reader.Read())
+                    {
+                        var dto = new PiloteDTO();
+                        mapper.Map(reader, dto);
                         return dto;
                     }
                     else

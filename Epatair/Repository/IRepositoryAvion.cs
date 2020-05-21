@@ -20,5 +20,7 @@ namespace Epatair.Repository
         void ModifierAvion(AvionDTO Avion);
 
         AvionDTO GetAvion(int IdAvion);
+
+        AvionDTO GetAvion(string NomAvion);
     }
 }
