@@ -21,7 +21,7 @@ namespace Epatair.Gestion
         FactureDto facture = new FactureDto();
 
         //Fonction pour créer une nouvelle facture
-        public void NouvelleFacture(AvionDTO avion, PiloteDTO instruteur, PiloteDTO pilote,DateTime HeureDemarrage, DateTime HeureArret, DateTime HeureAtterissage, DateTime HeureDecolage, double tarifAvion)
+        public double NouvelleFacture(AvionDTO avion, PiloteDTO instruteur, PiloteDTO pilote,DateTime HeureDemarrage, DateTime HeureArret, DateTime HeureAtterissage, DateTime HeureDecolage)
         {
             double HeuredeVol, HeureSol;
 
@@ -31,14 +31,18 @@ namespace Epatair.Gestion
             Mappeur.MappeurFacture mappeur = new Mappeur.MappeurFacture();
             facture=mappeur.Map(avion,instruteur,  pilote,  HeuredeVol,  HeureSol,  HeureDemarrage, HeureArret,  HeureAtterissage,  HeureDecolage,  tarifHrVol,  tarifHrSol,facture);
 
-            calculertotalFacture(facture);
+
+            RepositoryFacture.NouvelleFacture(facture);
+
+            return calculertotalFacture(facture);
         }
 
         //fonction pour calculer le total d'une facture
         public double calculertotalFacture(FactureDto facture)
         {
+            
 
-            return(facture.HrVol * facture.TarifHrVol) + (facture.TarifHrSol * facture.HrSol);
+            return(facture.HrVol * tarifHrVol) + (facture.HrSol * tarifHrSol)+facture.avion.Tarif;
 
         }
         
@@ -49,7 +53,7 @@ namespace Epatair.Gestion
 
         }
 
-        private double calculertempssol(DateTime heureDemarrage,DateTime heuredecollage,DateTime heureatterrissage,DateTime heurearret)
+        public double calculertempssol(DateTime heureDemarrage,DateTime heuredecollage,DateTime heureatterrissage,DateTime heurearret)
         {
             double heuresol;
             heuresol=(heuredecollage - heureDemarrage).TotalHours;
@@ -59,11 +63,16 @@ namespace Epatair.Gestion
             return heuresol;
         
         }
-        private double calculertempsVol(DateTime heuredecollage,DateTime heureatterrissage )
+        public double calculertempsVol(DateTime heuredecollage,DateTime heureatterrissage )
         {
 
             return (heureatterrissage - heuredecollage).TotalHours;
 
+        }
+
+        public FactureDto GetFacture(int IdFacture)
+        {
+            return RepositoryFacture.GetFacture(IdFacture);
         }
     }
 }

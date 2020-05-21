@@ -21,6 +21,7 @@ namespace Epatair.Repositorie
                 return ConfigurationManager.ConnectionStrings["BDEpatAir"].ConnectionString;
             }
         }
+        Mappeur.MappeurFacture mapper = new Mappeur.MappeurFacture();
 
         //Fonction permettant d'aller chercher et de retourner une liste de facture
         public List<Dto.FactureDto> GetListeFacture()
@@ -29,14 +30,14 @@ namespace Epatair.Repositorie
 
             using (SqlConnection connection = new SqlConnection(ChaineConnexion))
             {
-                SqlCommand command = new SqlCommand("Select * From Facture", connection);
+                SqlCommand command = new SqlCommand("Select * From Tbl_Facture", connection);
 
-
+                connection.Open();
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        var mapper = new Mappeur.MappeurFacture();
+                        
                         var dto = new FactureDto();
                         mapper.Map(reader, dto);
                         liste.Add(dto);
@@ -52,24 +53,26 @@ namespace Epatair.Repositorie
         }
 
         //Fonction pour créer une nouvelle facture
-        public void NouvelleFacture(int avion, string instruteur, string pilote, double HeuredeVol, double HeureSol, DateTime HeureDemarrage, DateTime HeureArret, DateTime HeureAtterissage, DateTime HeureDecolage)
+        public void NouvelleFacture(FactureDto facture)
         {
             using (SqlConnection connexion = new SqlConnection(ChaineConnexion))
             {
 
                 connexion.Open();
 
-                SqlCommand commande = new SqlCommand("INSERT INTO Tbl_Facture (HeureSol,HeureVol,IdAvion,IdInstruteur,IdPilote,HeureDemmage,HeureArret,HeureDecollage,HeureAtterissage) VALUES (@Avion,@instruteur,@pilote,@HeuredeVol,@HeureSol,@HeureDemarrage,@HeureArret,@HeureAtterissage,@HeureDecolage); SELECT SCOPE_IDENTITY()", connexion);
+                SqlCommand commande = new SqlCommand("INSERT INTO Tbl_Facture (HeureSol,TarifHoraireSol,HeureVol,TarifHeureVol,IdInstructeur,IdPilote,IdAvion,HeureDemarrage,HeureDecollage,HeureAtterissage,HeureArret) VALUES (@HeureSol,@TarifHSol,@HeuredeVol,@TarifHVol,@instruteur,@pilote,@Avion,@HeureDemarrage,@HeureDecolage,@HeureAtterissage,@HeureArret); SELECT SCOPE_IDENTITY()", connexion);
 
-                commande.Parameters.AddWithValue("@Avion", avion);
-                commande.Parameters.AddWithValue("@instruteur", instruteur);
-                commande.Parameters.AddWithValue("@pilote", pilote);
-                commande.Parameters.AddWithValue("@HeuredeVol", HeuredeVol);
-                commande.Parameters.AddWithValue("@HeureSol", HeureSol);
-                commande.Parameters.AddWithValue("@HeureDemarrage", HeureDemarrage);
-                commande.Parameters.AddWithValue("@HeureArret", HeureArret);
-                commande.Parameters.AddWithValue("@HeureAtterissage", HeureAtterissage);
-                commande.Parameters.AddWithValue("@HeureDecolage", HeureDecolage);
+                commande.Parameters.AddWithValue("@Avion", facture.avion.IdAvion);
+                commande.Parameters.AddWithValue("@instruteur", facture.Instructeur.IdPilote);
+                commande.Parameters.AddWithValue("@pilote", facture.Pilote.IdPilote);
+                commande.Parameters.AddWithValue("@HeuredeVol", facture.HrVol);
+                commande.Parameters.AddWithValue("@HeureSol", facture.HrSol);
+                commande.Parameters.AddWithValue("@HeureDemarrage", facture.HrDemarrage);
+                commande.Parameters.AddWithValue("@HeureArret", facture.HrArret);
+                commande.Parameters.AddWithValue("@HeureAtterissage", facture.HrAtterissage);
+                commande.Parameters.AddWithValue("@HeureDecolage", facture.HrDecollage);
+                commande.Parameters.AddWithValue("@TarifHVol", facture.TarifHrVol);
+                commande.Parameters.AddWithValue("@TarifHSol", facture.TarifHrSol);
 
                 object valeur = commande.ExecuteScalar();
             }
@@ -77,6 +80,25 @@ namespace Epatair.Repositorie
 
         }
 
+        public FactureDto GetFacture(int IdFacture)
+        {
+            using (SqlConnection connexion = new SqlConnection(ChaineConnexion))
+            {
+                SqlCommand commande = new SqlCommand("select * from Tbl_Facture where IdFacture=@IdFacture", connexion);
+                commande.Parameters.AddWithValue("@IdFacture", IdFacture);
+                connexion.Open();
+
+                using (SqlDataReader reader = commande.ExecuteReader())
+                    if (reader.Read())
+                    {
+                        var dto = new FactureDto();
+                        mapper.Map(reader, dto);
+                        return dto;
+                    }
+                    else
+                        return null;
+            }
+        }
 
     }
 }

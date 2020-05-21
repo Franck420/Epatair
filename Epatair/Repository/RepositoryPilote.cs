@@ -51,7 +51,7 @@ namespace Epatair.Repository
         {
             using (SqlConnection connexion = new SqlConnection(ChaineConnexion))
             {
-                SqlCommand commande = new SqlCommand("select * from Tbl_Pilote where IdPilote=@IdPilote", connexion);
+                SqlCommand commande = new SqlCommand("select * from Tbl_Pilote inner join Tbl_Grade on Tbl_Pilote.IdGrade = Tbl_Grade.IdGrade where IdPilote=@IdPilote", connexion);
                 commande.Parameters.AddWithValue("@IdPilote", IdPilote);
                 connexion.Open();
 
@@ -67,13 +67,33 @@ namespace Epatair.Repository
             }
         }
 
+        public PiloteDTO GetPilote(string NomPilote)
+        {
+            using (SqlConnection connexion = new SqlConnection(ChaineConnexion))
+            {
+                SqlCommand commande = new SqlCommand("select * from Tbl_Pilote inner join Tbl_Grade on Tbl_Pilote.IdGrade = Tbl_Grade.IdGrade where Nom=@NomPilote", connexion);
+                commande.Parameters.AddWithValue("@NomPilote", NomPilote);
+                connexion.Open();
+
+                using (SqlDataReader reader = commande.ExecuteReader())
+                    if (reader.Read())
+                    {
+                        var dto = new PiloteDTO();
+                        mapper.Map(reader, dto);
+                        return dto;
+                    }
+                    else
+                        return null;
+            }
+        }
+
         //Fonction pour aller chercher une liste de pilotes selon leur grade
         public List<PiloteDTO> GetListePilote(string grade)
         {
             var listePilote = new List<PiloteDTO>();
             using (SqlConnection connexion = new SqlConnection(ChaineConnexion))
             {
-                SqlCommand commande = new SqlCommand("SELECT * FROM Tbl_Pilote where grade = @Grade", connexion);
+                SqlCommand commande = new SqlCommand("select IdPilote,Nom,Titre from Tbl_Pilote inner join Tbl_Grade on Tbl_Pilote.IdGrade = Tbl_Grade.IdGrade where Titre = @Grade", connexion);
                 commande.Parameters.AddWithValue("@Grade", grade);
                 connexion.Open();
 

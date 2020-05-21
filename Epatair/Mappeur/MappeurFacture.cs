@@ -17,17 +17,19 @@ namespace Epatair.Mappeur
 
             cible.Idfacture = (int)source["IdFacture"];
 
-            cible.HrVol = (float)source["HrVol"];
-            cible.HrSol = (float)source["HrSol"];
-            cible.TarifHrVol = (float)source["TarifHrVol"];
-            cible.TarifHrSol = (float)source["TarifHrVol"];
+            cible.HrVol = (double)source["HeureVol"];
+            cible.HrSol = (double)source["HeureSol"];
+            cible.TarifHrVol = (double)source["TarifHeureVol"];
+            cible.TarifHrSol = (double)source["TarifHoraireSol"];
           
+            
+
+            cible.HrDemarrage = (DateTime)source["HeureDemarrage"];
+            cible.HrDecollage = (DateTime)source["HeureDecollage"];
+            cible.HrArret = (DateTime)source["HeureArret"];
+            cible.HrAtterissage = (DateTime)source["HeureAtterissage"];
 
 
-            cible.HrDemarrage = (DateTime)source["HrDemarage"];
-            cible.HrDecollage = (DateTime)source["HrDemarage2"];
-            cible.HrArret = (DateTime)source["HrArret"];
-            cible.HrAtterissage = (DateTime)source["HrAtterissage"];
 
         }
 
@@ -40,8 +42,10 @@ namespace Epatair.Mappeur
             cible.HrSol = HeureSol;
             cible.TarifHrVol = tarifHrVol;
             cible.TarifHrSol = tarifHrSol;
-        
 
+            cible.avion = avion;
+            cible.Instructeur = instruteur;
+            cible.Pilote = pilote;
 
             cible.HrDemarrage = HeureDemarrage;
             cible.HrDecollage =HeureDecolage;

@@ -33,6 +33,8 @@
             this.btnAjouter = new System.Windows.Forms.Button();
             this.lstviewFacture = new System.Windows.Forms.ListView();
             this.GRBinformation = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtTarifAvion = new System.Windows.Forms.TextBox();
             this.btnvalidation = new System.Windows.Forms.Button();
             this.Btnannuler = new System.Windows.Forms.Button();
             this.btnaccepterFacture = new System.Windows.Forms.Button();
@@ -54,8 +56,6 @@
             this.lblHDemarage = new System.Windows.Forms.Label();
             this.txtIdFacture = new System.Windows.Forms.TextBox();
             this.lblIdFacture = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.GRBFacture.SuspendLayout();
             this.GRBinformation.SuspendLayout();
             this.SuspendLayout();
@@ -103,7 +103,7 @@
             // GRBinformation
             // 
             this.GRBinformation.Controls.Add(this.label1);
-            this.GRBinformation.Controls.Add(this.textBox1);
+            this.GRBinformation.Controls.Add(this.txtTarifAvion);
             this.GRBinformation.Controls.Add(this.btnvalidation);
             this.GRBinformation.Controls.Add(this.Btnannuler);
             this.GRBinformation.Controls.Add(this.btnaccepterFacture);
@@ -132,6 +132,23 @@
             this.GRBinformation.TabIndex = 5;
             this.GRBinformation.TabStop = false;
             this.GRBinformation.Text = "information facture";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Enabled = false;
+            this.label1.Location = new System.Drawing.Point(9, 120);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Avion Tarif";
+            // 
+            // txtTarifAvion
+            // 
+            this.txtTarifAvion.Location = new System.Drawing.Point(119, 113);
+            this.txtTarifAvion.Name = "txtTarifAvion";
+            this.txtTarifAvion.Size = new System.Drawing.Size(100, 20);
+            this.txtTarifAvion.TabIndex = 15;
             // 
             // btnvalidation
             // 
@@ -183,7 +200,7 @@
             // 
             // txtHDecolage
             // 
-            this.txtHDecolage.Location = new System.Drawing.Point(119, 367);
+            this.txtHDecolage.Location = new System.Drawing.Point(119, 289);
             this.txtHDecolage.Name = "txtHDecolage";
             this.txtHDecolage.Size = new System.Drawing.Size(100, 20);
             this.txtHDecolage.TabIndex = 11;
@@ -192,7 +209,7 @@
             // 
             this.LblHDecolage.AutoSize = true;
             this.LblHDecolage.Enabled = false;
-            this.LblHDecolage.Location = new System.Drawing.Point(6, 370);
+            this.LblHDecolage.Location = new System.Drawing.Point(6, 292);
             this.LblHDecolage.Name = "LblHDecolage";
             this.LblHDecolage.Size = new System.Drawing.Size(98, 13);
             this.LblHDecolage.TabIndex = 0;
@@ -212,6 +229,7 @@
             this.cmbAvionUtiliser.Name = "cmbAvionUtiliser";
             this.cmbAvionUtiliser.Size = new System.Drawing.Size(100, 21);
             this.cmbAvionUtiliser.TabIndex = 3;
+            this.cmbAvionUtiliser.SelectedIndexChanged += new System.EventHandler(this.cmbAvionUtiliser_SelectedIndexChanged);
             // 
             // lblAvion
             // 
@@ -245,7 +263,7 @@
             // 
             // txtHArret
             // 
-            this.txtHArret.Location = new System.Drawing.Point(119, 286);
+            this.txtHArret.Location = new System.Drawing.Point(119, 368);
             this.txtHArret.Name = "txtHArret";
             this.txtHArret.Size = new System.Drawing.Size(100, 20);
             this.txtHArret.TabIndex = 9;
@@ -264,7 +282,7 @@
             // 
             this.lblHArret.AutoSize = true;
             this.lblHArret.Enabled = false;
-            this.lblHArret.Location = new System.Drawing.Point(6, 289);
+            this.lblHArret.Location = new System.Drawing.Point(36, 371);
             this.lblHArret.Name = "lblHArret";
             this.lblHArret.Size = new System.Drawing.Size(68, 13);
             this.lblHArret.TabIndex = 0;
@@ -321,23 +339,6 @@
             this.lblIdFacture.TabIndex = 0;
             this.lblIdFacture.Text = "Identifieur Facture";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(119, 113);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 15;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Enabled = false;
-            this.label1.Location = new System.Drawing.Point(9, 120);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Avion Tarif";
-            // 
             // FrmFacturation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -385,6 +386,6 @@
         private System.Windows.Forms.ListView lstviewFacture;
         private System.Windows.Forms.Button btnvalidation;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTarifAvion;
     }
 }
