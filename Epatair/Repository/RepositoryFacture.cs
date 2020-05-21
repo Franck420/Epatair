@@ -62,9 +62,9 @@ namespace Epatair.Repositorie
 
                 SqlCommand commande = new SqlCommand("INSERT INTO Tbl_Facture (HeureSol,TarifHoraireSol,HeureVol,TarifHeureVol,IdInstructeur,IdPilote,IdAvion,HeureDemarrage,HeureDecollage,HeureAtterissage,HeureArret) VALUES (@HeureSol,@TarifHSol,@HeuredeVol,@TarifHVol,@instruteur,@pilote,@Avion,@HeureDemarrage,@HeureDecolage,@HeureAtterissage,@HeureArret); SELECT SCOPE_IDENTITY()", connexion);
 
-                commande.Parameters.AddWithValue("@Avion", facture.avion.IdAvion);
-                commande.Parameters.AddWithValue("@instruteur", facture.Instructeur.IdPilote);
-                commande.Parameters.AddWithValue("@pilote", facture.Pilote.IdPilote);
+                commande.Parameters.AddWithValue("@Avion", facture.avion);
+                commande.Parameters.AddWithValue("@instruteur", facture.Instructeur);
+                commande.Parameters.AddWithValue("@pilote", facture.Pilote);
                 commande.Parameters.AddWithValue("@HeuredeVol", facture.HrVol);
                 commande.Parameters.AddWithValue("@HeureSol", facture.HrSol);
                 commande.Parameters.AddWithValue("@HeureDemarrage", facture.HrDemarrage);

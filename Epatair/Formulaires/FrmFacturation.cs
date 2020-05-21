@@ -46,7 +46,7 @@ namespace Epatair.Formulaires
         private void btnaccepterFacture_Click(object sender, EventArgs e)
         {
             
-           txtTotal.Text=GestionFacture.NouvelleFacture(gestionAvion.GetAvion(cmbAvionUtiliser.SelectedItem.ToString()),gestionPilote.GetPilote(cmbinstruteur.SelectedItem.ToString()), gestionPilote.GetPilote(cmbClien.SelectedItem.ToString()), Convert.ToDateTime(txtDemarage.Text), Convert.ToDateTime(txtHArret.Text), Convert.ToDateTime(txtHAtterissage.Text), Convert.ToDateTime(txtHDecolage.Text)).ToString();
+           txtTotal.Text=GestionFacture.NouvelleFacture(gestionAvion.GetAvion(cmbAvionUtiliser.SelectedItem.ToString()),gestionPilote.GetPilote(cmbinstruteur.SelectedItem.ToString()), gestionPilote.GetPilote(cmbClien.SelectedItem.ToString()), Convert.ToDateTime(txtDemarage.Text), Convert.ToDateTime(txtHArret.Text), Convert.ToDateTime(txtHAtterissage.Text), Convert.ToDateTime(txtHDecolage.Text),Convert.ToDouble(txtTarifAvion.Text)).ToString();
            
             GRBinformation.Enabled = false;
             btnaccepterFacture.Visible = false;
@@ -64,10 +64,11 @@ namespace Epatair.Formulaires
         {
             lstviewFacture.View = View.Details;
             lstviewFacture.FullRowSelect = true;
-            lstviewFacture.Columns.Add("IdFacture", 3);
-            lstviewFacture.Columns.Add("IdAvion", 3);
-            lstviewFacture.Columns.Add("IdPilote", 3);
-            lstviewFacture.Columns.Add("Nom Pilote", 50);
+            lstviewFacture.Columns.Add("IdFacture", 60);
+            lstviewFacture.Columns.Add("IdAvion", 50);
+            lstviewFacture.Columns.Add("IdInstructeur", 80);
+            lstviewFacture.Columns.Add("IdPilote", 50);
+            lstviewFacture.Columns.Add("Nom Pilote", 80);
             lstviewFacture.Sorting = SortOrder.Ascending;
 
             foreach (var facture in listeFacture)
@@ -80,9 +81,11 @@ namespace Epatair.Formulaires
         private ListViewItem GetListViewFacture(FactureDto Facture)
         {
             ListViewItem item = new ListViewItem(Facture.Idfacture.ToString());
-            item.SubItems.Add(Facture.avion.IdAvion.ToString());
-            item.SubItems.Add(Facture.Pilote.IdPilote.ToString());
-            item.SubItems.Add(Facture.Pilote.Nom);
+            
+            item.SubItems.Add(Facture.avion.ToString());
+            item.SubItems.Add(Facture.Instructeur.ToString());
+            item.SubItems.Add(Facture.Pilote.ToString());
+            item.SubItems.Add(gestionPilote.GetPilote(Facture.Pilote).Nom);
             return item;
         }
 
@@ -101,23 +104,23 @@ namespace Epatair.Formulaires
             if (!validationFacture.ValidationDatetime(txtDemarage.Text))
             {
                 erreur = true;
-                MessageBox.Show("Demarage doit etre dans un forma valide (YYYY-MM-JJ-HH)");
+                MessageBox.Show("Demarage doit etre dans un forma valide (HH:mm)");
             }
             if (!validationFacture.ValidationDatetime(txtHArret.Text))
             {
                 erreur = true;
-                MessageBox.Show("Arret doit etre dans un forma valide (YYYY-MM-JJ-HH)");
+                MessageBox.Show("Arret doit etre dans un forma valide (HH:mm)");
             }
 
             if (!validationFacture.ValidationDatetime(txtHAtterissage.Text))
             {
                 erreur = true;
-                MessageBox.Show("Atterissage doit etre dans un forma valide (YYYY-MM-JJ-HH)");
+                MessageBox.Show("Atterissage doit etre dans un forma valide (HH:mm)");
             }
             if (!validationFacture.ValidationDatetime(txtHDecolage.Text))
             {
                 erreur = true;
-                MessageBox.Show("Decolage doit etre dans un forma valide (YYYY-MM-JJ-HH)");
+                MessageBox.Show("Decolage doit etre dans un forma valide (HH:mm)");
             }
 
 
@@ -152,5 +155,8 @@ namespace Epatair.Formulaires
 
             txtTarifAvion.Text = Convert.ToString(gestionAvion.GetAvion(cmbAvionUtiliser.SelectedItem.ToString()).Tarif);
         }
+
+        private void lstviewFacture_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        { }
     }
 }

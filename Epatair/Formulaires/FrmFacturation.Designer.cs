@@ -56,6 +56,7 @@
             this.lblHDemarage = new System.Windows.Forms.Label();
             this.txtIdFacture = new System.Windows.Forms.TextBox();
             this.lblIdFacture = new System.Windows.Forms.Label();
+            this.lblinformation = new System.Windows.Forms.Label();
             this.GRBFacture.SuspendLayout();
             this.GRBinformation.SuspendLayout();
             this.SuspendLayout();
@@ -76,7 +77,7 @@
             this.GRBFacture.Controls.Add(this.lstviewFacture);
             this.GRBFacture.Location = new System.Drawing.Point(12, 12);
             this.GRBFacture.Name = "GRBFacture";
-            this.GRBFacture.Size = new System.Drawing.Size(296, 426);
+            this.GRBFacture.Size = new System.Drawing.Size(338, 426);
             this.GRBFacture.TabIndex = 4;
             this.GRBFacture.TabStop = false;
             this.GRBFacture.Text = "Facture";
@@ -96,12 +97,14 @@
             this.lstviewFacture.HideSelection = false;
             this.lstviewFacture.Location = new System.Drawing.Point(3, 16);
             this.lstviewFacture.Name = "lstviewFacture";
-            this.lstviewFacture.Size = new System.Drawing.Size(287, 350);
+            this.lstviewFacture.Size = new System.Drawing.Size(326, 350);
             this.lstviewFacture.TabIndex = 0;
             this.lstviewFacture.UseCompatibleStateImageBehavior = false;
+            this.lstviewFacture.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lstviewFacture_ItemSelectionChanged);
             // 
             // GRBinformation
             // 
+            this.GRBinformation.Controls.Add(this.lblinformation);
             this.GRBinformation.Controls.Add(this.label1);
             this.GRBinformation.Controls.Add(this.txtTarifAvion);
             this.GRBinformation.Controls.Add(this.btnvalidation);
@@ -126,9 +129,9 @@
             this.GRBinformation.Controls.Add(this.txtIdFacture);
             this.GRBinformation.Controls.Add(this.lblIdFacture);
             this.GRBinformation.Enabled = false;
-            this.GRBinformation.Location = new System.Drawing.Point(320, 12);
+            this.GRBinformation.Location = new System.Drawing.Point(369, 12);
             this.GRBinformation.Name = "GRBinformation";
-            this.GRBinformation.Size = new System.Drawing.Size(254, 493);
+            this.GRBinformation.Size = new System.Drawing.Size(254, 524);
             this.GRBinformation.TabIndex = 5;
             this.GRBinformation.TabStop = false;
             this.GRBinformation.Text = "information facture";
@@ -137,7 +140,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Enabled = false;
-            this.label1.Location = new System.Drawing.Point(9, 120);
+            this.label1.Location = new System.Drawing.Point(9, 152);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 16;
@@ -145,14 +148,14 @@
             // 
             // txtTarifAvion
             // 
-            this.txtTarifAvion.Location = new System.Drawing.Point(119, 113);
+            this.txtTarifAvion.Location = new System.Drawing.Point(119, 145);
             this.txtTarifAvion.Name = "txtTarifAvion";
             this.txtTarifAvion.Size = new System.Drawing.Size(100, 20);
             this.txtTarifAvion.TabIndex = 15;
             // 
             // btnvalidation
             // 
-            this.btnvalidation.Location = new System.Drawing.Point(9, 444);
+            this.btnvalidation.Location = new System.Drawing.Point(9, 476);
             this.btnvalidation.Name = "btnvalidation";
             this.btnvalidation.Size = new System.Drawing.Size(158, 23);
             this.btnvalidation.TabIndex = 14;
@@ -162,7 +165,7 @@
             // 
             // Btnannuler
             // 
-            this.Btnannuler.Location = new System.Drawing.Point(173, 444);
+            this.Btnannuler.Location = new System.Drawing.Point(173, 476);
             this.Btnannuler.Name = "Btnannuler";
             this.Btnannuler.Size = new System.Drawing.Size(75, 23);
             this.Btnannuler.TabIndex = 13;
@@ -171,7 +174,7 @@
             // 
             // btnaccepterFacture
             // 
-            this.btnaccepterFacture.Location = new System.Drawing.Point(6, 444);
+            this.btnaccepterFacture.Location = new System.Drawing.Point(6, 476);
             this.btnaccepterFacture.Name = "btnaccepterFacture";
             this.btnaccepterFacture.Size = new System.Drawing.Size(121, 23);
             this.btnaccepterFacture.TabIndex = 12;
@@ -183,7 +186,7 @@
             // txtTotal
             // 
             this.txtTotal.Enabled = false;
-            this.txtTotal.Location = new System.Drawing.Point(119, 400);
+            this.txtTotal.Location = new System.Drawing.Point(119, 432);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(100, 20);
             this.txtTotal.TabIndex = 0;
@@ -192,7 +195,7 @@
             // 
             this.lblTotal.AutoSize = true;
             this.lblTotal.Enabled = false;
-            this.lblTotal.Location = new System.Drawing.Point(70, 403);
+            this.lblTotal.Location = new System.Drawing.Point(70, 435);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(37, 13);
             this.lblTotal.TabIndex = 0;
@@ -200,7 +203,7 @@
             // 
             // txtHDecolage
             // 
-            this.txtHDecolage.Location = new System.Drawing.Point(119, 289);
+            this.txtHDecolage.Location = new System.Drawing.Point(119, 321);
             this.txtHDecolage.Name = "txtHDecolage";
             this.txtHDecolage.Size = new System.Drawing.Size(100, 20);
             this.txtHDecolage.TabIndex = 11;
@@ -209,7 +212,7 @@
             // 
             this.LblHDecolage.AutoSize = true;
             this.LblHDecolage.Enabled = false;
-            this.LblHDecolage.Location = new System.Drawing.Point(6, 292);
+            this.LblHDecolage.Location = new System.Drawing.Point(6, 324);
             this.LblHDecolage.Name = "LblHDecolage";
             this.LblHDecolage.Size = new System.Drawing.Size(98, 13);
             this.LblHDecolage.TabIndex = 0;
@@ -217,7 +220,7 @@
             // 
             // txtHAtterissage
             // 
-            this.txtHAtterissage.Location = new System.Drawing.Point(119, 329);
+            this.txtHAtterissage.Location = new System.Drawing.Point(119, 361);
             this.txtHAtterissage.Name = "txtHAtterissage";
             this.txtHAtterissage.Size = new System.Drawing.Size(100, 20);
             this.txtHAtterissage.TabIndex = 10;
@@ -225,7 +228,7 @@
             // cmbAvionUtiliser
             // 
             this.cmbAvionUtiliser.FormattingEnabled = true;
-            this.cmbAvionUtiliser.Location = new System.Drawing.Point(119, 70);
+            this.cmbAvionUtiliser.Location = new System.Drawing.Point(119, 102);
             this.cmbAvionUtiliser.Name = "cmbAvionUtiliser";
             this.cmbAvionUtiliser.Size = new System.Drawing.Size(100, 21);
             this.cmbAvionUtiliser.TabIndex = 3;
@@ -235,7 +238,7 @@
             // 
             this.lblAvion.AutoSize = true;
             this.lblAvion.Enabled = false;
-            this.lblAvion.Location = new System.Drawing.Point(6, 70);
+            this.lblAvion.Location = new System.Drawing.Point(6, 102);
             this.lblAvion.Name = "lblAvion";
             this.lblAvion.Size = new System.Drawing.Size(66, 13);
             this.lblAvion.TabIndex = 0;
@@ -245,7 +248,7 @@
             // 
             this.lblHAtterissage.AutoSize = true;
             this.lblHAtterissage.Enabled = false;
-            this.lblHAtterissage.Location = new System.Drawing.Point(6, 332);
+            this.lblHAtterissage.Location = new System.Drawing.Point(6, 364);
             this.lblHAtterissage.Name = "lblHAtterissage";
             this.lblHAtterissage.Size = new System.Drawing.Size(98, 13);
             this.lblHAtterissage.TabIndex = 0;
@@ -255,7 +258,7 @@
             // 
             this.lblInstruteur.AutoSize = true;
             this.lblInstruteur.Enabled = false;
-            this.lblInstruteur.Location = new System.Drawing.Point(6, 156);
+            this.lblInstruteur.Location = new System.Drawing.Point(6, 188);
             this.lblInstruteur.Name = "lblInstruteur";
             this.lblInstruteur.Size = new System.Drawing.Size(90, 13);
             this.lblInstruteur.TabIndex = 0;
@@ -263,7 +266,7 @@
             // 
             // txtHArret
             // 
-            this.txtHArret.Location = new System.Drawing.Point(119, 368);
+            this.txtHArret.Location = new System.Drawing.Point(119, 400);
             this.txtHArret.Name = "txtHArret";
             this.txtHArret.Size = new System.Drawing.Size(100, 20);
             this.txtHArret.TabIndex = 9;
@@ -272,7 +275,7 @@
             // 
             this.lblNomclien.AutoSize = true;
             this.lblNomclien.Enabled = false;
-            this.lblNomclien.Location = new System.Drawing.Point(6, 200);
+            this.lblNomclien.Location = new System.Drawing.Point(6, 232);
             this.lblNomclien.Name = "lblNomclien";
             this.lblNomclien.Size = new System.Drawing.Size(69, 13);
             this.lblNomclien.TabIndex = 0;
@@ -282,7 +285,7 @@
             // 
             this.lblHArret.AutoSize = true;
             this.lblHArret.Enabled = false;
-            this.lblHArret.Location = new System.Drawing.Point(36, 371);
+            this.lblHArret.Location = new System.Drawing.Point(36, 403);
             this.lblHArret.Name = "lblHArret";
             this.lblHArret.Size = new System.Drawing.Size(68, 13);
             this.lblHArret.TabIndex = 0;
@@ -291,14 +294,14 @@
             // cmbinstruteur
             // 
             this.cmbinstruteur.FormattingEnabled = true;
-            this.cmbinstruteur.Location = new System.Drawing.Point(119, 156);
+            this.cmbinstruteur.Location = new System.Drawing.Point(119, 188);
             this.cmbinstruteur.Name = "cmbinstruteur";
             this.cmbinstruteur.Size = new System.Drawing.Size(100, 21);
             this.cmbinstruteur.TabIndex = 4;
             // 
             // txtDemarage
             // 
-            this.txtDemarage.Location = new System.Drawing.Point(119, 242);
+            this.txtDemarage.Location = new System.Drawing.Point(119, 274);
             this.txtDemarage.Name = "txtDemarage";
             this.txtDemarage.Size = new System.Drawing.Size(100, 20);
             this.txtDemarage.TabIndex = 8;
@@ -306,7 +309,7 @@
             // cmbClien
             // 
             this.cmbClien.FormattingEnabled = true;
-            this.cmbClien.Location = new System.Drawing.Point(119, 197);
+            this.cmbClien.Location = new System.Drawing.Point(119, 229);
             this.cmbClien.Name = "cmbClien";
             this.cmbClien.Size = new System.Drawing.Size(100, 21);
             this.cmbClien.TabIndex = 5;
@@ -315,7 +318,7 @@
             // 
             this.lblHDemarage.AutoSize = true;
             this.lblHDemarage.Enabled = false;
-            this.lblHDemarage.Location = new System.Drawing.Point(6, 245);
+            this.lblHDemarage.Location = new System.Drawing.Point(6, 277);
             this.lblHDemarage.Name = "lblHDemarage";
             this.lblHDemarage.Size = new System.Drawing.Size(106, 13);
             this.lblHDemarage.TabIndex = 0;
@@ -324,7 +327,7 @@
             // txtIdFacture
             // 
             this.txtIdFacture.Enabled = false;
-            this.txtIdFacture.Location = new System.Drawing.Point(119, 33);
+            this.txtIdFacture.Location = new System.Drawing.Point(119, 65);
             this.txtIdFacture.Name = "txtIdFacture";
             this.txtIdFacture.Size = new System.Drawing.Size(100, 20);
             this.txtIdFacture.TabIndex = 0;
@@ -333,17 +336,26 @@
             // 
             this.lblIdFacture.AutoSize = true;
             this.lblIdFacture.Enabled = false;
-            this.lblIdFacture.Location = new System.Drawing.Point(6, 36);
+            this.lblIdFacture.Location = new System.Drawing.Point(6, 68);
             this.lblIdFacture.Name = "lblIdFacture";
             this.lblIdFacture.Size = new System.Drawing.Size(92, 13);
             this.lblIdFacture.TabIndex = 0;
             this.lblIdFacture.Text = "Identifieur Facture";
             // 
+            // lblinformation
+            // 
+            this.lblinformation.AutoSize = true;
+            this.lblinformation.Location = new System.Drawing.Point(9, 38);
+            this.lblinformation.Name = "lblinformation";
+            this.lblinformation.Size = new System.Drawing.Size(238, 13);
+            this.lblinformation.TabIndex = 17;
+            this.lblinformation.Text = "Les heure doit etre rentre de cette façon: HH:mm";
+            // 
             // FrmFacturation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(586, 590);
+            this.ClientSize = new System.Drawing.Size(645, 590);
             this.Controls.Add(this.GRBinformation);
             this.Controls.Add(this.GRBFacture);
             this.Controls.Add(this.btnRetour);
@@ -387,5 +399,6 @@
         private System.Windows.Forms.Button btnvalidation;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTarifAvion;
+        private System.Windows.Forms.Label lblinformation;
     }
 }
