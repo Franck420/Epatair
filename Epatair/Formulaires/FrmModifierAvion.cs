@@ -24,6 +24,7 @@ namespace Epatair.Formulaires
             txtIdAvion.Text = Avion.IdAvion.ToString();
             txtNom.Text = Avion.Nom;
             txtIdLogbook.Text = Avion.IdLogbook.ToString();
+            txtTarif.Text = Avion.Tarif.ToString("C");
         }
 
         private void btnModifier_Click(object sender, EventArgs e)

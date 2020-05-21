@@ -48,7 +48,7 @@
             this.btnAjouter.Location = new System.Drawing.Point(6, 229);
             this.btnAjouter.Name = "btnAjouter";
             this.btnAjouter.Size = new System.Drawing.Size(134, 55);
-            this.btnAjouter.TabIndex = 0;
+            this.btnAjouter.TabIndex = 5;
             this.btnAjouter.Text = "Ajouter un avion à la base de donnée";
             this.btnAjouter.UseVisualStyleBackColor = true;
             this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
@@ -68,7 +68,7 @@
             this.btnSupprimer.Location = new System.Drawing.Point(6, 141);
             this.btnSupprimer.Name = "btnSupprimer";
             this.btnSupprimer.Size = new System.Drawing.Size(140, 55);
-            this.btnSupprimer.TabIndex = 2;
+            this.btnSupprimer.TabIndex = 3;
             this.btnSupprimer.Text = "Supprimer un avion de la base de donnée";
             this.btnSupprimer.UseVisualStyleBackColor = true;
             this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
@@ -78,7 +78,7 @@
             this.btnRevenir.Location = new System.Drawing.Point(18, 332);
             this.btnRevenir.Name = "btnRevenir";
             this.btnRevenir.Size = new System.Drawing.Size(156, 55);
-            this.btnRevenir.TabIndex = 3;
+            this.btnRevenir.TabIndex = 6;
             this.btnRevenir.Text = "Revenir au menu principal";
             this.btnRevenir.UseVisualStyleBackColor = true;
             this.btnRevenir.Click += new System.EventHandler(this.btnRevenir_Click);
@@ -115,14 +115,14 @@
             this.txtSupprimer.Location = new System.Drawing.Point(152, 159);
             this.txtSupprimer.Name = "txtSupprimer";
             this.txtSupprimer.Size = new System.Drawing.Size(100, 20);
-            this.txtSupprimer.TabIndex = 7;
+            this.txtSupprimer.TabIndex = 4;
             // 
             // txtModifier
             // 
             this.txtModifier.Location = new System.Drawing.Point(152, 69);
             this.txtModifier.Name = "txtModifier";
             this.txtModifier.Size = new System.Drawing.Size(100, 20);
-            this.txtModifier.TabIndex = 8;
+            this.txtModifier.TabIndex = 2;
             // 
             // grbliste
             // 

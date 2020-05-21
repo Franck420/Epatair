@@ -19,7 +19,7 @@ namespace Epatair.Mappeur
 
             cible.HrVol = (double)source["HeureVol"];
             cible.HrSol = (double)source["HeureSol"];
-            cible.TarifHrVol = (int)source["TarifHeureVol"];
+            cible.TarifHrVol = (double)source["TarifHeureVol"];
             cible.TarifHrSol = (double)source["TarifHoraireSol"];
 
             cible.avion = (int)source["IdAvion"];

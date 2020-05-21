@@ -87,7 +87,7 @@
             this.btnAjouter.Location = new System.Drawing.Point(6, 375);
             this.btnAjouter.Name = "btnAjouter";
             this.btnAjouter.Size = new System.Drawing.Size(124, 23);
-            this.btnAjouter.TabIndex = 2;
+            this.btnAjouter.TabIndex = 1;
             this.btnAjouter.Text = "Ajouter une facture";
             this.btnAjouter.UseVisualStyleBackColor = true;
             this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click_1);
@@ -151,14 +151,14 @@
             this.txtTarifAvion.Location = new System.Drawing.Point(119, 145);
             this.txtTarifAvion.Name = "txtTarifAvion";
             this.txtTarifAvion.Size = new System.Drawing.Size(100, 20);
-            this.txtTarifAvion.TabIndex = 15;
+            this.txtTarifAvion.TabIndex = 100000;
             // 
             // btnvalidation
             // 
-            this.btnvalidation.Location = new System.Drawing.Point(9, 476);
+            this.btnvalidation.Location = new System.Drawing.Point(6, 476);
             this.btnvalidation.Name = "btnvalidation";
             this.btnvalidation.Size = new System.Drawing.Size(158, 23);
-            this.btnvalidation.TabIndex = 14;
+            this.btnvalidation.TabIndex = 9;
             this.btnvalidation.Text = "Valider et calculer total facture";
             this.btnvalidation.UseVisualStyleBackColor = true;
             this.btnvalidation.Click += new System.EventHandler(this.btnvalidation_Click);
@@ -168,16 +168,17 @@
             this.Btnannuler.Location = new System.Drawing.Point(173, 476);
             this.Btnannuler.Name = "Btnannuler";
             this.Btnannuler.Size = new System.Drawing.Size(75, 23);
-            this.Btnannuler.TabIndex = 13;
+            this.Btnannuler.TabIndex = 11;
             this.Btnannuler.Text = "annuler";
             this.Btnannuler.UseVisualStyleBackColor = true;
+            this.Btnannuler.Click += new System.EventHandler(this.Btnannuler_Click);
             // 
             // btnaccepterFacture
             // 
             this.btnaccepterFacture.Location = new System.Drawing.Point(6, 476);
             this.btnaccepterFacture.Name = "btnaccepterFacture";
             this.btnaccepterFacture.Size = new System.Drawing.Size(121, 23);
-            this.btnaccepterFacture.TabIndex = 12;
+            this.btnaccepterFacture.TabIndex = 10;
             this.btnaccepterFacture.Text = "Ajouter";
             this.btnaccepterFacture.UseVisualStyleBackColor = true;
             this.btnaccepterFacture.Visible = false;
@@ -206,7 +207,7 @@
             this.txtHDecolage.Location = new System.Drawing.Point(119, 321);
             this.txtHDecolage.Name = "txtHDecolage";
             this.txtHDecolage.Size = new System.Drawing.Size(100, 20);
-            this.txtHDecolage.TabIndex = 11;
+            this.txtHDecolage.TabIndex = 6;
             // 
             // LblHDecolage
             // 
@@ -223,7 +224,7 @@
             this.txtHAtterissage.Location = new System.Drawing.Point(119, 361);
             this.txtHAtterissage.Name = "txtHAtterissage";
             this.txtHAtterissage.Size = new System.Drawing.Size(100, 20);
-            this.txtHAtterissage.TabIndex = 10;
+            this.txtHAtterissage.TabIndex = 7;
             // 
             // cmbAvionUtiliser
             // 
@@ -231,7 +232,7 @@
             this.cmbAvionUtiliser.Location = new System.Drawing.Point(119, 102);
             this.cmbAvionUtiliser.Name = "cmbAvionUtiliser";
             this.cmbAvionUtiliser.Size = new System.Drawing.Size(100, 21);
-            this.cmbAvionUtiliser.TabIndex = 3;
+            this.cmbAvionUtiliser.TabIndex = 1;
             this.cmbAvionUtiliser.SelectedIndexChanged += new System.EventHandler(this.cmbAvionUtiliser_SelectedIndexChanged);
             // 
             // lblAvion
@@ -269,7 +270,7 @@
             this.txtHArret.Location = new System.Drawing.Point(119, 400);
             this.txtHArret.Name = "txtHArret";
             this.txtHArret.Size = new System.Drawing.Size(100, 20);
-            this.txtHArret.TabIndex = 9;
+            this.txtHArret.TabIndex = 8;
             // 
             // lblNomclien
             // 
@@ -297,14 +298,14 @@
             this.cmbinstruteur.Location = new System.Drawing.Point(119, 188);
             this.cmbinstruteur.Name = "cmbinstruteur";
             this.cmbinstruteur.Size = new System.Drawing.Size(100, 21);
-            this.cmbinstruteur.TabIndex = 4;
+            this.cmbinstruteur.TabIndex = 3;
             // 
             // txtDemarage
             // 
             this.txtDemarage.Location = new System.Drawing.Point(119, 274);
             this.txtDemarage.Name = "txtDemarage";
             this.txtDemarage.Size = new System.Drawing.Size(100, 20);
-            this.txtDemarage.TabIndex = 8;
+            this.txtDemarage.TabIndex = 5;
             // 
             // cmbClien
             // 
@@ -312,7 +313,7 @@
             this.cmbClien.Location = new System.Drawing.Point(119, 229);
             this.cmbClien.Name = "cmbClien";
             this.cmbClien.Size = new System.Drawing.Size(100, 21);
-            this.cmbClien.TabIndex = 5;
+            this.cmbClien.TabIndex = 4;
             // 
             // lblHDemarage
             // 

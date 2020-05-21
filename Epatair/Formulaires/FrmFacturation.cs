@@ -46,11 +46,14 @@ namespace Epatair.Formulaires
         private void btnaccepterFacture_Click(object sender, EventArgs e)
         {
             
-           txtTotal.Text=GestionFacture.NouvelleFacture(gestionAvion.GetAvion(cmbAvionUtiliser.SelectedItem.ToString()),gestionPilote.GetPilote(cmbinstruteur.SelectedItem.ToString()), gestionPilote.GetPilote(cmbClien.SelectedItem.ToString()), Convert.ToDateTime(txtDemarage.Text), Convert.ToDateTime(txtHArret.Text), Convert.ToDateTime(txtHAtterissage.Text), Convert.ToDateTime(txtHDecolage.Text),Convert.ToDouble(txtTarifAvion.Text)).ToString();
+           txtTotal.Text=GestionFacture.NouvelleFacture(gestionAvion.GetAvion(cmbAvionUtiliser.SelectedItem.ToString()),gestionPilote.GetPilote(cmbinstruteur.SelectedItem.ToString()), gestionPilote.GetPilote(cmbClien.SelectedItem.ToString()), Convert.ToDateTime(txtDemarage.Text), Convert.ToDateTime(txtHArret.Text), Convert.ToDateTime(txtHAtterissage.Text), Convert.ToDateTime(txtHDecolage.Text),Convert.ToDouble(txtTarifAvion.Text)).ToString("C");
            
             GRBinformation.Enabled = false;
             btnaccepterFacture.Visible = false;
             btnvalidation.Visible = true;
+
+            afficherListeview();
+
         }
 
         private void afficherListeview()
@@ -92,14 +95,28 @@ namespace Epatair.Formulaires
         private void btnAjouter_Click_1(object sender, EventArgs e)
         {
             GRBinformation.Enabled = true;
+            txtDemarage.Text = "";
+            txtHArret.Text = "";
+            txtHAtterissage.Text = "";
+            txtHDecolage.Text = "";
+            txtTarifAvion.Text = "";
+            txtTotal.Text = "";
+            cmbAvionUtiliser.SelectedIndex = 0;
+            cmbClien.SelectedIndex = -1;
+            cmbinstruteur.SelectedIndex = -1;
         }
 
         private void btnvalidation_Click(object sender, EventArgs e)
         {
             bool erreur = false;
 
-           
 
+            if (!validationFacture.validationDouble(txtTarifAvion.Text))
+                {
+                
+                MessageBox.Show("appuier sur l avion pour avoir le tarif "); 
+            
+                }
 
             if (!validationFacture.ValidationDatetime(txtDemarage.Text))
             {
@@ -153,10 +170,15 @@ namespace Epatair.Formulaires
         private void cmbAvionUtiliser_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            txtTarifAvion.Text = Convert.ToString(gestionAvion.GetAvion(cmbAvionUtiliser.SelectedItem.ToString()).Tarif);
+            txtTarifAvion.Text = Convert.ToString(gestionAvion.GetAvion(cmbAvionUtiliser.SelectedItem.ToString()).Tarif.ToString());
         }
 
         private void lstviewFacture_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         { }
+
+        private void Btnannuler_Click(object sender, EventArgs e)
+        {
+            GRBinformation.Enabled = false;
+        }
     }
 }
