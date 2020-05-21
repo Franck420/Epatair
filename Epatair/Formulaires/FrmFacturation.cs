@@ -56,6 +56,8 @@ namespace Epatair.Formulaires
 
         }
 
+
+        //Fonction pour afficher le ListeViewItem
         private void afficherListeview()
         {
             lstviewFacture.Clear();
@@ -63,6 +65,8 @@ namespace Epatair.Formulaires
         
         }
 
+
+        //Fonction pour initialiser le ListeViewItem
         private void InitialiserListViewFacturation(IEnumerable<FactureDto> listeFacture)
         {
             lstviewFacture.View = View.Details;
@@ -81,6 +85,8 @@ namespace Epatair.Formulaires
 
             lstviewFacture.Sort();
         }
+
+        //Fonction pour remplir la liste avec le contenu du DTO
         private ListViewItem GetListViewFacture(FactureDto Facture)
         {
             ListViewItem item = new ListViewItem(Facture.Idfacture.ToString());
@@ -114,41 +120,38 @@ namespace Epatair.Formulaires
             if (!validationFacture.validationDouble(txtTarifAvion.Text))
                 {
                 
-                MessageBox.Show("appuier sur l avion pour avoir le tarif "); 
+                MessageBox.Show("Appuyer sur l'avion pour avoir le tarif"); 
             
                 }
 
             if (!validationFacture.ValidationDatetime(txtDemarage.Text))
             {
                 erreur = true;
-                MessageBox.Show("Demarage doit etre dans un forma valide (HH:mm)");
+                MessageBox.Show("Le démarrage doit être dans un format valide (HH:mm)");
             }
             if (!validationFacture.ValidationDatetime(txtHArret.Text))
             {
                 erreur = true;
-                MessageBox.Show("Arret doit etre dans un forma valide (HH:mm)");
+                MessageBox.Show("L'arrêt doit être dans un format valide (HH:mm)");
             }
 
             if (!validationFacture.ValidationDatetime(txtHAtterissage.Text))
             {
                 erreur = true;
-                MessageBox.Show("Atterissage doit etre dans un forma valide (HH:mm)");
+                MessageBox.Show("L'atterissage doit être dans un format valide (HH:mm)");
             }
             if (!validationFacture.ValidationDatetime(txtHDecolage.Text))
             {
                 erreur = true;
-                MessageBox.Show("Decolage doit etre dans un forma valide (HH:mm)");
+                MessageBox.Show("Le décollage doit être dans un format valide (HH:mm)");
             }
-
-
 
             if (!erreur)
             {
                 
                 btnaccepterFacture.Visible = true;
                 btnvalidation.Visible = false;
-            }
-            
+            }            
         }
         private void remplirecmbPilote(ComboBox cmb,string grade)
         {

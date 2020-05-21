@@ -33,6 +33,7 @@
             this.btnAjouter = new System.Windows.Forms.Button();
             this.lstviewFacture = new System.Windows.Forms.ListView();
             this.GRBinformation = new System.Windows.Forms.GroupBox();
+            this.lblinformation = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTarifAvion = new System.Windows.Forms.TextBox();
             this.btnvalidation = new System.Windows.Forms.Button();
@@ -56,7 +57,6 @@
             this.lblHDemarage = new System.Windows.Forms.Label();
             this.txtIdFacture = new System.Windows.Forms.TextBox();
             this.lblIdFacture = new System.Windows.Forms.Label();
-            this.lblinformation = new System.Windows.Forms.Label();
             this.GRBFacture.SuspendLayout();
             this.GRBinformation.SuspendLayout();
             this.SuspendLayout();
@@ -129,33 +129,42 @@
             this.GRBinformation.Controls.Add(this.txtIdFacture);
             this.GRBinformation.Controls.Add(this.lblIdFacture);
             this.GRBinformation.Enabled = false;
-            this.GRBinformation.Location = new System.Drawing.Point(369, 12);
+            this.GRBinformation.Location = new System.Drawing.Point(370, 12);
             this.GRBinformation.Name = "GRBinformation";
-            this.GRBinformation.Size = new System.Drawing.Size(254, 524);
+            this.GRBinformation.Size = new System.Drawing.Size(276, 524);
             this.GRBinformation.TabIndex = 5;
             this.GRBinformation.TabStop = false;
-            this.GRBinformation.Text = "information facture";
+            this.GRBinformation.Text = "Information facture";
+            // 
+            // lblinformation
+            // 
+            this.lblinformation.AutoSize = true;
+            this.lblinformation.Location = new System.Drawing.Point(3, 38);
+            this.lblinformation.Name = "lblinformation";
+            this.lblinformation.Size = new System.Drawing.Size(272, 13);
+            this.lblinformation.TabIndex = 17;
+            this.lblinformation.Text = "Les heures doivent  être entrées de cette façon: HH:mm";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Enabled = false;
-            this.label1.Location = new System.Drawing.Point(9, 152);
+            this.label1.Location = new System.Drawing.Point(44, 152);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.Size = new System.Drawing.Size(76, 13);
             this.label1.TabIndex = 16;
-            this.label1.Text = "Avion Tarif";
+            this.label1.Text = "Tarif de l\'avion";
             // 
             // txtTarifAvion
             // 
-            this.txtTarifAvion.Location = new System.Drawing.Point(119, 145);
+            this.txtTarifAvion.Location = new System.Drawing.Point(134, 146);
             this.txtTarifAvion.Name = "txtTarifAvion";
             this.txtTarifAvion.Size = new System.Drawing.Size(100, 20);
             this.txtTarifAvion.TabIndex = 100000;
             // 
             // btnvalidation
             // 
-            this.btnvalidation.Location = new System.Drawing.Point(6, 476);
+            this.btnvalidation.Location = new System.Drawing.Point(21, 476);
             this.btnvalidation.Name = "btnvalidation";
             this.btnvalidation.Size = new System.Drawing.Size(158, 23);
             this.btnvalidation.TabIndex = 9;
@@ -165,17 +174,17 @@
             // 
             // Btnannuler
             // 
-            this.Btnannuler.Location = new System.Drawing.Point(173, 476);
+            this.Btnannuler.Location = new System.Drawing.Point(188, 476);
             this.Btnannuler.Name = "Btnannuler";
             this.Btnannuler.Size = new System.Drawing.Size(75, 23);
             this.Btnannuler.TabIndex = 11;
-            this.Btnannuler.Text = "annuler";
+            this.Btnannuler.Text = "Annuler";
             this.Btnannuler.UseVisualStyleBackColor = true;
             this.Btnannuler.Click += new System.EventHandler(this.Btnannuler_Click);
             // 
             // btnaccepterFacture
             // 
-            this.btnaccepterFacture.Location = new System.Drawing.Point(6, 476);
+            this.btnaccepterFacture.Location = new System.Drawing.Point(21, 476);
             this.btnaccepterFacture.Name = "btnaccepterFacture";
             this.btnaccepterFacture.Size = new System.Drawing.Size(121, 23);
             this.btnaccepterFacture.TabIndex = 10;
@@ -187,7 +196,7 @@
             // txtTotal
             // 
             this.txtTotal.Enabled = false;
-            this.txtTotal.Location = new System.Drawing.Point(119, 432);
+            this.txtTotal.Location = new System.Drawing.Point(134, 432);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(100, 20);
             this.txtTotal.TabIndex = 0;
@@ -196,15 +205,15 @@
             // 
             this.lblTotal.AutoSize = true;
             this.lblTotal.Enabled = false;
-            this.lblTotal.Location = new System.Drawing.Point(70, 435);
+            this.lblTotal.Location = new System.Drawing.Point(32, 435);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(37, 13);
+            this.lblTotal.Size = new System.Drawing.Size(93, 13);
             this.lblTotal.TabIndex = 0;
-            this.lblTotal.Text = "Total :";
+            this.lblTotal.Text = "Total de la facture";
             // 
             // txtHDecolage
             // 
-            this.txtHDecolage.Location = new System.Drawing.Point(119, 321);
+            this.txtHDecolage.Location = new System.Drawing.Point(134, 321);
             this.txtHDecolage.Name = "txtHDecolage";
             this.txtHDecolage.Size = new System.Drawing.Size(100, 20);
             this.txtHDecolage.TabIndex = 6;
@@ -213,15 +222,15 @@
             // 
             this.LblHDecolage.AutoSize = true;
             this.LblHDecolage.Enabled = false;
-            this.LblHDecolage.Location = new System.Drawing.Point(6, 324);
+            this.LblHDecolage.Location = new System.Drawing.Point(22, 324);
             this.LblHDecolage.Name = "LblHDecolage";
-            this.LblHDecolage.Size = new System.Drawing.Size(98, 13);
+            this.LblHDecolage.Size = new System.Drawing.Size(100, 13);
             this.LblHDecolage.TabIndex = 0;
-            this.LblHDecolage.Text = "Heure de decolage";
+            this.LblHDecolage.Text = "Heure de décollage";
             // 
             // txtHAtterissage
             // 
-            this.txtHAtterissage.Location = new System.Drawing.Point(119, 361);
+            this.txtHAtterissage.Location = new System.Drawing.Point(134, 361);
             this.txtHAtterissage.Name = "txtHAtterissage";
             this.txtHAtterissage.Size = new System.Drawing.Size(100, 20);
             this.txtHAtterissage.TabIndex = 7;
@@ -229,7 +238,7 @@
             // cmbAvionUtiliser
             // 
             this.cmbAvionUtiliser.FormattingEnabled = true;
-            this.cmbAvionUtiliser.Location = new System.Drawing.Point(119, 102);
+            this.cmbAvionUtiliser.Location = new System.Drawing.Point(134, 102);
             this.cmbAvionUtiliser.Name = "cmbAvionUtiliser";
             this.cmbAvionUtiliser.Size = new System.Drawing.Size(100, 21);
             this.cmbAvionUtiliser.TabIndex = 1;
@@ -239,35 +248,35 @@
             // 
             this.lblAvion.AutoSize = true;
             this.lblAvion.Enabled = false;
-            this.lblAvion.Location = new System.Drawing.Point(6, 102);
+            this.lblAvion.Location = new System.Drawing.Point(54, 106);
             this.lblAvion.Name = "lblAvion";
-            this.lblAvion.Size = new System.Drawing.Size(66, 13);
+            this.lblAvion.Size = new System.Drawing.Size(63, 13);
             this.lblAvion.TabIndex = 0;
-            this.lblAvion.Text = "Avion utiliser";
+            this.lblAvion.Text = "Avion utilisé";
             // 
             // lblHAtterissage
             // 
             this.lblHAtterissage.AutoSize = true;
             this.lblHAtterissage.Enabled = false;
-            this.lblHAtterissage.Location = new System.Drawing.Point(6, 364);
+            this.lblHAtterissage.Location = new System.Drawing.Point(21, 364);
             this.lblHAtterissage.Name = "lblHAtterissage";
-            this.lblHAtterissage.Size = new System.Drawing.Size(98, 13);
+            this.lblHAtterissage.Size = new System.Drawing.Size(101, 13);
             this.lblHAtterissage.TabIndex = 0;
-            this.lblHAtterissage.Text = "Heure d\'atterissage";
+            this.lblHAtterissage.Text = "Heure d\'atterrissage";
             // 
             // lblInstruteur
             // 
             this.lblInstruteur.AutoSize = true;
             this.lblInstruteur.Enabled = false;
-            this.lblInstruteur.Location = new System.Drawing.Point(6, 188);
+            this.lblInstruteur.Location = new System.Drawing.Point(21, 188);
             this.lblInstruteur.Name = "lblInstruteur";
-            this.lblInstruteur.Size = new System.Drawing.Size(90, 13);
+            this.lblInstruteur.Size = new System.Drawing.Size(100, 13);
             this.lblInstruteur.TabIndex = 0;
-            this.lblInstruteur.Text = "Nom de instruteur";
+            this.lblInstruteur.Text = "Nom de l\'instructeur";
             // 
             // txtHArret
             // 
-            this.txtHArret.Location = new System.Drawing.Point(119, 400);
+            this.txtHArret.Location = new System.Drawing.Point(134, 400);
             this.txtHArret.Name = "txtHArret";
             this.txtHArret.Size = new System.Drawing.Size(100, 20);
             this.txtHArret.TabIndex = 8;
@@ -276,33 +285,33 @@
             // 
             this.lblNomclien.AutoSize = true;
             this.lblNomclien.Enabled = false;
-            this.lblNomclien.Location = new System.Drawing.Point(6, 232);
+            this.lblNomclien.Location = new System.Drawing.Point(49, 232);
             this.lblNomclien.Name = "lblNomclien";
-            this.lblNomclien.Size = new System.Drawing.Size(69, 13);
+            this.lblNomclien.Size = new System.Drawing.Size(72, 13);
             this.lblNomclien.TabIndex = 0;
-            this.lblNomclien.Text = "Nom du clien";
+            this.lblNomclien.Text = "Nom du client";
             // 
             // lblHArret
             // 
             this.lblHArret.AutoSize = true;
             this.lblHArret.Enabled = false;
-            this.lblHArret.Location = new System.Drawing.Point(36, 403);
+            this.lblHArret.Location = new System.Drawing.Point(53, 403);
             this.lblHArret.Name = "lblHArret";
             this.lblHArret.Size = new System.Drawing.Size(68, 13);
             this.lblHArret.TabIndex = 0;
-            this.lblHArret.Text = "Heure d\'arret";
+            this.lblHArret.Text = "Heure d\'arrêt";
             // 
             // cmbinstruteur
             // 
             this.cmbinstruteur.FormattingEnabled = true;
-            this.cmbinstruteur.Location = new System.Drawing.Point(119, 188);
+            this.cmbinstruteur.Location = new System.Drawing.Point(134, 188);
             this.cmbinstruteur.Name = "cmbinstruteur";
             this.cmbinstruteur.Size = new System.Drawing.Size(100, 21);
             this.cmbinstruteur.TabIndex = 3;
             // 
             // txtDemarage
             // 
-            this.txtDemarage.Location = new System.Drawing.Point(119, 274);
+            this.txtDemarage.Location = new System.Drawing.Point(134, 274);
             this.txtDemarage.Name = "txtDemarage";
             this.txtDemarage.Size = new System.Drawing.Size(100, 20);
             this.txtDemarage.TabIndex = 5;
@@ -310,7 +319,7 @@
             // cmbClien
             // 
             this.cmbClien.FormattingEnabled = true;
-            this.cmbClien.Location = new System.Drawing.Point(119, 229);
+            this.cmbClien.Location = new System.Drawing.Point(134, 229);
             this.cmbClien.Name = "cmbClien";
             this.cmbClien.Size = new System.Drawing.Size(100, 21);
             this.cmbClien.TabIndex = 4;
@@ -319,16 +328,16 @@
             // 
             this.lblHDemarage.AutoSize = true;
             this.lblHDemarage.Enabled = false;
-            this.lblHDemarage.Location = new System.Drawing.Point(6, 277);
+            this.lblHDemarage.Location = new System.Drawing.Point(19, 277);
             this.lblHDemarage.Name = "lblHDemarage";
             this.lblHDemarage.Size = new System.Drawing.Size(106, 13);
             this.lblHDemarage.TabIndex = 0;
-            this.lblHDemarage.Text = "Heure de Démarrage";
+            this.lblHDemarage.Text = "Heure du Démarrage";
             // 
             // txtIdFacture
             // 
             this.txtIdFacture.Enabled = false;
-            this.txtIdFacture.Location = new System.Drawing.Point(119, 65);
+            this.txtIdFacture.Location = new System.Drawing.Point(134, 65);
             this.txtIdFacture.Name = "txtIdFacture";
             this.txtIdFacture.Size = new System.Drawing.Size(100, 20);
             this.txtIdFacture.TabIndex = 0;
@@ -337,26 +346,17 @@
             // 
             this.lblIdFacture.AutoSize = true;
             this.lblIdFacture.Enabled = false;
-            this.lblIdFacture.Location = new System.Drawing.Point(6, 68);
+            this.lblIdFacture.Location = new System.Drawing.Point(27, 68);
             this.lblIdFacture.Name = "lblIdFacture";
             this.lblIdFacture.Size = new System.Drawing.Size(92, 13);
             this.lblIdFacture.TabIndex = 0;
-            this.lblIdFacture.Text = "Identifieur Facture";
-            // 
-            // lblinformation
-            // 
-            this.lblinformation.AutoSize = true;
-            this.lblinformation.Location = new System.Drawing.Point(9, 38);
-            this.lblinformation.Name = "lblinformation";
-            this.lblinformation.Size = new System.Drawing.Size(238, 13);
-            this.lblinformation.TabIndex = 17;
-            this.lblinformation.Text = "Les heure doit etre rentre de cette façon: HH:mm";
+            this.lblIdFacture.Text = "Identifiant Facture";
             // 
             // FrmFacturation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(645, 590);
+            this.ClientSize = new System.Drawing.Size(659, 590);
             this.Controls.Add(this.GRBinformation);
             this.Controls.Add(this.GRBFacture);
             this.Controls.Add(this.btnRetour);

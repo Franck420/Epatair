@@ -22,8 +22,7 @@ namespace Epatair.Mappeur
 
         //Fonction pour mapper a partir d'informations partielles
         public void Map(string nom,string IdGrade, PiloteDTO cible)
-        {
-            
+        {            
             cible.Nom = nom;
             cible.Grade = IdGrade;
 

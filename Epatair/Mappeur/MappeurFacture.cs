@@ -35,6 +35,7 @@ namespace Epatair.Mappeur
 
         }
 
+        //Fonction pour mapper a partir des informations de la facture
         public FactureDto  Map(AvionDTO avion, PiloteDTO instruteur, PiloteDTO pilote, double HeuredeVol, double HeureSol, DateTime HeureDemarrage, DateTime HeureArret, DateTime HeureAtterissage, DateTime HeureDecolage, double tarifHrVol, double tarifHrSol , FactureDto cible)
         {
 

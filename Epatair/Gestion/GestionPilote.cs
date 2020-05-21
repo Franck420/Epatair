@@ -29,6 +29,7 @@ namespace Epatair.Gestion
             return repositoryPilote.GetPilote(IdPilote);
         }
 
+        //Fonction pour aller chercher un Pilote avec le nom
         public PiloteDTO GetPilote(string Nom)
         {
             return repositoryPilote.GetPilote(Nom);

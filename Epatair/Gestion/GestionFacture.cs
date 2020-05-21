@@ -53,6 +53,7 @@ namespace Epatair.Gestion
 
         }
 
+        //Fonction pour calculer le temps au sol
         public double calculertempssol(DateTime heureDemarrage,DateTime heuredecollage,DateTime heureatterrissage,DateTime heurearret)
         {
             double heuresol;
@@ -63,6 +64,9 @@ namespace Epatair.Gestion
             return heuresol;
         
         }
+
+
+        //Fonction pour calculer le temps au vol
         public double calculertempsVol(DateTime heuredecollage,DateTime heureatterrissage )
         {
 
@@ -70,6 +74,8 @@ namespace Epatair.Gestion
 
         }
 
+
+        //Fonction pour aller chercher une facture avec le ID
         public FactureDto GetFacture(int IdFacture)
         {
             return RepositoryFacture.GetFacture(IdFacture);

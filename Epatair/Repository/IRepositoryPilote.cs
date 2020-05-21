@@ -16,6 +16,7 @@ namespace Epatair.Repository
         //Fonction pour aller chercher un pilote grâce à son ID
         PiloteDTO GetPilote(int IdPilote);
 
+        //Fonction pour aller chercher un Pilote avec le nom
         PiloteDTO GetPilote(string NomPilote);
 
         //Fonction pour aller chercher une liste de pilotes selon leur grade

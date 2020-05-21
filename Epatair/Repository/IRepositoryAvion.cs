@@ -18,9 +18,9 @@ namespace Epatair.Repository
         void SupprimerAvion(int IdAvion);
         //Fonction pour modifier un avion
         void ModifierAvion(AvionDTO Avion);
-
+        //Fonction pour aller chercher un avion avec son ID
         AvionDTO GetAvion(int IdAvion);
-
+        //Fonction pour aller chercher un avion avec son Nom
         AvionDTO GetAvion(string NomAvion);
     }
 }

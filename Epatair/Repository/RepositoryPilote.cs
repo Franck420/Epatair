@@ -67,6 +67,7 @@ namespace Epatair.Repository
             }
         }
 
+        //Fonction pour aller chercher un Pilote avec le nom
         public PiloteDTO GetPilote(string NomPilote)
         {
             using (SqlConnection connexion = new SqlConnection(ChaineConnexion))

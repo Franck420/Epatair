@@ -88,6 +88,7 @@ namespace Epatair.Repository
             }
         }
 
+        //Fonction pour aller chercher un avion avec son ID
         public AvionDTO GetAvion(int IdAvion)
         {
             using (SqlConnection connexion = new SqlConnection(ChaineConnexion))
@@ -108,6 +109,7 @@ namespace Epatair.Repository
             }
         }
 
+        //Fonction pour aller chercher un avion avec son Nom
         public AvionDTO GetAvion(string NomAvion)
         {
             using (SqlConnection connexion = new SqlConnection(ChaineConnexion))

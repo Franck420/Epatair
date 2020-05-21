@@ -16,7 +16,7 @@ namespace Epatair.Gestion
         AvionDTO Avion = new AvionDTO();
         MappeurAvion mappeurAvion = new MappeurAvion();
 
-        //fonctions pour aller chercher et retourner la liste des avions
+        //Fonctions pour aller chercher et retourner la liste des avions
         public List<AvionDTO> GetListeAvion()
         {
             return repositoryAvion.GetListeAvion();
@@ -41,11 +41,13 @@ namespace Epatair.Gestion
             repositoryAvion.ModifierAvion(Avion);
         }
 
+        //Fonction pour aller chercher un avion avec son ID
         public AvionDTO GetAvion(int IdAvion)
         {
             return repositoryAvion.GetAvion(IdAvion);
         }
 
+        //Fonction pour aller chercher un avion avec son Nom
         public AvionDTO GetAvion(string NomAvion)
         {
             return repositoryAvion.GetAvion(NomAvion);

@@ -15,6 +15,7 @@ namespace Epatair.Repository
         //Fonction pour créer une nouvelle facture
         void NouvelleFacture(FactureDto facture);
 
+        //Fonction permettant d'aller chercher une facture avec son ID
         FactureDto GetFacture(int IdFacture);
 
 
